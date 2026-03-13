@@ -513,3 +513,9 @@ body.no-scroll{overflow:hidden}
 .grid-2 .card, .grid-2 .card h3, .grid-2 .card p, .grid-2 .card li,
 .timeline .card, .timeline .card h3, .timeline .card li{color:#0f1d33;}
 .grid-2 .card .list, .timeline .card .list, .hero-right .list, .hero-right .hint{color:#42516f;}
+
+.hero-actions{
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
