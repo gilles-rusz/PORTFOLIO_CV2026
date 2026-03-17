@@ -216,7 +216,7 @@ body:not(.light) .card .btn-ghost{
   width:290px;
   height:290px;
   object-fit:cover;
-  object-position:80% 30%;
+  object-position:100% 30%;
   border-radius:50%;
   border:4px solid rgba(90,167,255,.28);
   box-shadow:0 14px 28px rgba(0,0,0,.18);

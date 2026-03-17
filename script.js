@@ -76,9 +76,9 @@ const projects = {
           ${gallery([
             { src: "assets/img/greenbin-dashboard.png", alt: "Dashboard GreenBin", caption: "Dashboard administrateur" },
             { src: "assets/img/greenbin-dechets.png", alt: "Liste des déchets GreenBin", caption: "Liste des déchets" },
-            { src: "assets/img/greenbin-edit.png", alt: "Modification d’un déchet GreenBin", caption: "Modification d’un déchet" },
+            { src: "assets/img/greenbin-edit.png", alt: "Modification d'un déchet GreenBin", caption: "Modification d'un déchet" },
             { src: "assets/img/greenbin-users.png", alt: "Gestion des utilisateurs GreenBin", caption: "Gestion des utilisateurs" },
-            { src: "assets/img/greenbin-add-user.png", alt: "Ajout d’un utilisateur GreenBin", caption: "Ajout d’un utilisateur" }
+            { src: "assets/img/greenbin-add-user.png", alt: "Ajout d'un utilisateur GreenBin", caption: "Ajout d'un utilisateur" }
           ])}
         </div>
         <div class="modal-meta">
@@ -112,7 +112,7 @@ const projects = {
     `
   },
   artisan: {
-    kicker: "Projet de fin d’études • Application responsive",
+    kicker: "Projet de fin d'études • Application responsive",
     title: "Trouve Ton Artisan",
     body: `
       <div class="modal-grid">
@@ -127,7 +127,7 @@ const projects = {
         <div class="modal-meta">
           <div class="meta-card">
             <h4>Présentation</h4>
-            <p>Projet de fin d’études réalisé dans le cadre de ma formation Développeur Web et Web Mobile. Cette plateforme permet de rechercher un artisan, consulter sa fiche détaillée et le contacter sur desktop comme sur mobile.</p>
+            <p>Projet de fin d'études réalisé dans le cadre de ma formation Développeur Web et Web Mobile. Cette plateforme permet de rechercher un artisan, consulter sa fiche détaillée et le contacter sur desktop comme sur mobile.</p>
           </div>
           <div class="meta-card">
             <h4>Ce que ce projet montre</h4>
@@ -167,12 +167,12 @@ const projects = {
         <div class="modal-meta">
           <div class="meta-card">
             <h4>Présentation</h4>
-            <p>Projet orienté back-end autour de la gestion des catways et des réservations d’un port de plaisance. Il met en avant l’architecture Express et la modélisation MongoDB.</p>
+            <p>Projet orienté back-end autour de la gestion des catways et des réservations d'un port de plaisance. Il met en avant l’architecture Express et la modélisation MongoDB.</p>
           </div>
           <div class="meta-card">
             <h4>Ce que ce projet montre</h4>
             <ul class="meta-list">
-              <li>Organisation d’un projet Express</li>
+              <li>Organisation d'un projet Express</li>
               <li>Routes CRUD et services dédiés</li>
               <li>Modèles Mongoose / MongoDB</li>
               <li>Rendu EJS + réponses JSON</li>
@@ -272,11 +272,11 @@ const formHint = document.getElementById("formHint");
 if (contactForm) {
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (formHint) formHint.textContent = "Le message va s’ouvrir dans votre client mail (pré-rempli).";
+    if (formHint) formHint.textContent = "Le message va s'ouvrir dans votre client mail (pré-rempli).";
     const data = new FormData(contactForm);
     const subject = encodeURIComponent("Contact via portfolio");
     const body = encodeURIComponent(`Nom: ${data.get("name")}\nEmail: ${data.get("email")}\n\nMessage:\n${data.get("message")}`);
-    window.location.href = `mailto:bnvc.x@outlook.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:gilles.dev57@outlook.fr?subject=${subject}&body=${body}`;
   });
 }
 
@@ -284,6 +284,6 @@ const cvLink = document.getElementById("cvLink");
 if (cvLink) {
   cvLink.addEventListener("click", (e) => {
     e.preventDefault();
-    alert("Ajoute ton CV PDF dans assets/cv/ puis remplace ce lien par le fichier final.");
+    alert("Ajoute ton CV PDF.");
   });
 }
