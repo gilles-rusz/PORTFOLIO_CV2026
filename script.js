@@ -74,12 +74,12 @@ const projects = {
       <div class="modal-grid">
         <div class="modal-gallery">
           ${gallery([
-            { src: "assets/img/greenbin-dashboard.png", alt: "Dashboard GreenBin", caption: "Dashboard administrateur" },
-            { src: "assets/img/greenbin-dechets.png", alt: "Liste des déchets GreenBin", caption: "Liste des déchets" },
-            { src: "assets/img/greenbin-edit.png", alt: "Modification d'un déchet GreenBin", caption: "Modification d'un déchet" },
-            { src: "assets/img/greenbin-users.png", alt: "Gestion des utilisateurs GreenBin", caption: "Gestion des utilisateurs" },
-            { src: "assets/img/greenbin-add-user.png", alt: "Ajout d'un utilisateur GreenBin", caption: "Ajout d'un utilisateur" }
-          ])}
+      { src: "assets/img/greenbin-dashboard.png", alt: "Dashboard GreenBin", caption: "Dashboard administrateur" },
+      { src: "assets/img/greenbin-dechets.png", alt: "Liste des déchets GreenBin", caption: "Liste des déchets" },
+      { src: "assets/img/greenbin-edit.png", alt: "Modification d'un déchet GreenBin", caption: "Modification d'un déchet" },
+      { src: "assets/img/greenbin-users.png", alt: "Gestion des utilisateurs GreenBin", caption: "Gestion des utilisateurs" },
+      { src: "assets/img/greenbin-add-user.png", alt: "Ajout d'un utilisateur GreenBin", caption: "Ajout d'un utilisateur" }
+    ])}
         </div>
         <div class="modal-meta">
           <div class="meta-card">
@@ -118,11 +118,11 @@ const projects = {
       <div class="modal-grid">
         <div class="modal-gallery">
           ${gallery([
-            { src: "assets/img/artisan-home-desktop.png", alt: "Accueil desktop Trouve Ton Artisan", caption: "Accueil desktop" },
-            { src: "assets/img/artisan-detail-desktop.png", alt: "Fiche artisan desktop", caption: "Fiche artisan desktop" },
-            { src: "assets/img/artisan-home-mobile.png", alt: "Accueil mobile Trouve Ton Artisan", caption: "Accueil mobile" },
-            { src: "assets/img/artisan-detail-mobile.png", alt: "Fiche artisan mobile", caption: "Fiche artisan mobile" }
-          ])}
+      { src: "assets/img/artisan-home-desktop.png", alt: "Accueil desktop Trouve Ton Artisan", caption: "Accueil desktop" },
+      { src: "assets/img/artisan-detail-desktop.png", alt: "Fiche artisan desktop", caption: "Fiche artisan desktop" },
+      { src: "assets/img/artisan-home-mobile.png", alt: "Accueil mobile Trouve Ton Artisan", caption: "Accueil mobile" },
+      { src: "assets/img/artisan-detail-mobile.png", alt: "Fiche artisan mobile", caption: "Fiche artisan mobile" }
+    ])}
         </div>
         <div class="modal-meta">
           <div class="meta-card">
@@ -152,29 +152,33 @@ const projects = {
       </div>
     `
   },
-  auction: {
+    auction: {
     kicker: "Application web • Temps réel",
     title: "Auction Showcase",
     body: `
       <div class="modal-grid modal-grid-auction">
         <div class="modal-media-stack">
           <div class="video-card">
-            <video class="project-video" controls preload="metadata" playsinline poster="assets/img/auction-cover.png">
-              <source src="assets/video/auction-demo.mp4" type="video/mp4">
-              Votre navigateur ne supporte pas la lecture vidéo.
-            </video>
+            <iframe
+              class="project-video"
+              src="https://www.youtube.com/embed/lbiNGFZb_8g"
+              title="Démo Auction Showcase"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
           </div>
           <div class="modal-gallery modal-gallery-compact">
             ${gallery([
-              { src: "assets/img/auction-cover.png", alt: "Interface admin Auction Showcase", caption: "Vue d'ensemble de l'espace administrateur" },
-              { src: "assets/img/auction-cover.png", alt: "Gestion des enchères Auction Showcase", caption: "Navigation et gestion des enchères" }
+              { src: "assets/img/dashboard.png", alt: "Interface admin Auction Showcase", caption: "Vue d'ensemble de l'espace administrateur" },
+              { src: "assets/img/gestion.png", alt: "Gestion des enchères Auction Showcase", caption: "Navigation et gestion des enchères" }
             ])}
           </div>
         </div>
         <div class="modal-meta">
           <div class="meta-card">
             <h4>Présentation</h4>
-            <p>Application d’enchères en temps réel développée initialement durant mon stage, puis retravaillée en version démonstration pour valoriser l’interface utilisateur, la navigation, l’espace d’administration et les interactions en temps réel.</p>
+            <p>Application d'enchères en temps réel développée initialement durant mon stage, puis retravaillée en version démonstration pour valoriser l'interface utilisateur, la navigation, l'espace d'administration et les interactions en temps réel.</p>
           </div>
           <div class="meta-card">
             <h4>Ce que ce projet montre</h4>
@@ -196,24 +200,29 @@ const projects = {
               <span class="tag">MySQL</span>
             </div>
           </div>
+          <div class="meta-card">
+            <h4>Liens</h4>
+            <div class="tags">
+              <a class="tag" href="https://youtu.be/lbiNGFZb_8g" target="_blank" rel="noopener noreferrer">Voir la démo</a>
+            </div>
+          </div>
         </div>
       </div>
     `
   }
 };
-
 function openModal(key) {
-  const p = projects[key];
-  if (!p) return;
-  modalKicker.textContent = p.kicker;
-  modalTitle.textContent = p.title;
-  modalBody.innerHTML = p.body;
-  modalActions.innerHTML = `
+    const p = projects[key];
+if (!p) return;
+modalKicker.textContent = p.kicker;
+modalTitle.textContent = p.title;
+modalBody.innerHTML = p.body;
+modalActions.innerHTML = `
     <a class="btn" href="#contact">Me contacter</a>
     <a class="btn btn-ghost" href="https://github.com/gilles-rusz" target="_blank" rel="noreferrer">Mon GitHub</a>
   `;
-  modal.classList.add("show");
-  modal.setAttribute("aria-hidden", "false");
+modal.classList.add("show");
+modal.setAttribute("aria-hidden", "false");
 }
 
 function closeModal() {
