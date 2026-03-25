@@ -161,7 +161,7 @@ const projects = {
           <div class="video-card">
             <iframe
               class="project-video"
-              src="https://www.youtube.com/embed/lbiNGFZb_8g"
+              src="https://youtu.be/fjJrTaBJ95k"
               title="Démo Auction Showcase"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
