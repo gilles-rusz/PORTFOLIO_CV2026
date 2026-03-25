@@ -152,30 +152,37 @@ const projects = {
       </div>
     `
   },
-  russell: {
-    kicker: "Projet API / Back-end",
-    title: "API Port de plaisance Russell",
+  auction: {
+    kicker: "Application web • Temps réel",
+    title: "Auction Showcase",
     body: `
-      <div class="modal-grid">
-        <div class="modal-gallery">
-          ${gallery([
-            { src: "assets/img/russell-architecture.png", alt: "Architecture du projet Russell", caption: "Architecture du projet" },
-            { src: "assets/img/russell-route.png", alt: "Route Express Russell", caption: "Route Express et rendu / JSON" },
-            { src: "assets/img/russell-model.png", alt: "Modèle Mongoose Russell", caption: "Modèle Mongoose" }
-          ], "code")}
+      <div class="modal-grid modal-grid-auction">
+        <div class="modal-media-stack">
+          <div class="video-card">
+            <video class="project-video" controls preload="metadata" playsinline poster="assets/img/auction-cover.png">
+              <source src="assets/video/auction-demo.mp4" type="video/mp4">
+              Votre navigateur ne supporte pas la lecture vidéo.
+            </video>
+          </div>
+          <div class="modal-gallery modal-gallery-compact">
+            ${gallery([
+              { src: "assets/img/auction-cover.png", alt: "Interface admin Auction Showcase", caption: "Vue d'ensemble de l'espace administrateur" },
+              { src: "assets/img/auction-cover.png", alt: "Gestion des enchères Auction Showcase", caption: "Navigation et gestion des enchères" }
+            ])}
+          </div>
         </div>
         <div class="modal-meta">
           <div class="meta-card">
             <h4>Présentation</h4>
-            <p>Projet orienté back-end autour de la gestion des catways et des réservations d'un port de plaisance. Il met en avant l’architecture Express et la modélisation MongoDB.</p>
+            <p>Application d’enchères en temps réel développée initialement durant mon stage, puis retravaillée en version démonstration pour valoriser l’interface utilisateur, la navigation, l’espace d’administration et les interactions en temps réel.</p>
           </div>
           <div class="meta-card">
             <h4>Ce que ce projet montre</h4>
             <ul class="meta-list">
-              <li>Organisation d'un projet Express</li>
-              <li>Routes CRUD et services dédiés</li>
-              <li>Modèles Mongoose / MongoDB</li>
-              <li>Rendu EJS + réponses JSON</li>
+              <li>Interface administrateur claire et orientée gestion</li>
+              <li>Navigation front-end en EJS / Express</li>
+              <li>Mise à jour temps réel des enchères via WebSocket</li>
+              <li>Structuration full-stack avec Node.js, PHP et MySQL</li>
             </ul>
           </div>
           <div class="meta-card">
@@ -183,9 +190,10 @@ const projects = {
             <div class="tags">
               <span class="tag">Node.js</span>
               <span class="tag">Express</span>
-              <span class="tag">MongoDB</span>
-              <span class="tag">Mongoose</span>
               <span class="tag">EJS</span>
+              <span class="tag">WebSocket</span>
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
             </div>
           </div>
         </div>

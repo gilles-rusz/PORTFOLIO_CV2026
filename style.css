@@ -279,7 +279,9 @@ body:not(.light) .card .btn-ghost{
   display:grid;
   grid-template-columns:1.15fr 1fr 1fr;
   gap:22px;
+  align-items:stretch;
 }
+.project.card{height:100%;}
 .project{
   text-align:left;
   padding:0;
@@ -334,16 +336,16 @@ body:not(.light) .card .btn-ghost{
 .project-badge.study-badge{
   background:linear-gradient(135deg, #7c3aed, #4f46e5);
 }
-.project-content{padding:18px 18px 20px; position:relative}
+.project-content{padding:18px 18px 20px; position:relative; display:flex; flex-direction:column; gap:0; height:100%;}
 .project h3{margin:0 0 10px; font-size:1.28rem; color:#09121f}
-.project p{margin:0 0 14px; color:#3d4b67; line-height:1.65}
+.project p{margin:0 0 14px; color:#3d4b67; line-height:1.65; min-height:132px}
 .tags{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px}
 .tags .tag{
   background:rgba(6,20,39,.06);
   color:#10213d;
   border:1px solid rgba(16,33,61,.08);
 }
-.project-cta{display:inline-flex; align-items:center; gap:8px; color:#0a7f67; font-weight:900}
+.project-cta{display:inline-flex; align-items:center; gap:8px; color:#0a7f67; font-weight:900; margin-top:auto}
 body.light .projects-shell{
   backdrop-filter: blur(10px);
   background:
@@ -402,6 +404,24 @@ body.light .footer{background:rgba(247,249,255,.7)}
 .modal-actions{display:flex; gap:10px; flex-wrap:wrap; padding:10px 8px 4px}
 .modal-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:18px; align-items:start}
 .modal-gallery{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+.video-card{
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(10,18,34,.08);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 24px rgba(8,22,44,.08);
+}
+.project-video{
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  background:#0b1220;
+  border:0;
+}
+.modal-media-stack{display:grid; gap:14px;}
+.modal-gallery-compact{grid-template-columns:repeat(2,1fr);}
+.modal-grid-auction{grid-template-columns:1.12fr .88fr;}
+
 .shot{
   background:rgba(255,255,255,.72);
   border:1px solid rgba(10,18,34,.08);
