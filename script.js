@@ -161,7 +161,7 @@ const projects = {
           <div class="video-card">
             <iframe
               class="project-video"
-              src="https://youtu.be/fjJrTaBJ95k"
+              src="https://www.youtube.com/embed/fjJrTaBJ95k"
               title="Démo Auction Showcase"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -203,7 +203,7 @@ const projects = {
           <div class="meta-card">
             <h4>Liens</h4>
             <div class="tags">
-              <a class="tag" href="https://youtu.be/lbiNGFZb_8g" target="_blank" rel="noopener noreferrer">Voir la démo</a>
+              <a class="tag" href="https://www.youtube.com/embed/fjJrTaBJ95k" target="_blank" rel="noopener noreferrer">Voir la démo</a>
             </div>
           </div>
         </div>
