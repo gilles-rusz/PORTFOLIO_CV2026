@@ -1,0 +1,9 @@
+Portfolio v7.2
+
+- suppression du texte "Lecture rapide recruteur" au-dessus des technologies
+- ajout d'un fond de section projets plus sombre et cohérent avec le reste du site
+- réactivation claire des interactions sur les projets
+- clic sur la carte ou sur l'image => ouverture des détails
+- boutons Repo / Démo / Voir plus protégés contre les conflits de clic
+- ajout d'un hint visuel "Cliquer pour voir plus" sur les covers
+- cache busting sur style.css et script.js pour éviter les anciens fichiers en ligne

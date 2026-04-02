@@ -1,0 +1,34 @@
+PORTFOLIO V7 - Modifications principales
+
+1. Hero retravaillé
+- Positionnement renforcé : Développeur Full Stack orienté outils métier, API REST et back-office
+- Ajout de 3 cartes de preuve (22 ans terrain, full stack, focus outils utiles)
+- Boutons CV + LinkedIn plus visibles
+
+2. Contenu plus convaincant
+- Ajout d'une section "Ce que je peux déjà livrer"
+- Reformulation de la section À propos pour mieux valoriser la reconversion
+- Parcours mis à jour avec le stage CK Charles Kieffer
+
+3. Projets renforcés
+- Passage de 3 à 4 projets
+- Ajout du projet Russell pour montrer l'architecture backend
+- Descriptions projet plus orientées problème / réalisation / preuve
+- Liens projet plus précis dans les modales
+
+4. Contact et conversion
+- Section contact plus directe
+- Liens LinkedIn / GitHub / code du portfolio plus visibles
+- Formulaire avec champs autocomplete
+
+5. Technique / UX
+- Correction du HTML (balise fermante en trop supprimée)
+- Suppression du code JS mort lié à cvLink
+- Fermeture du menu mobile au clic sur un lien
+- Amélioration de l'accessibilité clavier (focus visible, cycle de focus dans la modale)
+- Ajout de rel="noopener noreferrer" sur les liens externes target blank
+
+6. Performance
+- Création de portrait.webp et auction-cover.webp
+- Création d'une image sociale plus légère : preview_v7.jpg
+- Suppression du fichier vidéo local non utilisé (auction-demo.mp4)

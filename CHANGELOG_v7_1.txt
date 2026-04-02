@@ -1,0 +1,9 @@
+PORTFOLIO V7.1
+
+- Refonte de la section projets en cartes plus lisibles avec actions directes
+- Ajout d'une section visuelle de technologies avec logos colorés
+- Repositionnement des projets selon leur vrai contexte : stage, synthèse, titre pro, formation
+- Mise en avant d'Auction Showcase comme projet réalisé en entreprise
+- Clarification de GreenBin comme projet de présentation / aboutissement de workflow
+- Clarification de Russell comme projet de formation orienté architecture backend
+- Nouveau visuel de couverture pour Russell pour améliorer la lisibilité

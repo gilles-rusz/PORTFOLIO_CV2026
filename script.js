@@ -2,12 +2,24 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 const burger = document.getElementById("burger");
 const nav = document.querySelector(".nav");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+function closeNav() {
+  if (!nav || !burger) return;
+  nav.classList.remove("open");
+  burger.setAttribute("aria-expanded", "false");
+}
+
 if (burger && nav) {
   burger.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("open");
     burger.setAttribute("aria-expanded", String(isOpen));
   });
 }
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", closeNav);
+});
 
 const themeBtn = document.getElementById("themeBtn");
 const savedTheme = localStorage.getItem("theme");
@@ -16,11 +28,14 @@ if (savedTheme === "light") {
 } else {
   document.body.classList.remove("light");
 }
+
 function refreshThemeIcon() {
   if (!themeBtn) return;
   themeBtn.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
 }
+
 refreshThemeIcon();
+
 if (themeBtn) {
   themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("light");
@@ -37,8 +52,8 @@ function runTyping() {
   el.textContent = "";
   const tick = () => {
     el.textContent = text.slice(0, i);
-    i++;
-    if (i <= text.length) setTimeout(tick, 22);
+    i += 1;
+    if (i <= text.length) setTimeout(tick, 20);
   };
   tick();
 }
@@ -59,102 +74,165 @@ const modalTitle = document.getElementById("modalTitle");
 const modalBody = document.getElementById("modalBody");
 const modalActions = document.getElementById("modalActions");
 
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxClose = document.getElementById("lightboxClose");
+
+let lastFocusedElement = null;
+
+function syncBodyScroll() {
+  const modalOpen = modal && modal.classList.contains("show");
+  const lightboxOpen = lightbox && lightbox.classList.contains("show");
+  document.body.classList.toggle("no-scroll", Boolean(modalOpen || lightboxOpen));
+}
+
 const gallery = (items, kind = "screen") => items.map((item) => `
   <figure class="shot ${kind === "code" ? "code" : ""}">
-    <img src="${item.src}" alt="${item.alt}">
+    <img src="${item.src}" alt="${item.alt}" loading="lazy" decoding="async">
     <figcaption>${item.caption}</figcaption>
   </figure>
 `).join("");
 
+const linksHtml = (links = []) => `
+  <div class="tags">
+    ${links.map((link) => link.href
+      ? `<a class="tag" href="${link.href}" target="_blank" rel="noopener noreferrer">${link.label}</a>`
+      : `<span class="tag">${link.label}</span>`).join("")}
+  </div>
+`;
+
+const listHtml = (items = []) => `
+  <ul class="meta-list">
+    ${items.map((item) => `<li>${item}</li>`).join("")}
+  </ul>
+`;
+
 const projects = {
   greenbin: {
-    kicker: "Projet principal • Full-stack",
+    kicker: "Projet de présentation • Titre professionnel DWWM",
     title: "GreenBin",
+    primaryLabel: "Voir le repo",
+    primaryHref: "https://github.com/gilles-rusz/greenbin",
     body: `
       <div class="modal-grid">
         <div class="modal-gallery">
           ${gallery([
-      { src: "assets/img/greenbin-dashboard.png", alt: "Dashboard GreenBin", caption: "Dashboard administrateur" },
-      { src: "assets/img/greenbin-dechets.png", alt: "Liste des déchets GreenBin", caption: "Liste des déchets" },
-      { src: "assets/img/greenbin-edit.png", alt: "Modification d'un déchet GreenBin", caption: "Modification d'un déchet" },
-      { src: "assets/img/greenbin-users.png", alt: "Gestion des utilisateurs GreenBin", caption: "Gestion des utilisateurs" },
-      { src: "assets/img/greenbin-add-user.png", alt: "Ajout d'un utilisateur GreenBin", caption: "Ajout d'un utilisateur" }
-    ])}
+            { src: "assets/img/greenbin-dashboard.png", alt: "Dashboard GreenBin", caption: "Dashboard administrateur" },
+            { src: "assets/img/greenbin-dechets.png", alt: "Liste des déchets GreenBin", caption: "Suivi et listing des déchets" },
+            { src: "assets/img/greenbin-edit.png", alt: "Modification d'un déchet GreenBin", caption: "Édition des données métier" },
+            { src: "assets/img/greenbin-users.png", alt: "Gestion des utilisateurs GreenBin", caption: "Gestion des utilisateurs et rôles" },
+            { src: "assets/img/greenbin-add-user.png", alt: "Ajout d'un utilisateur GreenBin", caption: "Formulaire d'ajout utilisateur" }
+          ])}
         </div>
         <div class="modal-meta">
           <div class="meta-card">
-            <h4>Présentation</h4>
-            <p>Application web full-stack de gestion des déchets, avec tableau de bord administrateur, gestion des utilisateurs, formulaires métiers et conteneurisation de l’application avec Docker.</p>
+            <h4>Contexte</h4>
+            <p>Projet de présentation réalisé pendant le titre professionnel Développeur Web et Web Mobile Full Stack, pensé comme un aboutissement de mon workflow Git / GitHub et de ma capacité à structurer un vrai back-office métier.</p>
           </div>
           <div class="meta-card">
-            <h4>Ce que ce projet montre</h4>
-            <ul class="meta-list">
-              <li>Dashboard administrateur et navigation métier</li>
-              <li>CRUD complet sur les déchets</li>
-              <li>Gestion des utilisateurs et des rôles</li>
-              <li>Formulaires de création / modification</li>
-              <li>Déploiement et exécution via Docker</li>
-            </ul>
+            <h4>Ce que j'ai réalisé</h4>
+            ${listHtml([
+              "Dashboard administrateur et navigation métier",
+              "CRUD complet sur les déchets",
+              "Gestion des utilisateurs et des rôles",
+              "Formulaires de création / modification",
+              "Workflow GitHub par branches de développement et features",
+              "Conteneurisation de l'application avec Docker"
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Ce que ça démontre</h4>
+            ${listHtml([
+              "Capacité à structurer une application full stack utile",
+              "Compréhension des besoins back-office et des workflows de gestion",
+              "Rigueur sur le workflow Git et l'intégration progressive des fonctionnalités",
+              "Maîtrise d'une stack React + Express + MySQL + Sequelize"
+            ])}
           </div>
           <div class="meta-card">
             <h4>Stack</h4>
-            <div class="tags">
-              <span class="tag">React</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">Express</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">Sequelize</span>
-              <span class="tag">Docker</span>
-            </div>
+            ${linksHtml([
+              { label: "React" },
+              { label: "Node.js" },
+              { label: "Express" },
+              { label: "MySQL" },
+              { label: "Sequelize" },
+              { label: "Docker" }
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Liens</h4>
+            ${linksHtml([
+              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/greenbin" }
+            ])}
           </div>
         </div>
       </div>
     `
   },
   artisan: {
-    kicker: "Projet de fin d'études • Application responsive",
+    kicker: "Projet de synthèse • Fin de formation",
     title: "Trouve Ton Artisan",
+    primaryLabel: "Voir le repo",
+    primaryHref: "https://github.com/gilles-rusz/trouve_ton_artisan",
     body: `
       <div class="modal-grid">
         <div class="modal-gallery">
           ${gallery([
-      { src: "assets/img/artisan-home-desktop.png", alt: "Accueil desktop Trouve Ton Artisan", caption: "Accueil desktop" },
-      { src: "assets/img/artisan-detail-desktop.png", alt: "Fiche artisan desktop", caption: "Fiche artisan desktop" },
-      { src: "assets/img/artisan-home-mobile.png", alt: "Accueil mobile Trouve Ton Artisan", caption: "Accueil mobile" },
-      { src: "assets/img/artisan-detail-mobile.png", alt: "Fiche artisan mobile", caption: "Fiche artisan mobile" }
-    ])}
+            { src: "assets/img/artisan-home-desktop.png", alt: "Accueil desktop Trouve Ton Artisan", caption: "Accueil desktop" },
+            { src: "assets/img/artisan-detail-desktop.png", alt: "Fiche artisan desktop", caption: "Fiche détail desktop" },
+            { src: "assets/img/artisan-home-mobile.png", alt: "Accueil mobile Trouve Ton Artisan", caption: "Accueil mobile" },
+            { src: "assets/img/artisan-detail-mobile.png", alt: "Fiche artisan mobile", caption: "Fiche détail mobile" }
+          ])}
         </div>
         <div class="modal-meta">
           <div class="meta-card">
-            <h4>Présentation</h4>
-            <p>Projet de fin d'études réalisé dans le cadre de ma formation Développeur Web et Web Mobile. Cette plateforme permet de rechercher un artisan, consulter sa fiche détaillée et le contacter sur desktop comme sur mobile.</p>
+            <h4>Contexte</h4>
+            <p>Projet de synthèse de fin de formation, conçu pour répondre à un besoin concret de mise en relation entre particuliers et artisans en valorisant le parcours utilisateur et le responsive.</p>
           </div>
           <div class="meta-card">
-            <h4>Ce que ce projet montre</h4>
-            <ul class="meta-list">
-              <li>Navigation React Router</li>
-              <li>Fiches détails dynamiques</li>
-              <li>Contact via email</li>
-              <li>Interface adaptée desktop / mobile</li>
-            </ul>
+            <h4>Ce que j'ai réalisé</h4>
+            ${listHtml([
+              "Navigation React Router et pages dynamiques",
+              "Fiches détails artisan",
+              "Formulaire de contact",
+              "Expérience responsive desktop / mobile",
+              "Connexion front / API REST / base MySQL"
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Ce que ça démontre</h4>
+            ${listHtml([
+              "Capacité à construire une expérience utilisateur claire",
+              "Gestion du responsive et d'une logique de consultation métier",
+              "Travail full stack avec React, Express, Sequelize et MySQL"
+            ])}
           </div>
           <div class="meta-card">
             <h4>Stack</h4>
-            <div class="tags">
-              <span class="tag">React</span>
-              <span class="tag">Bootstrap</span>
-              <span class="tag">Express</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">Sequelize</span>
-            </div>
+            ${linksHtml([
+              { label: "React" },
+              { label: "Express" },
+              { label: "MySQL" },
+              { label: "Sequelize" },
+              { label: "Responsive" }
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Liens</h4>
+            ${linksHtml([
+              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/trouve_ton_artisan" }
+            ])}
           </div>
         </div>
       </div>
     `
   },
-    auction: {
-    kicker: "Application web • Temps réel",
+  auction: {
+    kicker: "Projet réalisé en stage • CK Charles Kieffer",
     title: "Auction Showcase",
+    primaryLabel: "Voir la démo",
+    primaryHref: "https://www.youtube.com/watch?v=fjJrTaBJ95k",
     body: `
       <div class="modal-grid modal-grid-auction">
         <div class="modal-media-stack">
@@ -177,82 +255,144 @@ const projects = {
         </div>
         <div class="modal-meta">
           <div class="meta-card">
-            <h4>Présentation</h4>
-            <p>Application d'enchères en temps réel développée initialement durant mon stage, puis retravaillée en version démonstration pour valoriser l'interface utilisateur, la navigation, l'espace d'administration et les interactions en temps réel.</p>
+            <h4>Contexte</h4>
+            <p>Projet développé dans un contexte de stage chez CK Charles Kieffer, puis adapté en version démonstration pour montrer l'interface d'administration, les interactions temps réel et le rendu global du produit.</p>
           </div>
           <div class="meta-card">
-            <h4>Ce que ce projet montre</h4>
-            <ul class="meta-list">
-              <li>Interface administrateur claire et orientée gestion</li>
-              <li>Navigation front-end en EJS / Express</li>
-              <li>Mise à jour temps réel des enchères via WebSocket</li>
-              <li>Structuration full-stack avec Node.js, PHP et MySQL</li>
-            </ul>
+            <h4>Ce que j'ai réalisé</h4>
+            ${listHtml([
+              "Interface administrateur orientée gestion",
+              "Navigation front-end en EJS / Express",
+              "Mise à jour temps réel des enchères via WebSocket",
+              "Travail sur l'expérience de démonstration et la lisibilité produit",
+              "Valorisation du projet via une démo vidéo claire"
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Ce que ça démontre</h4>
+            ${listHtml([
+              "Capacité à produire une interface métier claire",
+              "Compréhension du temps réel et des usages back-office",
+              "Expérience concrète en contexte de stage sur un projet web opérationnel"
+            ])}
           </div>
           <div class="meta-card">
             <h4>Stack</h4>
-            <div class="tags">
-              <span class="tag">Node.js</span>
-              <span class="tag">Express</span>
-              <span class="tag">EJS</span>
-              <span class="tag">WebSocket</span>
-              <span class="tag">PHP</span>
-              <span class="tag">MySQL</span>
-            </div>
+            ${linksHtml([
+              { label: "Node.js" },
+              { label: "Express" },
+              { label: "EJS" },
+              { label: "WebSocket" },
+              { label: "PHP" },
+              { label: "MySQL" }
+            ])}
           </div>
           <div class="meta-card">
             <h4>Liens</h4>
-            <div class="tags">
-              <a class="tag" href="https://www.youtube.com/embed/fjJrTaBJ95k" target="_blank" rel="noopener noreferrer">Voir la démo</a>
-            </div>
+            ${linksHtml([
+              { label: "Démo vidéo", href: "https://www.youtube.com/watch?v=fjJrTaBJ95k" },
+              { label: "Code non public" }
+            ])}
+          </div>
+        </div>
+      </div>
+    `
+  },
+  russell: {
+    kicker: "Projet de formation • API & architecture backend",
+    title: "Port de plaisance Russell",
+    primaryLabel: "Voir le repo",
+    primaryHref: "https://github.com/gilles-rusz/api-russell",
+    body: `
+      <div class="modal-grid">
+        <div class="modal-gallery">
+          ${gallery([
+            { src: "assets/img/russell-architecture.png", alt: "Architecture du projet Russell", caption: "Vue d'ensemble de l'architecture" },
+            { src: "assets/img/russell-route.png", alt: "Exemple de routes du projet Russell", caption: "Organisation des routes" },
+            { src: "assets/img/russell-service.png", alt: "Exemple de services du projet Russell", caption: "Séparation de la logique métier" },
+            { src: "assets/img/russell-model.png", alt: "Exemple de modèle du projet Russell", caption: "Modélisation des données" }
+          ], "code")}
+        </div>
+        <div class="modal-meta">
+          <div class="meta-card">
+            <h4>Contexte</h4>
+            <p>Projet de formation réalisé pendant mon parcours DWWM, et non dans un contexte entreprise, pour montrer ma capacité à structurer une API, des vues EJS et une architecture backend claire.</p>
+          </div>
+          <div class="meta-card">
+            <h4>Ce que j'ai réalisé</h4>
+            ${listHtml([
+              "Authentification par JWT",
+              "CRUD complet utilisateurs / catways / réservations",
+              "Vues EJS et tableau de bord",
+              "Organisation backend avec routes, services, modèles et middlewares",
+              "API REST documentée"
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Ce que ça démontre</h4>
+            ${listHtml([
+              "Capacité à structurer une application plus technique côté backend",
+              "Compréhension de l'architecture et de la séparation des responsabilités",
+              "Capacité à expliquer clairement routes, services, modèles et middlewares",
+              "Aisance sur Node.js, Express, MongoDB, JWT et EJS"
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Stack</h4>
+            ${linksHtml([
+              { label: "Node.js" },
+              { label: "Express" },
+              { label: "MongoDB" },
+              { label: "Mongoose" },
+              { label: "JWT" },
+              { label: "EJS" }
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Liens</h4>
+            ${linksHtml([
+              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/api-russell" }
+            ])}
           </div>
         </div>
       </div>
     `
   }
 };
+
+function getFocusableElements(container) {
+  return [...container.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])')]
+    .filter((el) => !el.hasAttribute("hidden"));
+}
+
 function openModal(key) {
-    const p = projects[key];
-if (!p) return;
-modalKicker.textContent = p.kicker;
-modalTitle.textContent = p.title;
-modalBody.innerHTML = p.body;
-modalActions.innerHTML = `
-    <a class="btn" href="#contact">Me contacter</a>
-    <a class="btn btn-ghost" href="https://github.com/gilles-rusz" target="_blank" rel="noreferrer">Mon GitHub</a>
+  const project = projects[key];
+  if (!project) return;
+
+  lastFocusedElement = document.activeElement;
+  modalKicker.textContent = project.kicker;
+  modalTitle.textContent = project.title;
+  modalBody.innerHTML = project.body;
+  modalActions.innerHTML = `
+    <a class="btn" href="${project.primaryHref}" target="_blank" rel="noopener noreferrer">${project.primaryLabel}</a>
+    <a class="btn btn-ghost" href="#contact">Me contacter</a>
   `;
-modal.classList.add("show");
-modal.setAttribute("aria-hidden", "false");
+
+  modal.classList.add("show");
+  modal.setAttribute("aria-hidden", "false");
+  syncBodyScroll();
+  modalClose?.focus();
 }
 
 function closeModal() {
+  if (!modal) return;
   modal.classList.remove("show");
   modal.setAttribute("aria-hidden", "true");
-}
-
-document.querySelectorAll(".project").forEach((btn) => {
-  btn.addEventListener("click", () => openModal(btn.dataset.project));
-});
-if (modalClose) modalClose.addEventListener("click", closeModal);
-if (modal) {
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
-  });
-}
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    if (lightbox && lightbox.classList.contains("show")) {
-      closeLightbox();
-    } else {
-      closeModal();
-    }
+  syncBodyScroll();
+  if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+    lastFocusedElement.focus();
   }
-});
-
-
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
-const lightboxClose = document.getElementById("lightboxClose");
+}
 
 function openLightbox(src, alt = "Capture agrandie") {
   if (!lightbox || !lightboxImg) return;
@@ -260,7 +400,8 @@ function openLightbox(src, alt = "Capture agrandie") {
   lightboxImg.alt = alt;
   lightbox.classList.add("show");
   lightbox.setAttribute("aria-hidden", "false");
-  document.body.classList.add("no-scroll");
+  syncBodyScroll();
+  lightboxClose?.focus();
 }
 
 function closeLightbox() {
@@ -268,8 +409,44 @@ function closeLightbox() {
   lightbox.classList.remove("show");
   lightbox.setAttribute("aria-hidden", "true");
   lightboxImg.src = "";
-  document.body.classList.remove("no-scroll");
+  syncBodyScroll();
 }
+
+document.querySelectorAll(".project-trigger, .project-cover-trigger").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    openModal(btn.dataset.project);
+  });
+});
+
+document.querySelectorAll(".project-card-clickable").forEach((card) => {
+  card.addEventListener("click", (e) => {
+    if (e.target.closest("a, button")) return;
+    openModal(card.dataset.project);
+  });
+
+  card.addEventListener("keydown", (e) => {
+    if ((e.key === "Enter" || e.key === " ") && !e.target.closest("a, button")) {
+      e.preventDefault();
+      openModal(card.dataset.project);
+    }
+  });
+});
+
+document.querySelectorAll(".project-action-link").forEach((el) => {
+  el.addEventListener("click", (e) => e.stopPropagation());
+});
+
+modalClose?.addEventListener("click", closeModal);
+lightboxClose?.addEventListener("click", closeLightbox);
+
+modal?.addEventListener("click", (e) => {
+  if (e.target === modal) closeModal();
+});
+
+lightbox?.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
 
 document.addEventListener("click", (e) => {
   const img = e.target.closest(".shot img");
@@ -279,8 +456,38 @@ document.addEventListener("click", (e) => {
     return;
   }
 
-  if (e.target === lightbox || e.target === lightboxClose) {
-    closeLightbox();
+  if (!nav || !burger) return;
+  const clickInsideNav = e.target.closest(".nav");
+  if (!clickInsideNav && nav.classList.contains("open")) {
+    closeNav();
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    if (lightbox && lightbox.classList.contains("show")) {
+      closeLightbox();
+      return;
+    }
+    if (modal && modal.classList.contains("show")) {
+      closeModal();
+    }
+    return;
+  }
+
+  if (e.key === "Tab" && modal && modal.classList.contains("show")) {
+    const focusable = getFocusableElements(modal);
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   }
 });
 
@@ -289,18 +496,16 @@ const formHint = document.getElementById("formHint");
 if (contactForm) {
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (formHint) formHint.textContent = "Le message va s'ouvrir dans votre client mail (pré-rempli).";
+    if (formHint) {
+      formHint.textContent = "Le message va s'ouvrir dans votre client mail avec les champs déjà pré-remplis.";
+    }
     const data = new FormData(contactForm);
     const subject = encodeURIComponent("Contact via portfolio");
-    const body = encodeURIComponent(`Nom: ${data.get("name")}\nEmail: ${data.get("email")}\n\nMessage:\n${data.get("message")}`);
-    window.location.href = `mailto:gilles.dev57@outlook.fr?subject=${subject}&body=${body}`;
-  });
-}
+    const body = encodeURIComponent(`Nom: ${data.get("name")}
+Email: ${data.get("email")}
 
-const cvLink = document.getElementById("cvLink");
-if (cvLink) {
-  cvLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    alert("Ajoute ton CV PDF.");
+Message:
+${data.get("message")}`);
+    window.location.href = `mailto:gilles.dev57@outlook.fr?subject=${subject}&body=${body}`;
   });
 }
