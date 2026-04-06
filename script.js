@@ -256,13 +256,14 @@ const projects = {
         <div class="modal-meta">
           <div class="meta-card">
             <h4>Contexte</h4>
-            <p>Projet développé dans un contexte de stage chez CK Charles Kieffer, puis adapté en version démonstration pour montrer l'interface d'administration, les interactions temps réel et le rendu global du produit.</p>
+            <p>Projet développé dans un contexte de stage chez CK Charles Kieffer, puis adapté en version démonstration pour montrer l'interface d'administration, les interactions temps réel, l'authentification Azure et le rendu global du produit.</p>
           </div>
           <div class="meta-card">
             <h4>Ce que j'ai réalisé</h4>
             ${listHtml([
               "Interface administrateur orientée gestion",
               "Navigation front-end en EJS / Express",
+              "Authentification sécurisée via Azure",
               "Mise à jour temps réel des enchères via WebSocket",
               "Travail sur l'expérience de démonstration et la lisibilité produit",
               "Valorisation du projet via une démo vidéo claire"
@@ -272,6 +273,7 @@ const projects = {
             <h4>Ce que ça démontre</h4>
             ${listHtml([
               "Capacité à produire une interface métier claire",
+              "Compréhension d'une intégration d'authentification en environnement professionnel",
               "Compréhension du temps réel et des usages back-office",
               "Expérience concrète en contexte de stage sur un projet web opérationnel"
             ])}

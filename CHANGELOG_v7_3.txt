@@ -1,0 +1,5 @@
+v7.3
+- Ajout de PHP dans la section technologies
+- Ajout de Tailwind CSS dans la section technologies
+- Mise à jour d'Auction Showcase avec la mention de l'authentification Azure
+- Mise à jour des versions de cache CSS/JS en 7.3
