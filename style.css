@@ -1013,6 +1013,7 @@ textarea:focus-visible{
   letter-spacing:.02em;
   color:#fff;
 }
+.project-context-badge.pro{background:linear-gradient(135deg,#059669,#10b981);}
 .project-context-badge.stage{background:linear-gradient(135deg,#f59e0b,#ea580c);}
 .project-context-badge.title-pro{background:linear-gradient(135deg,#0f766e,#14b8a6);}
 .project-context-badge.study{background:linear-gradient(135deg,#7c3aed,#4f46e5);}
@@ -1122,4 +1123,30 @@ body.light .project-card-v71{background:rgba(255,255,255,.96);}
 .project-action-link{position:relative; z-index:3;}
 @media (max-width:760px){
   .project-cover-hint{font-size:.72rem; padding:6px 9px;}
+}
+
+.coming-soon-banner{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(90,167,255,.25);
+  background:linear-gradient(135deg, rgba(16,24,39,.78), rgba(5,150,105,.08));
+}
+.coming-soon-content{display:flex; flex-direction:column; gap:12px;}
+.coming-soon-content h3{margin:0; font-size:1.4rem;}
+.coming-soon-badge{
+  display:inline-flex;
+  align-self:flex-start;
+  padding:6px 14px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#f59e0b,#ea580c);
+  color:#fff;
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.coming-soon-content .tags{margin-top:4px;}
+body.light .coming-soon-banner{
+  background:linear-gradient(135deg, rgba(255,255,255,.92), rgba(5,150,105,.06));
+  border-color:rgba(5,150,105,.2);
 }

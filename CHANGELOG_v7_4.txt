@@ -1,0 +1,13 @@
+Portfolio v7.4
+
+- Mise à jour du positionnement : Développeur Full Stack & Fondateur Web RG Est
+- Ajout du lien vers webrgest.fr dans le hero, infos rapides, contact et footer
+- Nouveau projet : Web RG Est (site vitrine professionnel, Next.js, Tailwind CSS, Vercel)
+- Section "À venir" avec Burovia — E-commerce by Web RG Est
+- Nouvelle entrée dans le parcours : Fondateur Web RG Est (2025 — aujourd'hui)
+- Ajout de Next.js dans les technologies
+- Mise à jour des textes À propos, contact et valeur ajoutée pour refléter l'activité indépendante
+- Mise à jour des metadata, Open Graph et JSON-LD
+- Badge "Activité professionnelle" pour les projets Web RG Est
+- Section "À venir" dans la navigation
+- Mise à jour des versions de cache CSS/JS en 7.4
