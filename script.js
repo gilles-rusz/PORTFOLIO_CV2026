@@ -108,6 +108,64 @@ const listHtml = (items = []) => `
 `;
 
 const projects = {
+  webrgest: {
+    kicker: "Activité professionnelle • Web RG Est",
+    title: "Web RG Est",
+    primaryLabel: "Voir le site",
+    primaryHref: "https://webrgest.fr",
+    body: `
+      <div class="modal-grid">
+        <div class="modal-gallery">
+          ${gallery([
+            { src: "assets/img/webrgest-cover.png", alt: "Page d'accueil Web RG Est", caption: "Page d'accueil — design premium" }
+          ])}
+        </div>
+        <div class="modal-meta">
+          <div class="meta-card">
+            <h4>Contexte</h4>
+            <p>Site vitrine professionnel créé pour mon activité indépendante de création web et solutions digitales dans l'Est de la France. Conçu pour inspirer confiance, présenter mes services et générer des contacts.</p>
+          </div>
+          <div class="meta-card">
+            <h4>Ce que j'ai réalisé</h4>
+            ${listHtml([
+              "Design premium et responsive avec Tailwind CSS",
+              "SEO avancé : sitemap, robots.txt, metadata, JSON-LD, Open Graph",
+              "Blog intégré pour le référencement naturel",
+              "Pages services, à propos, refonte de site internet",
+              "Déploiement Vercel avec domaine personnalisé webrgest.fr",
+              "Vérification Google Search Console"
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Ce que ça démontre</h4>
+            ${listHtml([
+              "Capacité à concevoir et livrer un site professionnel de bout en bout",
+              "Maîtrise de Next.js, React et Tailwind CSS",
+              "Compétences SEO et stratégie de visibilité en ligne",
+              "Identité de marque et positionnement commercial"
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Stack</h4>
+            ${linksHtml([
+              { label: "Next.js" },
+              { label: "React" },
+              { label: "TypeScript" },
+              { label: "Tailwind CSS" },
+              { label: "Vercel" }
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Liens</h4>
+            ${linksHtml([
+              { label: "webrgest.fr", href: "https://webrgest.fr" },
+              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/webrgest-site" }
+            ])}
+          </div>
+        </div>
+      </div>
+    `
+  },
   greenbin: {
     kicker: "Projet de présentation • Titre professionnel DWWM",
     title: "GreenBin",
