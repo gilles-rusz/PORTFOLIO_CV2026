@@ -1131,6 +1131,15 @@ body.light .project-card-v71{background:rgba(255,255,255,.96);}
   border:1px solid rgba(90,167,255,.25);
   background:linear-gradient(135deg, rgba(16,24,39,.78), rgba(5,150,105,.08));
 }
+.coming-soon-banner,
+.coming-soon-banner h3,
+.coming-soon-banner p,
+.coming-soon-banner .tags .tag{
+  color:#f1f5f9;
+}
+.coming-soon-banner:hover{
+  background:linear-gradient(135deg, rgba(16,24,39,.85), rgba(5,150,105,.12));
+}
 .coming-soon-content{display:flex; flex-direction:column; gap:12px;}
 .coming-soon-content h3{margin:0; font-size:1.4rem;}
 .coming-soon-badge{
@@ -1146,7 +1155,18 @@ body.light .project-card-v71{background:rgba(255,255,255,.96);}
   text-transform:uppercase;
 }
 .coming-soon-content .tags{margin-top:4px;}
+body.light .coming-soon-banner,
+body.light .coming-soon-banner h3,
+body.light .coming-soon-banner p{
+  color:#09121f;
+}
+body.light .coming-soon-banner .tags .tag{
+  color:#41516f;
+}
 body.light .coming-soon-banner{
   background:linear-gradient(135deg, rgba(255,255,255,.92), rgba(5,150,105,.06));
   border-color:rgba(5,150,105,.2);
+}
+body.light .coming-soon-banner:hover{
+  background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(5,150,105,.10));
 }
