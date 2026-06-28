@@ -161,8 +161,7 @@ const projects = {
           <div class="meta-card">
             <h4>Liens</h4>
             ${linksHtml([
-              { label: "burovia.eu", href: "https://burovia.eu" },
-              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/burovia" }
+              { label: "burovia.eu", href: "https://burovia.eu" }
             ])}
           </div>
         </div>
@@ -219,8 +218,7 @@ const projects = {
           <div class="meta-card">
             <h4>Liens</h4>
             ${linksHtml([
-              { label: "webrgest.fr", href: "https://webrgest.fr" },
-              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/webrgest-site" }
+              { label: "webrgest.fr", href: "https://webrgest.fr" }
             ])}
           </div>
         </div>
@@ -230,8 +228,8 @@ const projects = {
   greenbin: {
     kicker: "Projet de présentation • Titre professionnel DWWM",
     title: "GreenBin",
-    primaryLabel: "Voir le repo",
-    primaryHref: "https://github.com/gilles-rusz/greenbin",
+    primaryLabel: "Voir plus",
+    primaryHref: "",
     body: `
       <div class="modal-grid">
         <div class="modal-gallery">
@@ -246,7 +244,7 @@ const projects = {
         <div class="modal-meta">
           <div class="meta-card">
             <h4>Contexte</h4>
-            <p>Projet de présentation réalisé pendant le titre professionnel Développeur Web et Web Mobile Full Stack, pensé comme un aboutissement de mon workflow Git / GitHub et de ma capacité à structurer un vrai back-office métier.</p>
+            <p>Projet de présentation réalisé pendant le titre professionnel Développeur Web et Web Mobile Full Stack, pensé comme un aboutissement de mon workflow Git et de ma capacité à structurer un vrai back-office métier.</p>
           </div>
           <div class="meta-card">
             <h4>Ce que j'ai réalisé</h4>
@@ -255,7 +253,7 @@ const projects = {
               "CRUD complet sur les déchets",
               "Gestion des utilisateurs et des rôles",
               "Formulaires de création / modification",
-              "Workflow GitHub par branches de développement et features",
+              "Workflow Git par branches de développement et features",
               "Conteneurisation de l'application avec Docker"
             ])}
           </div>
@@ -279,12 +277,7 @@ const projects = {
               { label: "Docker" }
             ])}
           </div>
-          <div class="meta-card">
-            <h4>Liens</h4>
-            ${linksHtml([
-              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/greenbin" }
-            ])}
-          </div>
+
         </div>
       </div>
     `
@@ -292,8 +285,8 @@ const projects = {
   artisan: {
     kicker: "Projet de synthèse • Fin de formation",
     title: "Trouve Ton Artisan",
-    primaryLabel: "Voir le repo",
-    primaryHref: "https://github.com/gilles-rusz/trouve_ton_artisan",
+    primaryLabel: "Voir plus",
+    primaryHref: "",
     body: `
       <div class="modal-grid">
         <div class="modal-gallery">
@@ -337,12 +330,7 @@ const projects = {
               { label: "Responsive" }
             ])}
           </div>
-          <div class="meta-card">
-            <h4>Liens</h4>
-            ${linksHtml([
-              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/trouve_ton_artisan" }
-            ])}
-          </div>
+
         </div>
       </div>
     `
@@ -422,8 +410,8 @@ const projects = {
   russell: {
     kicker: "Projet de formation • API & architecture backend",
     title: "Port de plaisance Russell",
-    primaryLabel: "Voir le repo",
-    primaryHref: "https://github.com/gilles-rusz/api-russell",
+    primaryLabel: "Voir plus",
+    primaryHref: "",
     body: `
       <div class="modal-grid">
         <div class="modal-gallery">
@@ -469,12 +457,7 @@ const projects = {
               { label: "EJS" }
             ])}
           </div>
-          <div class="meta-card">
-            <h4>Liens</h4>
-            ${linksHtml([
-              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/api-russell" }
-            ])}
-          </div>
+
         </div>
       </div>
     `
@@ -495,7 +478,7 @@ function openModal(key) {
   modalTitle.textContent = project.title;
   modalBody.innerHTML = project.body;
   modalActions.innerHTML = `
-    <a class="btn" href="${project.primaryHref}" target="_blank" rel="noopener noreferrer">${project.primaryLabel}</a>
+    ${project.primaryHref ? `<a class="btn" href="${project.primaryHref}" target="_blank" rel="noopener noreferrer">${project.primaryLabel}</a>` : ''}
     <a class="btn btn-ghost" href="#contact">Me contacter</a>
   `;
 
