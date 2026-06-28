@@ -18,8 +18,11 @@
   <meta name="theme-color" content="#0b0f17">
   <link rel="canonical" href="https://gilles-rusz.github.io/PORTFOLIO_CV2026/">
 
-  <link rel="stylesheet" href="style.css?v=7.4">
+  <link rel="stylesheet" href="style.css?v=8.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
 {
@@ -67,7 +70,7 @@
     <section class="hero container">
       <div class="hero-left">
         <p class="kicker">Portfolio · Développeur Full Stack · Fondateur <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none">Web RG Est</a></p>
-        <h1>Gilles Ruszczycki</h1>
+        <h1 class="gradient-name">Gilles Ruszczycki</h1>
         <p class="subtitle">
           <span class="typed" data-typed="Développeur Full Stack • Fondateur Web RG Est • Création web & solutions digitales"></span>
         </p>
@@ -105,6 +108,7 @@
           <span class="chip">Express</span>
           <span class="chip">Tailwind CSS</span>
           <span class="chip">MySQL</span>
+          <span class="chip">PostgreSQL</span>
           <span class="chip">MongoDB</span>
           <span class="chip">Docker</span>
           <span class="chip">GitHub</span>
@@ -259,6 +263,10 @@
           <span>MySQL</span>
         </article>
         <article class="tech-logo-card card pad">
+          <i class="devicon-postgresql-plain colored" aria-hidden="true"></i>
+          <span>PostgreSQL</span>
+        </article>
+        <article class="tech-logo-card card pad">
           <i class="devicon-mongodb-plain colored" aria-hidden="true"></i>
           <span>MongoDB</span>
         </article>
@@ -299,6 +307,33 @@
         </div>
 
         <div class="projects-grid-v71">
+          <article class="project-card-v71 card project-card-clickable project-card-featured" data-project="burovia" tabindex="0" role="button" aria-label="Ouvrir les détails du projet Burovia">
+            <button class="project-cover-v71 project-cover-trigger" data-project="burovia" type="button" aria-label="Voir les détails du projet Burovia">
+              <img src="assets/img/burovia-cover.png" alt="Capture du site Burovia.eu" loading="lazy" decoding="async" />
+              <span class="project-cover-hint">Cliquer pour voir plus</span>
+            </button>
+            <div class="project-card-body">
+              <div class="project-topline">
+                <span class="project-context-badge pro">Activité professionnelle</span>
+                <span class="project-context-note">Web RG Est</span>
+              </div>
+              <h3>Burovia</h3>
+              <p class="project-card-text">Site e-commerce d'accessoires de télétravail avec catalogue produits, panier, paiement Stripe et livraison FR/BE/LU. Conçu et développé par Web RG Est.</p>
+              <p class="project-card-proof">Montre : e-commerce complet, Stripe, PostgreSQL, architecture full stack et déploiement production.</p>
+              <div class="tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Stripe</span>
+              </div>
+              <div class="project-actions-row">
+                <a class="btn project-action-link" href="https://burovia.eu" target="_blank" rel="noopener noreferrer">Voir le site</a>
+                <button class="btn btn-ghost project-trigger project-action-link" data-project="burovia" type="button">Voir plus</button>
+              </div>
+            </div>
+          </article>
+
           <article class="project-card-v71 card project-card-clickable" data-project="webrgest" tabindex="0" role="button" aria-label="Ouvrir les détails du projet Web RG Est">
             <button class="project-cover-v71 project-cover-trigger" data-project="webrgest" type="button" aria-label="Voir les détails du projet Web RG Est">
               <img src="assets/img/webrgest-cover.png" alt="Capture du site Web RG Est" loading="lazy" decoding="async" />
@@ -442,15 +477,15 @@
       <div class="coming-soon-banner card pad">
         <div class="coming-soon-content">
           <span class="coming-soon-badge">En développement</span>
-          <h3>Burovia — E-commerce by Web RG Est</h3>
+          <h3>Automatisation & IA — Prochaine étape Web RG Est</h3>
           <p class="section-text section-text-tight">
-            Un site e-commerce conçu et développé par Web RG Est, pensé pour offrir une expérience d'achat fluide
-            et une gestion simplifiée. Burovia illustrera la capacité de Web RG Est à livrer des solutions e-commerce complètes.
+            Intégration de workflows n8n, agents IA et automatisations pour proposer des solutions
+            intelligentes aux clients de Web RG Est : chatbots, lead generation et workflows automatisés.
           </p>
           <div class="tags">
-            <span class="tag">E-commerce</span>
-            <span class="tag">Next.js</span>
-            <span class="tag">Stripe</span>
+            <span class="tag">n8n</span>
+            <span class="tag">Agents IA</span>
+            <span class="tag">Automatisation</span>
             <span class="tag">Web RG Est</span>
           </div>
         </div>
@@ -586,7 +621,7 @@
     <img id="lightboxImg" src="" alt="Capture agrandie">
   </div>
 
-  <script src="script.js?v=7.4"></script>
+  <script src="script.js?v=8.0"></script>
 </body>
 
 </html>

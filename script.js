@@ -108,6 +108,67 @@ const listHtml = (items = []) => `
 `;
 
 const projects = {
+  burovia: {
+    kicker: "Activité professionnelle • Web RG Est",
+    title: "Burovia",
+    primaryLabel: "Voir le site",
+    primaryHref: "https://burovia.eu",
+    body: `
+      <div class="modal-grid">
+        <div class="modal-gallery">
+          ${gallery([
+            { src: "assets/img/burovia-cover.png", alt: "Page d'accueil Burovia.eu", caption: "Page d'accueil — hero et navigation" }
+          ])}
+        </div>
+        <div class="modal-meta">
+          <div class="meta-card">
+            <h4>Contexte</h4>
+            <p>Site e-commerce complet développé par Web RG Est pour vendre des accessoires de télétravail (confort, posture, organisation, périphériques) avec livraison en France, Belgique et Luxembourg.</p>
+          </div>
+          <div class="meta-card">
+            <h4>Ce que j'ai réalisé</h4>
+            ${listHtml([
+              "Catalogue produits avec catégories et filtres",
+              "Panier et tunnel d'achat complet",
+              "Intégration paiement sécurisé Stripe",
+              "Système d'authentification utilisateurs",
+              "Newsletter et gestion des commandes",
+              "Design responsive et optimisé mobile",
+              "Déploiement production sur VPS Hostinger"
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Ce que ça démontre</h4>
+            ${listHtml([
+              "Capacité à concevoir et livrer un e-commerce de bout en bout",
+              "Intégration de solutions de paiement (Stripe)",
+              "Architecture full stack Node.js / React / PostgreSQL",
+              "Déploiement et administration serveur en production",
+              "Vision produit et positionnement commercial"
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Stack</h4>
+            ${linksHtml([
+              { label: "React" },
+              { label: "Node.js" },
+              { label: "Express" },
+              { label: "PostgreSQL" },
+              { label: "Stripe" },
+              { label: "VPS Hostinger" }
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Liens</h4>
+            ${linksHtml([
+              { label: "burovia.eu", href: "https://burovia.eu" },
+              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/burovia" }
+            ])}
+          </div>
+        </div>
+      </div>
+    `
+  },
   webrgest: {
     kicker: "Activité professionnelle • Web RG Est",
     title: "Web RG Est",
