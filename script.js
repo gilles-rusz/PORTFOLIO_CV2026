@@ -108,6 +108,66 @@ const listHtml = (items = []) => `
 `;
 
 const projects = {
+  burovia: {
+    kicker: "Activité professionnelle • Web RG Est",
+    title: "Burovia",
+    primaryLabel: "Voir le site",
+    primaryHref: "https://burovia.eu",
+    body: `
+      <div class="modal-grid">
+        <div class="modal-gallery">
+          ${gallery([
+            { src: "assets/img/burovia-cover.png", alt: "Page d'accueil Burovia.eu", caption: "Page d'accueil — hero et navigation" }
+          ])}
+        </div>
+        <div class="modal-meta">
+          <div class="meta-card">
+            <h4>Contexte</h4>
+            <p>Site e-commerce complet développé par Web RG Est pour vendre des accessoires de télétravail (confort, posture, organisation, périphériques) avec livraison en France, Belgique et Luxembourg.</p>
+          </div>
+          <div class="meta-card">
+            <h4>Ce que j'ai réalisé</h4>
+            ${listHtml([
+              "Catalogue produits avec catégories et filtres",
+              "Panier et tunnel d'achat complet",
+              "Intégration paiement sécurisé Stripe",
+              "Système d'authentification utilisateurs",
+              "Newsletter et gestion des commandes",
+              "Design responsive et optimisé mobile",
+              "Déploiement production sur VPS Hostinger"
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Ce que ça démontre</h4>
+            ${listHtml([
+              "Capacité à concevoir et livrer un e-commerce de bout en bout",
+              "Intégration de solutions de paiement (Stripe)",
+              "Architecture full stack Node.js / React / PostgreSQL",
+              "Déploiement et administration serveur en production",
+              "Vision produit et positionnement commercial"
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Stack</h4>
+            ${linksHtml([
+              { label: "React" },
+              { label: "Node.js" },
+              { label: "Express" },
+              { label: "PostgreSQL" },
+              { label: "Stripe" },
+              { label: "VPS Hostinger" }
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Liens</h4>
+            ${linksHtml([
+              { label: "burovia.eu", href: "https://burovia.eu" }
+            ])}
+          </div>
+        </div>
+      </div>
+    `
+  },
   webrgest: {
     kicker: "Activité professionnelle • Web RG Est",
     title: "Web RG Est",
@@ -158,8 +218,7 @@ const projects = {
           <div class="meta-card">
             <h4>Liens</h4>
             ${linksHtml([
-              { label: "webrgest.fr", href: "https://webrgest.fr" },
-              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/webrgest-site" }
+              { label: "webrgest.fr", href: "https://webrgest.fr" }
             ])}
           </div>
         </div>
@@ -169,8 +228,8 @@ const projects = {
   greenbin: {
     kicker: "Projet de présentation • Titre professionnel DWWM",
     title: "GreenBin",
-    primaryLabel: "Voir le repo",
-    primaryHref: "https://github.com/gilles-rusz/greenbin",
+    primaryLabel: "Voir plus",
+    primaryHref: "",
     body: `
       <div class="modal-grid">
         <div class="modal-gallery">
@@ -185,7 +244,7 @@ const projects = {
         <div class="modal-meta">
           <div class="meta-card">
             <h4>Contexte</h4>
-            <p>Projet de présentation réalisé pendant le titre professionnel Développeur Web et Web Mobile Full Stack, pensé comme un aboutissement de mon workflow Git / GitHub et de ma capacité à structurer un vrai back-office métier.</p>
+            <p>Projet de présentation réalisé pendant le titre professionnel Développeur Web et Web Mobile Full Stack, pensé comme un aboutissement de mon workflow Git et de ma capacité à structurer un vrai back-office métier.</p>
           </div>
           <div class="meta-card">
             <h4>Ce que j'ai réalisé</h4>
@@ -194,7 +253,7 @@ const projects = {
               "CRUD complet sur les déchets",
               "Gestion des utilisateurs et des rôles",
               "Formulaires de création / modification",
-              "Workflow GitHub par branches de développement et features",
+              "Workflow Git par branches de développement et features",
               "Conteneurisation de l'application avec Docker"
             ])}
           </div>
@@ -218,12 +277,7 @@ const projects = {
               { label: "Docker" }
             ])}
           </div>
-          <div class="meta-card">
-            <h4>Liens</h4>
-            ${linksHtml([
-              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/greenbin" }
-            ])}
-          </div>
+
         </div>
       </div>
     `
@@ -231,8 +285,8 @@ const projects = {
   artisan: {
     kicker: "Projet de synthèse • Fin de formation",
     title: "Trouve Ton Artisan",
-    primaryLabel: "Voir le repo",
-    primaryHref: "https://github.com/gilles-rusz/trouve_ton_artisan",
+    primaryLabel: "Voir plus",
+    primaryHref: "",
     body: `
       <div class="modal-grid">
         <div class="modal-gallery">
@@ -276,12 +330,7 @@ const projects = {
               { label: "Responsive" }
             ])}
           </div>
-          <div class="meta-card">
-            <h4>Liens</h4>
-            ${linksHtml([
-              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/trouve_ton_artisan" }
-            ])}
-          </div>
+
         </div>
       </div>
     `
@@ -361,8 +410,8 @@ const projects = {
   russell: {
     kicker: "Projet de formation • API & architecture backend",
     title: "Port de plaisance Russell",
-    primaryLabel: "Voir le repo",
-    primaryHref: "https://github.com/gilles-rusz/api-russell",
+    primaryLabel: "Voir plus",
+    primaryHref: "",
     body: `
       <div class="modal-grid">
         <div class="modal-gallery">
@@ -408,12 +457,7 @@ const projects = {
               { label: "EJS" }
             ])}
           </div>
-          <div class="meta-card">
-            <h4>Liens</h4>
-            ${linksHtml([
-              { label: "Repo GitHub", href: "https://github.com/gilles-rusz/api-russell" }
-            ])}
-          </div>
+
         </div>
       </div>
     `
@@ -434,7 +478,7 @@ function openModal(key) {
   modalTitle.textContent = project.title;
   modalBody.innerHTML = project.body;
   modalActions.innerHTML = `
-    <a class="btn" href="${project.primaryHref}" target="_blank" rel="noopener noreferrer">${project.primaryLabel}</a>
+    ${project.primaryHref ? `<a class="btn" href="${project.primaryHref}" target="_blank" rel="noopener noreferrer">${project.primaryLabel}</a>` : ''}
     <a class="btn btn-ghost" href="#contact">Me contacter</a>
   `;
 

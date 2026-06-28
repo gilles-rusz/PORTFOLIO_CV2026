@@ -18,8 +18,11 @@
   <meta name="theme-color" content="#0b0f17">
   <link rel="canonical" href="https://gilles-rusz.github.io/PORTFOLIO_CV2026/">
 
-  <link rel="stylesheet" href="style.css?v=7.4">
+  <link rel="stylesheet" href="style.css?v=8.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
 {
@@ -31,7 +34,6 @@
   "jobTitle": "Développeur Full Stack & Fondateur de Web RG Est",
   "description": "Développeur full stack et fondateur de Web RG Est — création de sites web, applications et solutions digitales.",
   "sameAs": [
-    "https://github.com/gilles-rusz",
     "https://www.linkedin.com/in/gilles-ruszczycki/",
     "https://webrgest.fr"
   ]
@@ -67,7 +69,7 @@
     <section class="hero container">
       <div class="hero-left">
         <p class="kicker">Portfolio · Développeur Full Stack · Fondateur <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none">Web RG Est</a></p>
-        <h1>Gilles Ruszczycki</h1>
+        <h1 class="gradient-name">Gilles Ruszczycki</h1>
         <p class="subtitle">
           <span class="typed" data-typed="Développeur Full Stack • Fondateur Web RG Est • Création web & solutions digitales"></span>
         </p>
@@ -79,7 +81,7 @@
 
         <div class="hero-actions">
           <a class="btn" href="#projets">Voir mes projets</a>
-          <a class="btn btn-ghost" href="assets/cv/CV_Gilles_Ruszczycki_n8n_agents_IA.pdf" target="_blank" rel="noopener noreferrer">Télécharger mon CV</a>
+          <a class="btn btn-ghost" href="assets/cv/CV_Gilles_Ruszczycki_Dev_Full_Stack.pdf" target="_blank" rel="noopener noreferrer">Télécharger mon CV</a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/gilles-ruszczycki/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
 
@@ -105,9 +107,10 @@
           <span class="chip">Express</span>
           <span class="chip">Tailwind CSS</span>
           <span class="chip">MySQL</span>
+          <span class="chip">PostgreSQL</span>
           <span class="chip">MongoDB</span>
           <span class="chip">Docker</span>
-          <span class="chip">GitHub</span>
+
         </div>
       </div>
 
@@ -122,7 +125,7 @@
             <li>📞 <a href="tel:+33637679995">06 37 67 99 95</a></li>
             <li>✉️ <a href="mailto:gilles.dev57@outlook.fr">gilles.dev57@outlook.fr</a></li>
             <li>💼 <a href="https://www.linkedin.com/in/gilles-ruszczycki/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li>💻 <a href="https://github.com/gilles-rusz" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+
             <li>🌐 <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">Web RG Est</a></li>
           </ul>
 
@@ -259,6 +262,10 @@
           <span>MySQL</span>
         </article>
         <article class="tech-logo-card card pad">
+          <i class="devicon-postgresql-plain colored" aria-hidden="true"></i>
+          <span>PostgreSQL</span>
+        </article>
+        <article class="tech-logo-card card pad">
           <i class="devicon-mongodb-plain colored" aria-hidden="true"></i>
           <span>MongoDB</span>
         </article>
@@ -279,7 +286,7 @@
         </article>
         <article class="card pad">
           <h3>Workflow</h3>
-          <p class="section-text section-text-tight">Git / GitHub, branches par features, intégration progressive, Postman, Figma et VS Code.</p>
+          <p class="section-text section-text-tight">Git, branches par features, intégration progressive, Postman, Figma et VS Code.</p>
         </article>
       </div>
     </section>
@@ -299,7 +306,34 @@
         </div>
 
         <div class="projects-grid-v71">
-          <article class="project-card-v71 card project-card-clickable" data-project="webrgest" tabindex="0" role="button" aria-label="Ouvrir les détails du projet Web RG Est">
+          <article class="project-card-v71 card project-card-clickable project-card-featured" data-project="burovia" tabindex="0" role="button" aria-label="Ouvrir les détails du projet Burovia">
+            <button class="project-cover-v71 project-cover-trigger" data-project="burovia" type="button" aria-label="Voir les détails du projet Burovia">
+              <img src="assets/img/burovia-cover.png" alt="Capture du site Burovia.eu" loading="lazy" decoding="async" />
+              <span class="project-cover-hint">Cliquer pour voir plus</span>
+            </button>
+            <div class="project-card-body">
+              <div class="project-topline">
+                <span class="project-context-badge pro">Activité professionnelle</span>
+                <span class="project-context-note">Web RG Est</span>
+              </div>
+              <h3>Burovia</h3>
+              <p class="project-card-text">Site e-commerce d'accessoires de télétravail avec catalogue produits, panier, paiement Stripe et livraison FR/BE/LU. Conçu et développé par Web RG Est.</p>
+              <p class="project-card-proof">Montre : e-commerce complet, Stripe, PostgreSQL, architecture full stack et déploiement production.</p>
+              <div class="tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Stripe</span>
+              </div>
+              <div class="project-actions-row">
+                <a class="btn project-action-link" href="https://burovia.eu" target="_blank" rel="noopener noreferrer">Voir le site</a>
+                <button class="btn btn-ghost project-trigger project-action-link" data-project="burovia" type="button">Voir plus</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card-v71 card project-card-clickable project-card-featured" data-project="webrgest" tabindex="0" role="button" aria-label="Ouvrir les détails du projet Web RG Est">
             <button class="project-cover-v71 project-cover-trigger" data-project="webrgest" type="button" aria-label="Voir les détails du projet Web RG Est">
               <img src="assets/img/webrgest-cover.png" alt="Capture du site Web RG Est" loading="lazy" decoding="async" />
               <span class="project-cover-hint">Cliquer pour voir plus</span>
@@ -326,7 +360,7 @@
             </div>
           </article>
 
-          <article class="project-card-v71 card project-card-clickable" data-project="auction" tabindex="0" role="button" aria-label="Ouvrir les détails du projet Auction Showcase">
+          <article class="project-card-v71 card project-card-clickable project-card-featured" data-project="auction" tabindex="0" role="button" aria-label="Ouvrir les détails du projet Auction Showcase">
             <button class="project-cover-v71 project-cover-trigger" data-project="auction" type="button" aria-label="Voir les détails du projet Auction Showcase">
               <img src="assets/img/auction-cover.webp" alt="Capture du projet Auction Showcase" loading="lazy" decoding="async" />
               <span class="project-cover-hint">Cliquer pour voir plus</span>
@@ -353,7 +387,7 @@
             </div>
           </article>
 
-          <article class="project-card-v71 card project-card-clickable" data-project="greenbin" tabindex="0" role="button" aria-label="Ouvrir les détails du projet GreenBin">
+          <article class="project-card-v71 card project-card-clickable project-card-featured" data-project="greenbin" tabindex="0" role="button" aria-label="Ouvrir les détails du projet GreenBin">
             <button class="project-cover-v71 project-cover-trigger" data-project="greenbin" type="button" aria-label="Voir les détails du projet GreenBin">
               <img src="assets/img/greenbin-dashboard.png" alt="Capture du dashboard GreenBin" loading="lazy" decoding="async" />
               <span class="project-cover-hint">Cliquer pour voir plus</span>
@@ -374,13 +408,12 @@
                 <span class="tag">Docker</span>
               </div>
               <div class="project-actions-row">
-                <a class="btn project-action-link" href="https://github.com/gilles-rusz/greenbin" target="_blank" rel="noopener noreferrer">Repo</a>
                 <button class="btn btn-ghost project-trigger project-action-link" data-project="greenbin" type="button">Voir plus</button>
               </div>
             </div>
           </article>
 
-          <article class="project-card-v71 card project-card-clickable" data-project="artisan" tabindex="0" role="button" aria-label="Ouvrir les détails du projet Trouve Ton Artisan">
+          <article class="project-card-v71 card project-card-clickable project-card-featured" data-project="artisan" tabindex="0" role="button" aria-label="Ouvrir les détails du projet Trouve Ton Artisan">
             <button class="project-cover-v71 project-cover-trigger" data-project="artisan" type="button" aria-label="Voir les détails du projet Trouve Ton Artisan">
               <img src="assets/img/artisan-home-desktop.png" alt="Capture du projet Trouve Ton Artisan" loading="lazy" decoding="async" />
               <span class="project-cover-hint">Cliquer pour voir plus</span>
@@ -401,13 +434,12 @@
                 <span class="tag">Responsive</span>
               </div>
               <div class="project-actions-row">
-                <a class="btn project-action-link" href="https://github.com/gilles-rusz/trouve_ton_artisan" target="_blank" rel="noopener noreferrer">Repo</a>
                 <button class="btn btn-ghost project-trigger project-action-link" data-project="artisan" type="button">Voir plus</button>
               </div>
             </div>
           </article>
 
-          <article class="project-card-v71 card project-card-clickable" data-project="russell" tabindex="0" role="button" aria-label="Ouvrir les détails du projet Port de plaisance Russell">
+          <article class="project-card-v71 card project-card-clickable project-card-featured" data-project="russell" tabindex="0" role="button" aria-label="Ouvrir les détails du projet Port de plaisance Russell">
             <button class="project-cover-v71 code-cover-v71 project-cover-trigger" data-project="russell" type="button" aria-label="Voir les détails du projet Port de plaisance Russell">
               <img src="assets/img/russell-cover-v71.jpg" alt="Montage visuel du projet Russell" loading="lazy" decoding="async" />
               <span class="project-cover-hint">Cliquer pour voir plus</span>
@@ -428,7 +460,6 @@
                 <span class="tag">EJS</span>
               </div>
               <div class="project-actions-row">
-                <a class="btn project-action-link" href="https://github.com/gilles-rusz/api-russell" target="_blank" rel="noopener noreferrer">Repo</a>
                 <button class="btn btn-ghost project-trigger project-action-link" data-project="russell" type="button">Voir plus</button>
               </div>
             </div>
@@ -442,15 +473,15 @@
       <div class="coming-soon-banner card pad">
         <div class="coming-soon-content">
           <span class="coming-soon-badge">En développement</span>
-          <h3>Burovia — E-commerce by Web RG Est</h3>
+          <h3>Automatisation & IA — Prochaine étape Web RG Est</h3>
           <p class="section-text section-text-tight">
-            Un site e-commerce conçu et développé par Web RG Est, pensé pour offrir une expérience d'achat fluide
-            et une gestion simplifiée. Burovia illustrera la capacité de Web RG Est à livrer des solutions e-commerce complètes.
+            Intégration de workflows n8n, agents IA et automatisations pour proposer des solutions
+            intelligentes aux clients de Web RG Est : chatbots, lead generation et workflows automatisés.
           </p>
           <div class="tags">
-            <span class="tag">E-commerce</span>
-            <span class="tag">Next.js</span>
-            <span class="tag">Stripe</span>
+            <span class="tag">n8n</span>
+            <span class="tag">Agents IA</span>
+            <span class="tag">Automatisation</span>
             <span class="tag">Web RG Est</span>
           </div>
         </div>
@@ -495,7 +526,7 @@
           <h3>Team Leader Logistique — Stellantis (Trémery)</h3>
           <ul class="list">
             <li>Management d'équipes jusqu'à 25 personnes</li>
-            <li>Organisation des flux et amélioration continue</li>
+            <li>Lean Management, organisation des flux et amélioration continue</li>
             <li>Résolution de problèmes opérationnels dans un environnement exigeant</li>
           </ul>
         </div>
@@ -520,14 +551,13 @@
 
           <div class="contact-actions">
             <a class="btn" href="mailto:gilles.dev57@outlook.fr">Email direct</a>
-            <a class="btn btn-ghost" href="assets/cv/CV_Gilles_Ruszczycki_n8n_agents_IA.pdf" target="_blank" rel="noopener noreferrer">Télécharger mon CV</a> 
+            <a class="btn btn-ghost" href="assets/cv/CV_Gilles_Ruszczycki_Dev_Full_Stack.pdf" target="_blank" rel="noopener noreferrer">Télécharger mon CV</a> 
           </div>
 
           <div class="contact-links">
             <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">Web RG Est</a>
             <a href="https://www.linkedin.com/in/gilles-ruszczycki/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/gilles-rusz" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://github.com/gilles-rusz/PORTFOLIO_CV2026" target="_blank" rel="noopener noreferrer">Code du portfolio</a>
+
           </div>
         </div>
 
@@ -576,7 +606,7 @@
       <div class="footer-links">
         <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">Web RG Est</a>
         <a href="https://www.linkedin.com/in/gilles-ruszczycki/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/gilles-rusz" target="_blank" rel="noopener noreferrer">GitHub</a>
+
       </div>
     </div>
   </footer>
@@ -586,7 +616,7 @@
     <img id="lightboxImg" src="" alt="Capture agrandie">
   </div>
 
-  <script src="script.js?v=7.4"></script>
+  <script src="script.js?v=8.0"></script>
 </body>
 
 </html>
