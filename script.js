@@ -117,7 +117,7 @@ const projects = {
       <div class="modal-grid">
         <div class="modal-gallery">
           ${gallery([
-            { src: "assets/img/burovia-cover.png", alt: "Page d'accueil Burovia.eu", caption: "Page d'accueil — hero et navigation" }
+            { src: "assets/img/burovia-cover.png", alt: "Page d'accueil Burovia.eu", caption: "Page d'accueil : hero et navigation" }
           ])}
         </div>
         <div class="modal-meta">
@@ -177,7 +177,7 @@ const projects = {
       <div class="modal-grid">
         <div class="modal-gallery">
           ${gallery([
-            { src: "assets/img/webrgest-cover.png", alt: "Page d'accueil Web RG Est", caption: "Page d'accueil — design premium" }
+            { src: "assets/img/webrgest-cover.png", alt: "Page d'accueil Web RG Est", caption: "Page d'accueil : design premium" }
           ])}
         </div>
         <div class="modal-meta">
