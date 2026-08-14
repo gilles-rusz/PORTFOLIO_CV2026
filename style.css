@@ -1213,6 +1213,7 @@ body.light .project-card-v71{background:rgba(255,255,255,.96);}
 .coming-soon-shot img{
   display:block;
   width:100%;
+  height:auto;
   aspect-ratio:16/10;
   object-fit:cover;
   background:rgba(255,255,255,.04);
