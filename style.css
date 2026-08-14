@@ -1196,6 +1196,40 @@ body.light .project-card-v71{background:rgba(255,255,255,.96);}
   text-transform:uppercase;
 }
 .coming-soon-content .tags{margin-top:4px;}
+.coming-soon-shots{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:4px;
+}
+.coming-soon-shot{
+  margin:0;
+  border-radius:16px;
+  overflow:hidden;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 10px 24px rgba(8,22,44,.18);
+}
+.coming-soon-shot img{
+  display:block;
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  background:rgba(255,255,255,.04);
+}
+.coming-soon-shot figcaption{
+  padding:10px 12px;
+  font-size:.84rem;
+  color:#cbd5e1;
+}
+body.light .coming-soon-shot{
+  background:rgba(255,255,255,.8);
+  border-color:rgba(10,18,34,.1);
+}
+body.light .coming-soon-shot figcaption{color:#41516f;}
+@media (max-width:760px){
+  .coming-soon-shots{grid-template-columns:1fr;}
+}
 body.light .coming-soon-banner,
 body.light .coming-soon-banner h3,
 body.light .coming-soon-banner p{
