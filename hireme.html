@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Le CV qui postule à votre place | Gilles Ruszczycki, Développeur Full Stack</title>
+  <meta name="description"
+    content="Répondez à 4 questions sur votre besoin : ce CV génère en direct le dossier de candidature de Gilles Ruszczycki, développeur web full stack, adapté à votre entreprise." />
+  <meta property="og:title" content="Le CV qui postule à votre place">
+  <meta property="og:description"
+    content="4 questions sur votre besoin, et ce CV s'écrit pour votre entreprise : projets comparables, plan des 30 premiers jours, disponibilité." />
+  <meta property="og:image" content="https://gilles-rusz.github.io/PORTFOLIO_CV2026/assets/img/preview_v7.jpg">
+  <meta property="og:url" content="https://gilles-rusz.github.io/PORTFOLIO_CV2026/hireme.html">
+  <meta property="og:type" content="website">
+  <meta name="author" content="Gilles Ruszczycki">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#080b12">
+  <link rel="canonical" href="https://gilles-rusz.github.io/PORTFOLIO_CV2026/hireme.html">
+
+  <link rel="stylesheet" href="hireme.css?v=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="grid-glow" aria-hidden="true"></div>
+
+  <header class="hm-header">
+    <a class="hm-brand" href="index.html">
+      <span class="hm-brand-mark">GR</span>
+      <span class="hm-brand-text">Gilles Ruszczycki<small>Développeur Web Full Stack</small></span>
+    </a>
+    <div class="hm-header-actions">
+      <span class="hm-status"><span class="hm-dot"></span> Disponible immédiatement</span>
+      <a class="hm-link" href="index.html">Portfolio classique</a>
+    </div>
+  </header>
+
+  <main class="hm-main">
+    <!-- ÉTAPE 0 : accroche -->
+    <section class="hm-intro" id="intro">
+      <p class="hm-kicker">Candidature spontanée, version développeur</p>
+      <h1>
+        Vous n'avez pas le temps de lire mon CV.<br />
+        <span class="hm-grad">Alors c'est lui qui va lire votre besoin.</span>
+      </h1>
+      <p class="hm-lead">
+        Quatre questions sur votre entreprise et ce que vous cherchez. En retour, cette page écrit en direct
+        le dossier de candidature qui vous correspond : les projets que j'ai déjà livrés dans votre cas,
+        ce que je peux produire dans mes 30 premiers jours, et ce que je ne sais pas encore faire.
+        Vous pouvez l'imprimer, l'exporter en PDF ou le transférer à votre équipe.
+      </p>
+      <div class="hm-intro-actions">
+        <button class="hm-btn hm-btn-primary" id="startBtn" type="button">Générer mon dossier · 45 secondes</button>
+        <a class="hm-btn hm-btn-ghost" href="assets/cv/CV_Gilles_Ruszczycki_Dev_Full_Stack.pdf" target="_blank" rel="noopener noreferrer">
+          CV classique en PDF
+        </a>
+      </div>
+      <ul class="hm-intro-notes">
+        <li>Aucune donnée envoyée : tout est calculé dans votre navigateur.</li>
+        <li>Vous préférez le format habituel ? Le PDF ci-dessus passe les ATS sans problème.</li>
+      </ul>
+    </section>
+
+    <!-- QUESTIONNAIRE -->
+    <section class="hm-wizard" id="wizard" hidden>
+      <div class="hm-progress">
+        <div class="hm-progress-bar"><span id="progressFill"></span></div>
+        <p class="hm-progress-label">Étape <strong id="stepNow">1</strong> sur 4 · <span id="stepName">Votre entreprise</span></p>
+      </div>
+
+      <!-- Étape 1 -->
+      <div class="hm-step" data-step="1">
+        <h2>Votre entreprise</h2>
+        <label class="hm-field">
+          <span>Nom de l'entreprise</span>
+          <input type="text" id="companyInput" placeholder="Votre entreprise, votre agence ou votre structure" maxlength="60" autocomplete="organization" />
+        </label>
+        <label class="hm-field">
+          <span>Secteur (facultatif)</span>
+          <input type="text" id="sectorInput" placeholder="télécom, industrie, e-commerce, collectivité" maxlength="60" />
+        </label>
+        <div class="hm-step-actions">
+          <button class="hm-btn hm-btn-primary" type="button" data-next="2">Continuer</button>
+        </div>
+      </div>
+
+      <!-- Étape 2 -->
+      <div class="hm-step" data-step="2" hidden>
+        <h2>Votre besoin le plus urgent</h2>
+        <p class="hm-step-help">Choisissez jusqu'à deux priorités. C'est ce qui déterminera les preuves que je vous montre.</p>
+        <div class="hm-choices" id="needChoices" data-max="2"></div>
+        <div class="hm-step-actions">
+          <button class="hm-btn hm-btn-ghost" type="button" data-prev="1">Retour</button>
+          <button class="hm-btn hm-btn-primary" type="button" data-next="3">Continuer</button>
+        </div>
+      </div>
+
+      <!-- Étape 3 -->
+      <div class="hm-step" data-step="3" hidden>
+        <h2>Votre environnement technique</h2>
+        <p class="hm-step-help">Cochez ce que votre équipe utilise. Je calcule honnêtement la correspondance, y compris les écarts.</p>
+        <div class="hm-choices hm-choices-compact" id="stackChoices"></div>
+        <div class="hm-step-actions">
+          <button class="hm-btn hm-btn-ghost" type="button" data-prev="2">Retour</button>
+          <button class="hm-btn hm-btn-primary" type="button" data-next="4">Continuer</button>
+        </div>
+      </div>
+
+      <!-- Étape 4 -->
+      <div class="hm-step" data-step="4" hidden>
+        <h2>Le cadre du poste</h2>
+        <p class="hm-step-help">Pour adapter la conclusion du dossier.</p>
+        <div class="hm-choices" id="contractChoices" data-single="true"></div>
+        <label class="hm-field hm-field-select">
+          <span>Vous voudriez démarrer</span>
+          <select id="timingSelect">
+            <option value="now">le plus vite possible</option>
+            <option value="month">dans le mois</option>
+            <option value="quarter">dans le trimestre</option>
+            <option value="unknown">on verra selon le profil</option>
+          </select>
+        </label>
+        <div class="hm-step-actions">
+          <button class="hm-btn hm-btn-ghost" type="button" data-prev="3">Retour</button>
+          <button class="hm-btn hm-btn-primary" id="generateBtn" type="button">Générer le dossier</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPILATION -->
+    <section class="hm-compile" id="compile" hidden aria-live="polite">
+      <div class="hm-terminal">
+        <div class="hm-terminal-head">
+          <span class="hm-tdot"></span><span class="hm-tdot"></span><span class="hm-tdot"></span>
+          <span class="hm-terminal-title">build/dossier-candidature</span>
+        </div>
+        <pre class="hm-terminal-body" id="terminalBody"></pre>
+      </div>
+    </section>
+
+    <!-- DOSSIER -->
+    <section class="hm-report" id="report" hidden>
+      <div class="hm-report-toolbar hm-noprint">
+        <button class="hm-btn hm-btn-primary" id="mailBtn" type="button">Me convoquer en entretien</button>
+        <button class="hm-btn hm-btn-ghost" id="printBtn" type="button">Imprimer / PDF</button>
+        <button class="hm-btn hm-btn-ghost" id="copyBtn" type="button">Copier le lien du dossier</button>
+        <button class="hm-btn hm-btn-ghost" id="restartBtn" type="button">Recommencer</button>
+      </div>
+
+      <article class="hm-sheet" id="sheet">
+        <header class="hm-sheet-head">
+          <div>
+            <p class="hm-sheet-kicker">Dossier de candidature généré le <span id="reportDate"></span></p>
+            <h2 id="reportTitle">Ce que je peux apporter</h2>
+            <p class="hm-sheet-sub" id="reportSub"></p>
+          </div>
+          <div class="hm-score" aria-label="Taux de correspondance">
+            <svg viewBox="0 0 120 120" class="hm-score-ring" aria-hidden="true">
+              <circle cx="60" cy="60" r="52" class="hm-score-track"></circle>
+              <circle cx="60" cy="60" r="52" class="hm-score-value" id="scoreArc"></circle>
+            </svg>
+            <div class="hm-score-text">
+              <strong id="scoreValue">0%</strong>
+              <span>de votre stack<br />déjà pratiquée</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="hm-block">
+          <h3>Votre besoin, ma réponse</h3>
+          <div class="hm-answer-grid" id="answerGrid"></div>
+        </section>
+
+        <section class="hm-block">
+          <h3>Les preuves : ce que j'ai déjà livré dans ce cas</h3>
+          <div class="hm-proof-grid" id="proofGrid"></div>
+        </section>
+
+        <section class="hm-block">
+          <h3>Mes 30 premiers jours chez <span class="hm-company-inline" id="planCompany">vous</span></h3>
+          <ol class="hm-plan" id="planList"></ol>
+        </section>
+
+        <section class="hm-block hm-block-split">
+          <div>
+            <h3>Ce que je maîtrise sur votre stack</h3>
+            <ul class="hm-list hm-list-ok" id="matchList"></ul>
+          </div>
+          <div>
+            <h3>Ce que je ne connais pas encore</h3>
+            <ul class="hm-list hm-list-gap" id="gapList"></ul>
+            <p class="hm-note" id="gapNote"></p>
+          </div>
+        </section>
+
+        <section class="hm-block">
+          <h3>Le bonus que peu de juniors ont</h3>
+          <div class="hm-bonus-grid">
+            <article class="hm-bonus">
+              <strong>22 ans en industrie</strong>
+              <p>Team leader logistique chez Stellantis Trémery, jusqu'à 25 personnes encadrées. Je sais tenir un délai, rendre compte et travailler sous contrainte.</p>
+            </article>
+            <article class="hm-bonus">
+              <strong>Lean et amélioration continue</strong>
+              <p>Analyse de causes, standardisation, mesure. Je ne livre pas seulement du code, je regarde ce qui fait perdre du temps à l'équipe.</p>
+            </article>
+            <article class="hm-bonus">
+              <strong>Une entreprise à mon nom</strong>
+              <p>Web RG Est : je gère de vrais clients, de vrais délais et de vraies mises en production. Autonomie prouvée, pas déclarée.</p>
+            </article>
+          </div>
+        </section>
+
+        <footer class="hm-sheet-foot">
+          <div>
+            <p class="hm-foot-title" id="footTitle">Prêt quand vous voulez</p>
+            <p class="hm-foot-text" id="footText"></p>
+          </div>
+          <ul class="hm-foot-contact">
+            <li>Gilles Ruszczycki · Maizières-lès-Metz (57)</li>
+            <li><a href="mailto:gilles.dev57@outlook.fr">gilles.dev57@outlook.fr</a> · <a href="tel:+33637679995">06 37 67 99 95</a></li>
+            <li><a href="https://www.linkedin.com/in/gilles-ruszczycki/" target="_blank" rel="noopener noreferrer">linkedin.com/in/gilles-ruszczycki</a> · <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">webrgest.fr</a></li>
+            <li class="hm-noprint"><a href="assets/cv/CV_Gilles_Ruszczycki_Dev_Full_Stack.pdf" target="_blank" rel="noopener noreferrer">CV classique en PDF (compatible ATS)</a></li>
+          </ul>
+        </footer>
+      </article>
+    </section>
+  </main>
+
+  <footer class="hm-foot hm-noprint">
+    <p>© <span id="year"></span> Gilles Ruszczycki · <a href="index.html">Portfolio complet</a> · <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">Web RG Est</a></p>
+  </footer>
+
+  <script src="hireme.js?v=1.0"></script>
+</body>
+
+</html>

@@ -1339,3 +1339,17 @@ body.light .coming-soon-banner:hover{
     min-height:auto;
   }
 }
+
+.nav-links a.nav-cta{
+  padding:7px 14px;
+  border-radius:999px;
+  border:1px solid rgba(90,167,255,.45);
+  background:linear-gradient(135deg, rgba(90,167,255,.18), rgba(124,243,209,.14));
+  font-weight:700;
+  opacity:1;
+}
+.nav-links a.nav-cta::after{display:none}
+.nav-links a.nav-cta:hover{
+  border-color:rgba(90,167,255,.8);
+  box-shadow:0 8px 20px rgba(90,167,255,.18);
+}
