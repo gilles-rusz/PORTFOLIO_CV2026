@@ -1,4 +1,4 @@
-/* Le CV qui postule à votre place — logique de génération du dossier.
+/* Le CV qui postule à votre place, logique de génération du dossier.
    Tout est calculé côté navigateur, aucune donnée n'est envoyée. */
 
 const NEEDS = [
@@ -297,7 +297,7 @@ function renderReport() {
   const circumference = 2 * Math.PI * 52;
   arc.style.strokeDasharray = String(circumference);
   if (score === null) {
-    scoreValue.textContent = '—';
+    scoreValue.textContent = '0%';
     arc.style.strokeDashoffset = String(circumference);
   } else {
     scoreValue.textContent = `${score}%`;
