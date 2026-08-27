@@ -4,6 +4,7 @@
 const NEEDS = [
   {
     id: 'vitrine',
+    family: 'tech',
     label: 'Un site vitrine qui inspire confiance',
     hint: 'image de marque, SEO, mobile',
     answer: "Je conçois et je mets en production des sites vitrines complets : structure des pages, rédaction technique du contenu, référencement, performances et responsive. C'est le cœur de mon activité Web RG Est.",
@@ -13,6 +14,7 @@ const NEEDS = [
   },
   {
     id: 'ecommerce',
+    family: 'tech',
     label: 'Vendre en ligne (catalogue, panier, paiement)',
     hint: 'Stripe, stocks, livraison',
     answer: "J'ai développé et mis en production une boutique complète : catalogue, panier, paiement Stripe, gestion des commandes et livraison multi-pays. Je connais les pièges (TVA, webhooks de paiement, états de commande).",
@@ -22,6 +24,7 @@ const NEEDS = [
   },
   {
     id: 'backoffice',
+    family: 'tech',
     label: 'Un back-office ou un dashboard métier',
     hint: 'CRUD, rôles, données',
     answer: "Je construis des interfaces d'administration lisibles : CRUD complet, formulaires métier, gestion des rôles et des accès, tableaux de bord. J'y ajoute ce que les utilisateurs demandent toujours : recherche, filtres et export.",
@@ -31,6 +34,7 @@ const NEEDS = [
   },
   {
     id: 'api',
+    family: 'tech',
     label: 'Une API et des intégrations',
     hint: 'REST, authentification, services tiers',
     answer: 'Je structure des API REST Node.js / Express : routes, services, modèles, authentification JWT et séparation claire des responsabilités. Je documente les endpoints pour que le front et les partenaires ne devinent rien.',
@@ -40,6 +44,7 @@ const NEEDS = [
   },
   {
     id: 'realtime',
+    family: 'tech',
     label: 'Du temps réel (live, notifications)',
     hint: 'WebSocket, mises à jour instantanées',
     answer: "Pendant mon stage au Luxembourg, j'ai développé une application d'enchères internes en temps réel : WebSocket, mises à jour instantanées pour tous les participants et interface d'administration.",
@@ -49,6 +54,7 @@ const NEEDS = [
   },
   {
     id: 'automation',
+    family: 'tech',
     label: 'Automatiser des tâches répétitives',
     hint: 'n8n, scripts, workflows',
     answer: "Je monte des workflows n8n et des scripts pour supprimer la saisie manuelle : formulaires vers CRM, relances, génération de documents, synchronisations. Mes 22 ans en industrie me font chercher le gaspillage avant d'écrire du code.",
@@ -58,6 +64,7 @@ const NEEDS = [
   },
   {
     id: 'refonte',
+    family: 'tech',
     label: 'Refondre ou accélérer un site existant',
     hint: 'performance, SEO, dette technique',
     answer: "Je reprends des bases existantes sans tout casser : mesure d'abord (performances, SEO, accessibilité), corrections priorisées ensuite, refonte progressive écran par écran.",
@@ -67,12 +74,73 @@ const NEEDS = [
   },
   {
     id: 'renfort',
+    family: 'tech',
     label: "Renforcer l'équipe au quotidien",
     hint: 'features, correctifs, revue de code',
     answer: "Je travaille par branches et pull requests, je commente mes choix et je demande une revue. J'ai été formé et j'ai travaillé exactement comme ça en stage : petites features, correctifs, intégration progressive.",
     deliverable: 'Mes premières pull requests mergées dans la semaine',
     projects: ['auction', 'greenbin'],
     plan: ['Prendre les tickets que personne n\'a le temps de traiter et livrer mes premières pull requests']
+  },
+  {
+    id: 'management',
+    family: 'terrain',
+    label: 'Encadrer une équipe au quotidien',
+    hint: 'animation terrain, montée en compétences',
+    answer: "J'ai encadré jusqu'à 25 personnes chez Stellantis pendant 22 ans : animation quotidienne, répartition de la charge, gestion des tensions et montée en compétences des équipiers. Je sais tenir une équipe sans la casser, et rendre compte à la hiérarchie avec des faits.",
+    deliverable: "Un point d'équipe cadré et des objectifs individuels lisibles dès la première semaine",
+    projects: ['stellantis', 'recrutement'],
+    plan: ["Rencontrer chaque membre de l'équipe en individuel et remonter les irritants avec un plan d'action"]
+  },
+  {
+    id: 'flux',
+    family: 'terrain',
+    label: 'Organiser des flux logistiques ou de production',
+    hint: 'approvisionnement, cadence, délais',
+    answer: "22 ans en logistique automobile sur des flux tendus : approvisionnement des lignes, respect de la cadence, gestion des aléas et des priorités. J'ai piloté des projets d'optimisation de flux avec mesure avant et après.",
+    deliverable: "Une cartographie du flux réel, avec les points de blocage chiffrés",
+    projects: ['stellantis', 'lean'],
+    plan: ['Observer le flux sur le terrain, chronométrer, puis proposer les deux corrections au meilleur rapport gain sur effort']
+  },
+  {
+    id: 'procedures',
+    family: 'terrain',
+    label: 'Écrire et faire appliquer des procédures',
+    hint: 'qualité, sécurité, conformité',
+    answer: "J'ai rédigé et fait appliquer des procédures en environnement exigeant : qualité ISO 9001, sécurité, conformité SSI. J'ai commencé ma carrière au contrôle qualité et sûreté de la centrale nucléaire de Cattenom, donc je sais ce qu'une procédure non respectée peut coûter.",
+    deliverable: 'Une procédure écrite, testée sur le terrain et comprise par les opérateurs',
+    projects: ['cattenom', 'stellantis'],
+    plan: ["Reprendre une procédure existante avec ceux qui l'appliquent, la simplifier et la faire valider"]
+  },
+  {
+    id: 'recrutement',
+    family: 'terrain',
+    label: 'Recruter et intégrer des collaborateurs',
+    hint: 'sélection, tutorat, intégration',
+    answer: "J'ai participé au recrutement opérationnel chez Stellantis : sourcing interne, entretiens de sélection, puis accompagnement des nouveaux jusqu'à l'autonomie. Je sais écrire un parcours d'intégration qui ne laisse pas le nouveau seul avec un badge.",
+    deliverable: "Un parcours d'intégration écrit pour le prochain arrivant",
+    projects: ['recrutement', 'stellantis'],
+    plan: ["Formaliser le parcours d'intégration du poste et le tester sur le prochain arrivant"]
+  },
+  {
+    id: 'lean',
+    family: 'terrain',
+    label: 'Lancer une démarche Lean et piloter des indicateurs',
+    hint: 'KPI, causes racines, standardisation',
+    answer: "Formé au Lean management et à l'ISO 9001 chez Stellantis, j'ai piloté des KPI et animé des chantiers d'amélioration continue : analyse de causes, standardisation, mesure des gains. Je m'attaque au gaspillage avant d'ajouter un outil.",
+    deliverable: 'Un indicateur suivi chaque semaine, compris par ceux qui le remplissent',
+    projects: ['lean', 'stellantis'],
+    plan: ['Choisir un seul indicateur utile, le faire vivre en réunion courte et supprimer les indicateurs que personne ne lit']
+  },
+  {
+    id: 'support',
+    family: 'terrain',
+    label: 'Support utilisateurs et outils numériques métier',
+    hint: 'incidents, parc informatique, formation',
+    answer: "J'ai fait le pont entre les équipes terrain et les outils numériques : diagnostic d'incidents, support applicatif, formation des utilisateurs, gestion de parc. Je parle aux utilisateurs sans jargon parce que j'ai été à leur place pendant 22 ans.",
+    deliverable: 'Les incidents récurrents identifiés, avec une fiche de résolution par cas',
+    projects: ['stellantis', 'webrgest'],
+    plan: ['Traiter les incidents en direct pendant une semaine, puis documenter les cas qui reviennent le plus']
   }
 ];
 
@@ -110,6 +178,31 @@ const STACK = [
   { id: 'mobile', label: 'React Native / Flutter', level: 'no' }
 ];
 
+/* Compétences terrain, encadrement et organisation, issues des 22 ans en industrie. */
+const FIELD_SKILLS = [
+  { id: 'manag', label: "Management d'équipe", level: 'ok' },
+  { id: 'anim', label: 'Animation terrain au quotidien', level: 'ok' },
+  { id: 'recrut', label: 'Recrutement et intégration', level: 'ok' },
+  { id: 'logistique', label: 'Logistique et gestion des flux', level: 'ok' },
+  { id: 'leanm', label: 'Lean management', level: 'ok' },
+  { id: 'iso', label: 'Qualité ISO 9001', level: 'ok' },
+  { id: 'kpi', label: 'Pilotage de KPI', level: 'ok' },
+  { id: 'procedure', label: 'Rédaction de procédures', level: 'ok' },
+  { id: 'securite', label: 'Sécurité et sûreté en site sensible', level: 'ok' },
+  { id: 'projet', label: 'Gestion de projet et coordination', level: 'ok' },
+  { id: 'supportapp', label: 'Support applicatif et incidents', level: 'ok' },
+  { id: 'formation', label: 'Formation des utilisateurs', level: 'ok' },
+  { id: 'parc', label: 'Gestion de parc informatique', level: 'partial' },
+  { id: 'rgpd', label: 'Conformité RGPD et SSI', level: 'partial' },
+  { id: 'anglais', label: 'Anglais professionnel', level: 'partial' },
+  { id: 'erp', label: 'ERP ou WMS logistique', level: 'partial' },
+  { id: 'compta', label: 'Comptabilité et paie', level: 'no' },
+  { id: 'commerce', label: 'Prospection commerciale terrain', level: 'partial' }
+];
+
+const ALL_SKILLS = STACK.concat(FIELD_SKILLS);
+const findSkill = (id) => ALL_SKILLS.find((s) => s.id === id);
+
 const STACK_GAP_PLAN = {
   vue: 'Vue.js reste du JavaScript composant : avec React et Next.js derrière moi, je suis opérationnel sur une base existante en une à deux semaines.',
   angular: "Angular est le plus éloigné de mon socle React. Comptez trois semaines avant que je sois vraiment autonome, mais TypeScript et l'architecture par services me sont familiers.",
@@ -124,7 +217,13 @@ const STACK_GAP_PLAN = {
   tests: "J'écris des tests, sans avoir encore tenu une vraie stratégie de couverture sur un gros projet. C'est le point que je veux travailler en équipe.",
   linux: "J'administre un VPS pour mes propres déploiements, sans être sysadmin.",
   wordpress: "Je sais intervenir sur WordPress, mais je développe en JavaScript par choix.",
-  python: 'Python : niveau scripts et automatisation, pas encore de back-end livré.'
+  python: 'Python : niveau scripts et automatisation, pas encore de back-end livré.',
+  parc: "J'ai géré du matériel et dépanné des utilisateurs, sans avoir tenu un parc informatique complet avec inventaire et cycle de vie.",
+  rgpd: 'Je suis sensibilisé au RGPD et à la SSI et je les applique dans mes développements, sans être référent conformité.',
+  anglais: 'Anglais technique et conversationnel : je lis la documentation et je tiens une réunion, pas encore une négociation.',
+  erp: "J'ai utilisé des outils métier de suivi de flux en industrie, sans être administrateur d'un ERP ou d'un WMS.",
+  compta: "La comptabilité et la paie ne sont pas mon domaine, en dehors de la gestion de ma propre micro-entreprise.",
+  commerce: "Je vends mes propres prestations chez Web RG Est, mais je ne suis pas un commercial de métier."
 };
 
 const PROJECTS = {
@@ -176,6 +275,38 @@ const PROJECTS = {
     link: 'index.html#projets',
     linkLabel: 'détails dans le portfolio'
   },
+  stellantis: {
+    name: 'Team Leader Logistique',
+    context: 'Stellantis Trémery · 2002 à 2024',
+    text: "22 ans en logistique automobile : encadrement d'équipes jusqu'à 25 personnes, animation terrain, gestion des aléas en flux tendu et support des équipes sur les outils métier.",
+    tags: ["Management d'équipe", 'Logistique', 'Flux tendu', 'Reporting'],
+    link: '',
+    linkLabel: ''
+  },
+  recrutement: {
+    name: 'Recrutement et intégration',
+    context: 'Stellantis · mission transverse',
+    text: "Participation au recrutement opérationnel : sourcing interne, entretiens de sélection, puis accompagnement des nouveaux embauchés jusqu'à l'autonomie sur le poste.",
+    tags: ['Entretiens', 'Tutorat', 'Montée en compétences'],
+    link: '',
+    linkLabel: ''
+  },
+  lean: {
+    name: 'Amélioration continue',
+    context: 'Stellantis · Lean et ISO 9001',
+    text: "Chantiers d'optimisation des flux : analyse de causes, standardisation des postes, pilotage de KPI et mesure des gains obtenus.",
+    tags: ['Lean', 'ISO 9001', 'KPI', 'Standardisation'],
+    link: '',
+    linkLabel: ''
+  },
+  cattenom: {
+    name: 'Agent Qualité Sûreté',
+    context: 'Centrale nucléaire de Cattenom · 2001',
+    text: 'Contrôle qualité et respect strict des procédures de sûreté dans un environnement critique, où aucun écart n\'est toléré.',
+    tags: ['Contrôle qualité', 'Procédures', 'Sûreté'],
+    link: '',
+    linkLabel: ''
+  },
   russell: {
     name: 'Port de plaisance Russell',
     context: 'Projet de formation · architecture back-end',
@@ -208,7 +339,8 @@ const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
 /* ---------- Construction des choix ---------- */
 
-function buildChoices(container, items, { multi = true, max = null } = {}) {
+function buildChoices(container, items, { multi = true, max = null, groupSelector = null } = {}) {
+  const groupActive = () => Array.from(document.querySelectorAll(groupSelector || '.__none__'));
   container.innerHTML = '';
   items.forEach((item) => {
     const btn = document.createElement('button');
@@ -228,7 +360,7 @@ function buildChoices(container, items, { multi = true, max = null } = {}) {
         btn.setAttribute('aria-pressed', 'true');
         return;
       }
-      const active = Array.from(container.querySelectorAll('.is-active'));
+      const active = groupSelector ? groupActive() : Array.from(container.querySelectorAll('.is-active'));
       if (!btn.classList.contains('is-active') && max && active.length >= max) {
         active[0].classList.remove('is-active');
         active[0].setAttribute('aria-pressed', 'false');
@@ -246,7 +378,7 @@ function selectedIds(container) {
 
 /* ---------- Navigation ---------- */
 
-const STEP_NAMES = { 1: 'Votre entreprise', 2: 'Votre besoin', 3: 'Votre stack', 4: 'Le cadre du poste' };
+const STEP_NAMES = { 1: 'Votre entreprise', 2: 'Votre besoin', 3: 'Vos attentes', 4: 'Le cadre du poste' };
 
 function goToStep(step) {
   state.step = step;
@@ -261,14 +393,14 @@ function goToStep(step) {
 
 /* ---------- Score ---------- */
 
-function computeScore(stackIds) {
-  if (!stackIds.length) return null;
+function computeScore(skillIds) {
+  if (!skillIds.length) return null;
   const weights = { ok: 1, partial: 0.55, no: 0 };
-  const total = stackIds.reduce((sum, id) => {
-    const item = STACK.find((s) => s.id === id);
+  const total = skillIds.reduce((sum, id) => {
+    const item = findSkill(id);
     return sum + (item ? weights[item.level] : 0);
   }, 0);
-  return Math.round((total / stackIds.length) * 100);
+  return Math.round((total / skillIds.length) * 100);
 }
 
 /* ---------- Rendu du dossier ---------- */
@@ -284,9 +416,18 @@ function renderReport() {
   $('#reportTitle').textContent = company ? `Ce que je peux apporter à ${company}` : 'Ce que je peux vous apporter';
   $('#planCompany').textContent = company || 'vous';
 
+  const families = needObjects.map((n) => n.family);
+  const hasTerrain = families.includes('terrain');
+  const hasTech = families.includes('tech');
+  const identity = hasTerrain && hasTech
+    ? 'Gilles Ruszczycki, team leader logistique et développeur web full stack'
+    : hasTerrain
+      ? 'Gilles Ruszczycki, team leader logistique, 22 ans de terrain'
+      : 'Gilles Ruszczycki, développeur web full stack';
+
   const sector = state.sector.trim();
   $('#reportSub').textContent = [
-    'Gilles Ruszczycki, développeur web full stack',
+    identity,
     sector ? `dossier orienté ${sector}` : null,
     `disponibilité : ${TIMINGS[state.timing].label}`
   ].filter(Boolean).join(' · ');
@@ -321,6 +462,9 @@ function renderReport() {
   $('#proofGrid').innerHTML = proofIds.slice(0, 4).map((id) => {
     const p = PROJECTS[id];
     const external = p.link.startsWith('http');
+    const link = p.link
+      ? `<a class="hm-proof-link" href="${p.link}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${p.linkLabel}</a>`
+      : '';
     return `
       <article class="hm-proof">
         <div class="hm-proof-head">
@@ -329,35 +473,37 @@ function renderReport() {
         </div>
         <p>${p.text}</p>
         <ul class="hm-tags">${p.tags.map((t) => `<li>${t}</li>`).join('')}</ul>
-        <a class="hm-proof-link" href="${p.link}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${p.linkLabel}</a>
+        ${link}
       </article>
     `;
   }).join('');
 
   // Plan 30 jours
   const planSteps = [
-    "Semaine 1 : comprendre votre métier avant votre code. Je lis, je pose des questions, je documente ce que je découvre.",
+    'Semaine 1 : comprendre votre métier avant de proposer quoi que ce soit. Je vais sur le terrain, je pose des questions, je documente ce que je découvre.',
     ...needObjects.map((need, i) => `Semaine ${i + 2} : ${need.plan[0]}`),
-    "Puis chaque semaine : livrer quelque chose de visible, en pull request relue, et signaler tôt ce qui coince."
+    hasTech
+      ? 'Puis chaque semaine : livrer quelque chose de visible, en pull request relue, et signaler tôt ce qui coince.'
+      : 'Puis chaque semaine : un point court, un résultat mesuré et les difficultés annoncées tôt plutôt que découvertes tard.'
   ];
   $('#planList').innerHTML = planSteps.map((s) => `<li>${s}</li>`).join('');
 
   // Match / écarts
-  const chosen = state.stack.map((id) => STACK.find((s) => s.id === id)).filter(Boolean);
+  const chosen = state.stack.map((id) => findSkill(id)).filter(Boolean);
   const okList = chosen.filter((s) => s.level === 'ok');
   const gapList = chosen.filter((s) => s.level !== 'ok');
 
   $('#matchList').innerHTML = okList.length
     ? okList.map((s) => `<li>${s.label}</li>`).join('')
-    : '<li>Vous n\'avez pas précisé de technologie : mon socle est React, Next.js, Node.js, Express, SQL et Docker.</li>';
+    : "<li>Vous n'avez rien coché : mon socle technique est React, Next.js, Node.js, Express, SQL et Docker, et mon socle terrain est l'encadrement d'équipe et l'organisation des flux.</li>";
 
   $('#gapList').innerHTML = gapList.length
     ? gapList.map((s) => `<li><strong>${s.label}</strong>${s.level === 'partial' ? ' <em>(notions)</em>' : ''}</li>`).join('')
-    : '<li>Rien à signaler sur les technologies que vous avez cochées.</li>';
+    : "<li>Rien à signaler sur ce que vous avez coché.</li>";
 
   $('#gapNote').textContent = gapList.length
     ? gapList.map((s) => STACK_GAP_PLAN[s.id]).filter(Boolean).join(' ')
-    : "Je préfère annoncer mes limites que les découvrir en réunion. Sur les technologies cochées, je n'ai rien à cacher.";
+    : "Je préfère annoncer mes limites que les découvrir en réunion. Sur ce que vous avez coché, je n'ai rien à cacher.";
 
   // Conclusion
   const contract = CONTRACTS.find((c) => c.id === state.contract) || CONTRACTS[0];
@@ -387,7 +533,7 @@ function readUrl() {
   state.company = params.get('c') || '';
   state.sector = params.get('s') || '';
   state.needs = (params.get('n') || '').split(',').filter((id) => NEEDS.some((n) => n.id === id));
-  state.stack = (params.get('t') || '').split(',').filter((id) => STACK.some((s) => s.id === id));
+  state.stack = (params.get('t') || '').split(',').filter((id) => Boolean(findSkill(id)));
   const k = params.get('k');
   if (CONTRACTS.some((c) => c.id === k)) state.contract = k;
   const d = params.get('d');
@@ -403,7 +549,7 @@ function runCompile(done) {
     '$ hireme build --target="' + company + '"',
     '→ lecture du besoin exprimé…',
     '→ recherche des projets comparables dans le portfolio…',
-    '→ calcul de la correspondance technique (sans arrondi flatteur)…',
+    '→ calcul de la correspondance (sans arrondi flatteur)…',
     '→ rédaction du plan des 30 premiers jours…',
     '→ vérification honnêteté : écarts de compétences inclus ✔',
     'dossier prêt. bonne lecture.'
@@ -430,11 +576,13 @@ function runCompile(done) {
 
 function buildMailto() {
   const company = state.company.trim() || 'notre entreprise';
-  const needLabels = (state.needs.length ? state.needs : ['renfort'])
+  const needObjects = (state.needs.length ? state.needs : ['renfort'])
     .map((id) => NEEDS.find((n) => n.id === id))
-    .filter(Boolean)
-    .map((n) => n.label.toLowerCase());
-  const subject = `Entretien - développeur full stack pour ${company}`;
+    .filter(Boolean);
+  const needLabels = needObjects.map((n) => n.label.toLowerCase());
+  const terrainOnly = needObjects.length > 0 && needObjects.every((n) => n.family === 'terrain');
+  const role = terrainOnly ? 'profil terrain et organisation' : 'développeur full stack';
+  const subject = `Entretien, ${role}, pour ${company}`;
   const body = [
     'Bonjour Gilles,',
     '',
@@ -463,11 +611,16 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#year').textContent = String(new Date().getFullYear());
 
   const needChoices = $('#needChoices');
+  const needFieldChoices = $('#needFieldChoices');
   const stackChoices = $('#stackChoices');
+  const fieldChoices = $('#fieldChoices');
   const contractChoices = $('#contractChoices');
+  const NEED_GROUP = '[data-need-group] .hm-choice.is-active';
 
-  buildChoices(needChoices, NEEDS, { multi: true, max: 2 });
+  buildChoices(needChoices, NEEDS.filter((n) => n.family === 'tech'), { multi: true, max: 2, groupSelector: NEED_GROUP });
+  buildChoices(needFieldChoices, NEEDS.filter((n) => n.family === 'terrain'), { multi: true, max: 2, groupSelector: NEED_GROUP });
   buildChoices(stackChoices, STACK, { multi: true });
+  buildChoices(fieldChoices, FIELD_SKILLS, { multi: true });
   buildChoices(contractChoices, CONTRACTS, { multi: false });
   contractChoices.firstElementChild.classList.add('is-active');
   contractChoices.firstElementChild.setAttribute('aria-pressed', 'true');
@@ -484,8 +637,8 @@ document.addEventListener('DOMContentLoaded', () => {
       state.company = $('#companyInput').value;
       state.sector = $('#sectorInput').value;
     }
-    if (next === 3) state.needs = selectedIds(needChoices);
-    if (next === 4) state.stack = selectedIds(stackChoices);
+    if (next === 3) state.needs = selectedIds(needChoices).concat(selectedIds(needFieldChoices));
+    if (next === 4) state.stack = selectedIds(stackChoices).concat(selectedIds(fieldChoices));
     goToStep(next);
   }));
 
@@ -538,14 +691,14 @@ document.addEventListener('DOMContentLoaded', () => {
     $('#companyInput').value = state.company;
     $('#sectorInput').value = state.sector;
     state.needs.forEach((id) => {
-      const el = needChoices.querySelector(`[data-id="${id}"]`);
+      const el = needChoices.querySelector(`[data-id="${id}"]`) || needFieldChoices.querySelector(`[data-id="${id}"]`);
       if (el) {
         el.classList.add('is-active');
         el.setAttribute('aria-pressed', 'true');
       }
     });
     state.stack.forEach((id) => {
-      const el = stackChoices.querySelector(`[data-id="${id}"]`);
+      const el = stackChoices.querySelector(`[data-id="${id}"]`) || fieldChoices.querySelector(`[data-id="${id}"]`);
       if (el) {
         el.classList.add('is-active');
         el.setAttribute('aria-pressed', 'true');
