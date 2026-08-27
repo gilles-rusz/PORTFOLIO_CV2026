@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Le CV qui postule à votre place | Gilles Ruszczycki, Développeur Full Stack</title>
+  <title>Le CV qui postule à votre place | Gilles Ruszczycki, terrain et développement web</title>
   <meta name="description"
-    content="Répondez à 4 questions sur votre besoin : ce CV génère en direct le dossier de candidature de Gilles Ruszczycki, développeur web full stack, adapté à votre entreprise." />
+    content="Répondez à 4 questions sur votre besoin : ce CV génère en direct le dossier de candidature de Gilles Ruszczycki, team leader logistique et développeur web full stack, adapté à votre entreprise." />
   <meta property="og:title" content="Le CV qui postule à votre place">
   <meta property="og:description"
-    content="4 questions sur votre besoin, et ce CV s'écrit pour votre entreprise : projets comparables, plan des 30 premiers jours, disponibilité." />
+    content="4 questions sur votre besoin, technique ou terrain, et ce CV s'écrit pour votre entreprise : expériences comparables, plan des 30 premiers jours, disponibilité." />
   <meta property="og:image" content="https://gilles-rusz.github.io/PORTFOLIO_CV2026/assets/img/preview_v7.jpg">
   <meta property="og:url" content="https://gilles-rusz.github.io/PORTFOLIO_CV2026/hireme.html">
   <meta property="og:type" content="website">
@@ -18,7 +18,7 @@
   <meta name="theme-color" content="#080b12">
   <link rel="canonical" href="https://gilles-rusz.github.io/PORTFOLIO_CV2026/hireme.html">
 
-  <link rel="stylesheet" href="hireme.css?v=1.0">
+  <link rel="stylesheet" href="hireme.css?v=1.1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
   <header class="hm-header">
     <a class="hm-brand" href="index.html">
       <span class="hm-brand-mark">GR</span>
-      <span class="hm-brand-text">Gilles Ruszczycki<small>Développeur Web Full Stack</small></span>
+      <span class="hm-brand-text">Gilles Ruszczycki<small>Team leader logistique et développeur web full stack</small></span>
     </a>
     <div class="hm-header-actions">
       <span class="hm-status"><span class="hm-dot"></span> Disponible immédiatement</span>
@@ -41,26 +41,31 @@
   <main class="hm-main">
     <!-- ÉTAPE 0 : accroche -->
     <section class="hm-intro" id="intro">
-      <p class="hm-kicker">Candidature spontanée, version développeur</p>
+      <p class="hm-kicker">Candidature spontanée, terrain et développement</p>
       <h1>
         Vous n'avez pas le temps de lire mon CV.<br />
         <span class="hm-grad">Alors c'est lui qui va lire votre besoin.</span>
       </h1>
       <p class="hm-lead">
-        Quatre questions sur votre entreprise et ce que vous cherchez. En retour, cette page écrit en direct
-        le dossier de candidature qui vous correspond : les projets que j'ai déjà livrés dans votre cas,
-        ce que je peux produire dans mes 30 premiers jours, et ce que je ne sais pas encore faire.
+        Quatre questions sur votre entreprise et ce que vous cherchez, côté développement web comme côté
+        terrain et encadrement. En retour, cette page écrit en direct le dossier de candidature qui vous
+        correspond : ce que j'ai déjà livré ou piloté dans votre cas, ce que je peux produire dans mes
+        30 premiers jours, et ce que je ne sais pas encore faire.
         Vous pouvez l'imprimer, l'exporter en PDF ou le transférer à votre équipe.
       </p>
       <div class="hm-intro-actions">
         <button class="hm-btn hm-btn-primary" id="startBtn" type="button">Générer mon dossier · 45 secondes</button>
+        <a class="hm-btn hm-btn-ghost" href="assets/cv/CV_Gilles_Ruszczycki_Profil_Complet.pdf" target="_blank" rel="noopener noreferrer">
+          CV terrain et digital
+        </a>
         <a class="hm-btn hm-btn-ghost" href="assets/cv/CV_Gilles_Ruszczycki_Dev_Full_Stack.pdf" target="_blank" rel="noopener noreferrer">
-          CV classique en PDF
+          CV développeur
         </a>
       </div>
       <ul class="hm-intro-notes">
+        <li>22 ans de terrain en industrie, dont l'encadrement d'équipes jusqu'à 25 personnes, et un titre de développeur web.</li>
         <li>Aucune donnée envoyée : tout est calculé dans votre navigateur.</li>
-        <li>Vous préférez le format habituel ? Le PDF ci-dessus passe les ATS sans problème.</li>
+        <li>Vous préférez le format habituel ? Les PDF ci-dessus passent les ATS sans problème.</li>
       </ul>
     </section>
 
@@ -90,8 +95,11 @@
       <!-- Étape 2 -->
       <div class="hm-step" data-step="2" hidden>
         <h2>Votre besoin le plus urgent</h2>
-        <p class="hm-step-help">Choisissez jusqu'à deux priorités. C'est ce qui déterminera les preuves que je vous montre.</p>
-        <div class="hm-choices" id="needChoices" data-max="2"></div>
+        <p class="hm-step-help">Choisissez jusqu'à deux priorités, dans une famille ou dans les deux. C'est ce qui déterminera les preuves que je vous montre.</p>
+        <h3 class="hm-group-title">Développement et digital</h3>
+        <div class="hm-choices" id="needChoices" data-need-group data-max="2"></div>
+        <h3 class="hm-group-title">Terrain, encadrement et organisation</h3>
+        <div class="hm-choices" id="needFieldChoices" data-need-group data-max="2"></div>
         <div class="hm-step-actions">
           <button class="hm-btn hm-btn-ghost" type="button" data-prev="1">Retour</button>
           <button class="hm-btn hm-btn-primary" type="button" data-next="3">Continuer</button>
@@ -100,9 +108,12 @@
 
       <!-- Étape 3 -->
       <div class="hm-step" data-step="3" hidden>
-        <h2>Votre environnement technique</h2>
-        <p class="hm-step-help">Cochez ce que votre équipe utilise. Je calcule honnêtement la correspondance, y compris les écarts.</p>
+        <h2>Ce que vous attendez du poste</h2>
+        <p class="hm-step-help">Cochez ce que votre équipe utilise ou ce que vous exigez du poste. Je calcule honnêtement la correspondance, y compris les écarts.</p>
+        <h3 class="hm-group-title">Environnement technique</h3>
         <div class="hm-choices hm-choices-compact" id="stackChoices"></div>
+        <h3 class="hm-group-title">Compétences terrain et organisation</h3>
+        <div class="hm-choices hm-choices-compact" id="fieldChoices"></div>
         <div class="hm-step-actions">
           <button class="hm-btn hm-btn-ghost" type="button" data-prev="2">Retour</button>
           <button class="hm-btn hm-btn-primary" type="button" data-next="4">Continuer</button>
@@ -164,7 +175,7 @@
             </svg>
             <div class="hm-score-text">
               <strong id="scoreValue">0%</strong>
-              <span>de votre stack<br />déjà pratiquée</span>
+              <span>de vos attentes<br />déjà pratiquées</span>
             </div>
           </div>
         </header>
@@ -175,7 +186,7 @@
         </section>
 
         <section class="hm-block">
-          <h3>Les preuves : ce que j'ai déjà livré dans ce cas</h3>
+          <h3>Les preuves : ce que j'ai déjà livré ou piloté dans ce cas</h3>
           <div class="hm-proof-grid" id="proofGrid"></div>
         </section>
 
@@ -186,7 +197,7 @@
 
         <section class="hm-block hm-block-split">
           <div>
-            <h3>Ce que je maîtrise sur votre stack</h3>
+            <h3>Ce que je maîtrise sur vos attentes</h3>
             <ul class="hm-list hm-list-ok" id="matchList"></ul>
           </div>
           <div>
@@ -201,7 +212,7 @@
           <div class="hm-bonus-grid">
             <article class="hm-bonus">
               <strong>22 ans en industrie</strong>
-              <p>Team leader logistique chez Stellantis Trémery, jusqu'à 25 personnes encadrées. Je sais tenir un délai, rendre compte et travailler sous contrainte.</p>
+              <p>Team leader logistique chez Stellantis Trémery, jusqu'à 25 personnes encadrées, recrutement et intégration inclus. Je sais tenir un délai, rendre compte et travailler sous contrainte.</p>
             </article>
             <article class="hm-bonus">
               <strong>Lean et amélioration continue</strong>
@@ -223,7 +234,7 @@
             <li>Gilles Ruszczycki · Maizières-lès-Metz (57)</li>
             <li><a href="mailto:gilles.dev57@outlook.fr">gilles.dev57@outlook.fr</a> · <a href="tel:+33637679995">06 37 67 99 95</a></li>
             <li><a href="https://www.linkedin.com/in/gilles-ruszczycki/" target="_blank" rel="noopener noreferrer">linkedin.com/in/gilles-ruszczycki</a> · <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">webrgest.fr</a></li>
-            <li class="hm-noprint"><a href="assets/cv/CV_Gilles_Ruszczycki_Dev_Full_Stack.pdf" target="_blank" rel="noopener noreferrer">CV classique en PDF (compatible ATS)</a></li>
+            <li class="hm-noprint"><a href="assets/cv/CV_Gilles_Ruszczycki_Profil_Complet.pdf" target="_blank" rel="noopener noreferrer">CV terrain et digital en PDF</a> · <a href="assets/cv/CV_Gilles_Ruszczycki_Dev_Full_Stack.pdf" target="_blank" rel="noopener noreferrer">CV développeur en PDF</a></li>
           </ul>
         </footer>
       </article>
@@ -234,7 +245,7 @@
     <p>© <span id="year"></span> Gilles Ruszczycki · <a href="index.html">Portfolio complet</a> · <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">Web RG Est</a></p>
   </footer>
 
-  <script src="hireme.js?v=1.0"></script>
+  <script src="hireme.js?v=1.1"></script>
 </body>
 
 </html>
