@@ -547,7 +547,7 @@ function renderReport() {
   needObjects.forEach((need) => need.projects.forEach((id) => {
     if (!proofIds.includes(id)) proofIds.push(id);
   }));
-  $('#proofGrid').innerHTML = proofIds.slice(0, 4).map((id) => {
+  $('#proofGrid').innerHTML = proofIds.slice(0, 6).map((id) => {
     const p = PROJECTS[id];
     const external = p.link.startsWith('http');
     const link = p.link
@@ -567,9 +567,12 @@ function renderReport() {
   }).join('');
 
   // Plan 30 jours
+  const planFirst = needObjects.slice(0, 3);
+  const planLater = needObjects.slice(3);
   const planSteps = [
     'Semaine 1 : comprendre votre métier avant de proposer quoi que ce soit. Je vais sur le terrain, je pose des questions, je documente ce que je découvre.',
-    ...needObjects.map((need, i) => `Semaine ${i + 2} : ${need.plan[0]}`),
+    ...planFirst.map((need, i) => `Semaine ${i + 2} : ${need.plan[0]}`),
+    ...planLater.map((need, i) => (i === 0 ? `Ensuite, dans l'ordre que vous fixez : ${need.plan[0]}` : need.plan[0])),
     hasTech
       ? 'Puis chaque semaine : livrer quelque chose de visible, en pull request relue, et signaler tôt ce qui coince.'
       : hasAnalyse
@@ -711,14 +714,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const analystChoices = $('#analystChoices');
   const fieldChoices = $('#fieldChoices');
   const contractChoices = $('#contractChoices');
-  const NEED_GROUP = '[data-need-group] .hm-choice.is-active';
   const needGroups = [needChoices, needAnalystChoices, needFieldChoices];
   const skillGroups = [stackChoices, analystChoices, fieldChoices];
   const findIn = (groups, id) => groups.reduce((found, g) => found || g.querySelector(`[data-id="${id}"]`), null);
 
-  buildChoices(needChoices, NEEDS.filter((n) => n.family === 'tech'), { multi: true, max: 2, groupSelector: NEED_GROUP });
-  buildChoices(needAnalystChoices, NEEDS.filter((n) => n.family === 'analyse'), { multi: true, max: 2, groupSelector: NEED_GROUP });
-  buildChoices(needFieldChoices, NEEDS.filter((n) => n.family === 'terrain'), { multi: true, max: 2, groupSelector: NEED_GROUP });
+  buildChoices(needChoices, NEEDS.filter((n) => n.family === 'tech'), { multi: true });
+  buildChoices(needAnalystChoices, NEEDS.filter((n) => n.family === 'analyse'), { multi: true });
+  buildChoices(needFieldChoices, NEEDS.filter((n) => n.family === 'terrain'), { multi: true });
   buildChoices(stackChoices, STACK, { multi: true });
   buildChoices(analystChoices, ANALYST_SKILLS, { multi: true });
   buildChoices(fieldChoices, FIELD_SKILLS, { multi: true });
