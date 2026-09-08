@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Le CV qui postule à votre place | Gilles Ruszczycki, terrain et développement web</title>
+  <title>Le CV qui postule à votre place | Gilles Ruszczycki, analyste fonctionnel et développeur web</title>
   <meta name="description"
-    content="Répondez à 4 questions sur votre besoin : ce CV génère en direct le dossier de candidature de Gilles Ruszczycki, team leader logistique et développeur web full stack, adapté à votre entreprise." />
+    content="Répondez à 4 questions sur votre besoin : ce CV génère en direct le dossier de candidature de Gilles Ruszczycki, analyste fonctionnel et développeur web full stack, adapté à votre entreprise." />
   <meta property="og:title" content="Le CV qui postule à votre place">
   <meta property="og:description"
-    content="4 questions sur votre besoin, technique ou terrain, et ce CV s'écrit pour votre entreprise : expériences comparables, plan des 30 premiers jours, disponibilité." />
+    content="4 questions sur votre besoin, développement, analyse fonctionnelle ou terrain, et ce CV s'écrit pour votre entreprise : expériences comparables, plan des 30 premiers jours, disponibilité." />
   <meta property="og:image" content="https://gilles-rusz.github.io/PORTFOLIO_CV2026/assets/img/preview_v7.jpg">
   <meta property="og:url" content="https://gilles-rusz.github.io/PORTFOLIO_CV2026/hireme.html">
   <meta property="og:type" content="website">
@@ -18,7 +18,7 @@
   <meta name="theme-color" content="#080b12">
   <link rel="canonical" href="https://gilles-rusz.github.io/PORTFOLIO_CV2026/hireme.html">
 
-  <link rel="stylesheet" href="hireme.css?v=1.1">
+  <link rel="stylesheet" href="hireme.css?v=1.2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
   <header class="hm-header">
     <a class="hm-brand" href="index.html">
       <span class="hm-brand-mark">GR</span>
-      <span class="hm-brand-text">Gilles Ruszczycki<small>Team leader logistique et développeur web full stack</small></span>
+      <span class="hm-brand-text">Gilles Ruszczycki<small>Analyste fonctionnel et développeur web full stack</small></span>
     </a>
     <div class="hm-header-actions">
       <span class="hm-status"><span class="hm-dot"></span> Disponible immédiatement</span>
@@ -41,16 +41,16 @@
   <main class="hm-main">
     <!-- ÉTAPE 0 : accroche -->
     <section class="hm-intro" id="intro">
-      <p class="hm-kicker">Candidature spontanée, terrain et développement</p>
+      <p class="hm-kicker">Candidature spontanée, analyse et développement</p>
       <h1>
         Vous n'avez pas le temps de lire mon CV.<br />
         <span class="hm-grad">Alors c'est lui qui va lire votre besoin.</span>
       </h1>
       <p class="hm-lead">
-        Quatre questions sur votre entreprise et ce que vous cherchez, côté développement web comme côté
-        terrain et encadrement. En retour, cette page écrit en direct le dossier de candidature qui vous
-        correspond : ce que j'ai déjà livré ou piloté dans votre cas, ce que je peux produire dans mes
-        30 premiers jours, et ce que je ne sais pas encore faire.
+        Quatre questions sur votre entreprise et ce que vous cherchez : développement web, analyse
+        fonctionnelle, ou encadrement d'équipe. En retour, cette page écrit en direct le dossier de
+        candidature qui vous correspond : ce que j'ai déjà livré ou piloté dans votre cas, ce que je peux
+        produire dans mes 30 premiers jours, et ce que je ne sais pas encore faire.
         Vous pouvez l'imprimer, l'exporter en PDF ou le transférer à votre équipe.
       </p>
       <div class="hm-intro-actions">
@@ -63,7 +63,7 @@
         </a>
       </div>
       <ul class="hm-intro-notes">
-        <li>22 ans de terrain en industrie, dont l'encadrement d'équipes jusqu'à 25 personnes, et un titre de développeur web.</li>
+        <li>22 ans côté métier, dont l'encadrement d'équipes jusqu'à 25 personnes, et un titre de développeur web : je parle les deux langues.</li>
         <li>Aucune donnée envoyée : tout est calculé dans votre navigateur.</li>
         <li>Vous préférez le format habituel ? Les PDF ci-dessus passent les ATS sans problème.</li>
       </ul>
@@ -98,7 +98,9 @@
         <p class="hm-step-help">Choisissez jusqu'à deux priorités, dans une famille ou dans les deux. C'est ce qui déterminera les preuves que je vous montre.</p>
         <h3 class="hm-group-title">Développement et digital</h3>
         <div class="hm-choices" id="needChoices" data-need-group data-max="2"></div>
-        <h3 class="hm-group-title">Terrain, encadrement et organisation</h3>
+        <h3 class="hm-group-title">Analyse fonctionnelle</h3>
+        <div class="hm-choices" id="needAnalystChoices" data-need-group data-max="2"></div>
+        <h3 class="hm-group-title">Terrain et encadrement</h3>
         <div class="hm-choices" id="needFieldChoices" data-need-group data-max="2"></div>
         <div class="hm-step-actions">
           <button class="hm-btn hm-btn-ghost" type="button" data-prev="1">Retour</button>
@@ -112,7 +114,9 @@
         <p class="hm-step-help">Cochez ce que votre équipe utilise ou ce que vous exigez du poste. Je calcule honnêtement la correspondance, y compris les écarts.</p>
         <h3 class="hm-group-title">Environnement technique</h3>
         <div class="hm-choices hm-choices-compact" id="stackChoices"></div>
-        <h3 class="hm-group-title">Compétences terrain et organisation</h3>
+        <h3 class="hm-group-title">Analyse fonctionnelle et outils projet</h3>
+        <div class="hm-choices hm-choices-compact" id="analystChoices"></div>
+        <h3 class="hm-group-title">Terrain et organisation</h3>
         <div class="hm-choices hm-choices-compact" id="fieldChoices"></div>
         <div class="hm-step-actions">
           <button class="hm-btn hm-btn-ghost" type="button" data-prev="2">Retour</button>
@@ -215,6 +219,10 @@
               <p>Team leader logistique chez Stellantis Trémery, jusqu'à 25 personnes encadrées, recrutement et intégration inclus. Je sais tenir un délai, rendre compte et travailler sous contrainte.</p>
             </article>
             <article class="hm-bonus">
+              <strong>Le métier et la technique</strong>
+              <p>Je recueille un besoin comme quelqu'un qui a vécu le terrain, et je le spécifie comme quelqu'un qui devra le développer. Les malentendus entre métier et IT se voient tôt.</p>
+            </article>
+            <article class="hm-bonus">
               <strong>Lean et amélioration continue</strong>
               <p>Analyse de causes, standardisation, mesure. Je ne livre pas seulement du code, je regarde ce qui fait perdre du temps à l'équipe.</p>
             </article>
@@ -245,7 +253,7 @@
     <p>© <span id="year"></span> Gilles Ruszczycki · <a href="index.html">Portfolio complet</a> · <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">Web RG Est</a></p>
   </footer>
 
-  <script src="hireme.js?v=1.1"></script>
+  <script src="hireme.js?v=1.2"></script>
 </body>
 
 </html>
