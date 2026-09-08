@@ -83,6 +83,66 @@ const NEEDS = [
     plan: ['Prendre les tickets que personne n\'a le temps de traiter et livrer mes premières pull requests']
   },
   {
+    id: 'besoin',
+    family: 'analyse',
+    label: 'Recueillir et cadrer un besoin métier',
+    hint: 'ateliers, irritants, arbitrages',
+    answer: "C'est l'exercice que je fais depuis vingt ans, d'abord comme team leader face à des équipes et à leurs irritants, aujourd'hui comme développeur face à des clients. Je fais parler l'utilisateur de son travail réel, pas de la solution qu'il imagine, puis je reformule le besoin en objectifs vérifiables et j'assume les arbitrages.",
+    deliverable: 'Le besoin reformulé et validé par le métier, avec ce qui est hors périmètre écrit noir sur blanc',
+    projects: ['ck', 'stellantis'],
+    plan: ["Aller écouter les utilisateurs sur leur poste et restituer les irritants classés par coût réel"]
+  },
+  {
+    id: 'specs',
+    family: 'analyse',
+    label: 'Rédiger des spécifications et des user stories',
+    hint: 'critères d\'acceptation, recette',
+    answer: "J'écris des spécifications que les développeurs peuvent implémenter sans revenir poser trois questions, parce que je suis moi-même celui qui développe ensuite : règles de gestion, cas limites, critères d'acceptation, et une recette écrite avant le développement.",
+    deliverable: 'Un lot de user stories prêtes à développer, avec critères d\'acceptation et cas de recette',
+    projects: ['ck', 'greenbin'],
+    plan: ["Reprendre une demande floue du backlog et la transformer en spécification testable, validée par le métier"]
+  },
+  {
+    id: 'process',
+    family: 'analyse',
+    label: 'Cartographier et optimiser un processus métier',
+    hint: 'existant, points de blocage, cible',
+    answer: "J'ai passé 22 ans à observer des processus réels et à les corriger, avec mesure avant et après. Je cartographie l'existant tel qu'il est vécu, pas tel qu'il est censé fonctionner, je chiffre les points de blocage, puis je propose une cible atteignable par étapes.",
+    deliverable: "La cartographie de l'existant et du processus cible, avec les gains attendus chiffrés",
+    projects: ['lean', 'stellantis'],
+    plan: ['Cartographier le processus existant avec ceux qui le vivent, puis chiffrer les deux corrections les plus rentables']
+  },
+  {
+    id: 'interface',
+    family: 'analyse',
+    label: 'Faire le lien entre le métier et l\'IT',
+    hint: 'traduction, recette, support, formation',
+    answer: "C'est ma valeur principale : je parle les deux langues. Je traduis une demande métier en contrainte technique et une contrainte technique en conséquence métier, je pilote la recette avec les utilisateurs, je forme et je traite les incidents sans jargon parce que j'ai été utilisateur pendant 22 ans.",
+    deliverable: 'Une recette menée avec les utilisateurs et les incidents récurrents documentés',
+    projects: ['ck', 'stellantis'],
+    plan: ["Suivre les demandes et les incidents pendant une semaine, puis rendre un point clair côté métier et côté IT"]
+  },
+  {
+    id: 'donnees',
+    family: 'analyse',
+    label: 'Analyser des données et des échanges de flux',
+    hint: 'SQL, modèle de données, XML et JSON',
+    answer: "Je modélise des bases et j'écris mes requêtes SQL au quotidien sur mes projets, et je manipule les formats d'échange XML et JSON entre applications. Je sais aller chercher la donnée pour vérifier une hypothèse plutôt que d'attendre un rapport.",
+    deliverable: 'Le modèle de données documenté et les requêtes qui répondent à vos questions récurrentes',
+    projects: ['greenbin', 'auction'],
+    plan: ['Reconstituer le modèle de données réel et fournir les requêtes de contrôle qui manquent']
+  },
+  {
+    id: 'maquette',
+    family: 'analyse',
+    label: 'Maquetter avant de faire développer',
+    hint: 'Figma, parcours utilisateur, validation',
+    answer: "Je maquette sous Figma avant d'écrire une ligne de code : parcours écran par écran, validation par le métier, puis développement. C'est le moyen le moins cher de découvrir qu'on s'est trompé, et ça évite les développements jetés.",
+    deliverable: 'Une maquette cliquable validée par les utilisateurs avant le premier développement',
+    projects: ['oliwood', 'greenbin'],
+    plan: ['Maquetter le prochain écran demandé et le faire valider par les utilisateurs avant de le développer']
+  },
+  {
     id: 'management',
     family: 'terrain',
     label: 'Encadrer une équipe au quotidien',
@@ -115,32 +175,12 @@ const NEEDS = [
   {
     id: 'recrutement',
     family: 'terrain',
-    label: 'Recruter et intégrer des collaborateurs',
-    hint: 'sélection, tutorat, intégration',
-    answer: "J'ai participé au recrutement opérationnel chez Stellantis : sourcing interne, entretiens de sélection, puis accompagnement des nouveaux jusqu'à l'autonomie. Je sais écrire un parcours d'intégration qui ne laisse pas le nouveau seul avec un badge.",
+    label: 'Recruter, intégrer et faire monter en compétences',
+    hint: 'sélection, tutorat, KPI d\'équipe',
+    answer: "J'ai participé au recrutement opérationnel chez Stellantis : sourcing interne, entretiens de sélection, puis accompagnement des nouveaux jusqu'à l'autonomie, indicateurs d'équipe à l'appui. Je sais écrire un parcours d'intégration qui ne laisse pas le nouveau seul avec un badge.",
     deliverable: "Un parcours d'intégration écrit pour le prochain arrivant",
-    projects: ['recrutement', 'stellantis'],
+    projects: ['recrutement', 'lean'],
     plan: ["Formaliser le parcours d'intégration du poste et le tester sur le prochain arrivant"]
-  },
-  {
-    id: 'lean',
-    family: 'terrain',
-    label: 'Lancer une démarche Lean et piloter des indicateurs',
-    hint: 'KPI, causes racines, standardisation',
-    answer: "Formé au Lean management et à l'ISO 9001 chez Stellantis, j'ai piloté des KPI et animé des chantiers d'amélioration continue : analyse de causes, standardisation, mesure des gains. Je m'attaque au gaspillage avant d'ajouter un outil.",
-    deliverable: 'Un indicateur suivi chaque semaine, compris par ceux qui le remplissent',
-    projects: ['lean', 'stellantis'],
-    plan: ['Choisir un seul indicateur utile, le faire vivre en réunion courte et supprimer les indicateurs que personne ne lit']
-  },
-  {
-    id: 'support',
-    family: 'terrain',
-    label: 'Support utilisateurs et outils numériques métier',
-    hint: 'incidents, parc informatique, formation',
-    answer: "J'ai fait le pont entre les équipes terrain et les outils numériques : diagnostic d'incidents, support applicatif, formation des utilisateurs, gestion de parc. Je parle aux utilisateurs sans jargon parce que j'ai été à leur place pendant 22 ans.",
-    deliverable: 'Les incidents récurrents identifiés, avec une fiche de résolution par cas',
-    projects: ['stellantis', 'webrgest'],
-    plan: ['Traiter les incidents en direct pendant une semaine, puis documenter les cas qui reviennent le plus']
   }
 ];
 
@@ -178,6 +218,32 @@ const STACK = [
   { id: 'mobile', label: 'React Native / Flutter', level: 'no' }
 ];
 
+/* Compétences d'analyse fonctionnelle : le pont entre le métier et la technique. */
+const ANALYST_SKILLS = [
+  { id: 'recueil', label: 'Recueil du besoin métier', level: 'ok' },
+  { id: 'specrec', label: 'Rédaction de spécifications', level: 'ok' },
+  { id: 'userstory', label: 'User stories et critères d\'acceptation', level: 'ok' },
+  { id: 'recette', label: 'Recette fonctionnelle', level: 'ok' },
+  { id: 'sql', label: 'Requêtes SQL', level: 'ok' },
+  { id: 'modele', label: 'Modélisation de données', level: 'ok' },
+  { id: 'figma', label: 'Figma (maquettage)', level: 'ok' },
+  { id: 'xml', label: 'XML', level: 'ok' },
+  { id: 'json', label: 'JSON', level: 'ok' },
+  { id: 'jira', label: 'Jira', level: 'partial' },
+  { id: 'scrum', label: 'Scrum', level: 'partial' },
+  { id: 'kanban', label: 'Kanban', level: 'partial' },
+  { id: 'sqlserver', label: 'SQL Server', level: 'partial' },
+  { id: 'oracle', label: 'Oracle', level: 'partial' },
+  { id: 'o365', label: 'Office 365', level: 'partial' },
+  { id: 'balsamiq', label: 'Balsamiq', level: 'partial' },
+  { id: 'visio', label: 'Microsoft Visio', level: 'partial' },
+  { id: 'drawio', label: 'draw.io', level: 'partial' },
+  { id: 'bpmn', label: 'BPMN', level: 'partial' },
+  { id: 'uml', label: 'UML', level: 'partial' },
+  { id: 'xsd', label: 'XSD', level: 'partial' },
+  { id: 'xslt', label: 'XSLT', level: 'partial' }
+];
+
 /* Compétences terrain, encadrement et organisation, issues des 22 ans en industrie. */
 const FIELD_SKILLS = [
   { id: 'manag', label: "Management d'équipe", level: 'ok' },
@@ -196,11 +262,10 @@ const FIELD_SKILLS = [
   { id: 'rgpd', label: 'Conformité RGPD et SSI', level: 'partial' },
   { id: 'anglais', label: 'Anglais professionnel', level: 'partial' },
   { id: 'erp', label: 'ERP ou WMS logistique', level: 'partial' },
-  { id: 'compta', label: 'Comptabilité et paie', level: 'no' },
-  { id: 'commerce', label: 'Prospection commerciale terrain', level: 'partial' }
+  { id: 'compta', label: 'Comptabilité et paie', level: 'no' }
 ];
 
-const ALL_SKILLS = STACK.concat(FIELD_SKILLS);
+const ALL_SKILLS = STACK.concat(ANALYST_SKILLS, FIELD_SKILLS);
 const findSkill = (id) => ALL_SKILLS.find((s) => s.id === id);
 
 const STACK_GAP_PLAN = {
@@ -223,7 +288,19 @@ const STACK_GAP_PLAN = {
   anglais: 'Anglais technique et conversationnel : je lis la documentation et je tiens une réunion, pas encore une négociation.',
   erp: "J'ai utilisé des outils métier de suivi de flux en industrie, sans être administrateur d'un ERP ou d'un WMS.",
   compta: "La comptabilité et la paie ne sont pas mon domaine, en dehors de la gestion de ma propre micro-entreprise.",
-  commerce: "Je vends mes propres prestations chez Web RG Est, mais je ne suis pas un commercial de métier."
+  jira: "J'ai travaillé sur Jira pendant mon stage chez CK Charles Kieffer : je sais suivre un ticket et alimenter un board, pas encore administrer un projet complet.",
+  scrum: "J'ai travaillé en itérations avec des points quotidiens, sans avoir tenu formellement un rôle Scrum. Le cadre m'est familier, la certification non.",
+  kanban: "Je connais le principe et j'ai piloté des flux tirés en industrie, mais je n'ai pas encore pratiqué le Kanban agile en équipe produit.",
+  sqlserver: "J'écris du SQL au quotidien sur MySQL et PostgreSQL : SQL Server, c'est le même langage et une console à prendre en main.",
+  oracle: "Même réponse pour Oracle : les requêtes et la modélisation ne changent pas, l'outil et le PL/SQL spécifique sont à apprendre.",
+  o365: 'Office 365 au niveau usage courant, Excel et collaboratif inclus, sans expertise Power Platform.',
+  balsamiq: 'Je maquette sous Figma. Balsamiq, je sais le lire et le prendre en main rapidement.',
+  visio: "Je n'ai jamais utilisé Visio en production : je fais mes schémas autrement, et l'outil s'apprend en quelques heures.",
+  drawio: "draw.io est à prendre en main. Ce qui compte est déjà acquis : savoir ce qu'un schéma doit montrer.",
+  bpmn: "BPMN, je connais le principe sans l'avoir pratiqué. J'ai en revanche cartographié des processus réels pendant 22 ans, la notation est la partie la plus rapide à apprendre.",
+  uml: "J'ai utilisé UML en formation, diagrammes de cas d'utilisation et de classes, sans le pratiquer au quotidien.",
+  xsd: "XML et JSON sont acquis. XSD, je l'ai croisé sans l'écrire moi-même : c'est une question de jours, pas de semaines.",
+  xslt: "XSLT est le point où je suis le plus juste sur les formats d'échange. Je vous le dis franchement plutôt que de le découvrir en mission."
 };
 
 const PROJECTS = {
@@ -306,6 +383,14 @@ const PROJECTS = {
     tags: ['Contrôle qualité', 'Procédures', 'Sûreté'],
     link: '',
     linkLabel: ''
+  },
+  ck: {
+    name: 'Analyse et suivi projet',
+    context: 'Stage · CK Charles Kieffer, Luxembourg',
+    text: "Recueil du besoin avec les équipes internes, spécifications de l'application d'enchères, suivi des tâches sous Jira et recette avec les utilisateurs avant mise à disposition.",
+    tags: ['Recueil du besoin', 'Spécifications', 'Jira', 'Recette'],
+    link: 'https://www.youtube.com/watch?v=fjJrTaBJ95k',
+    linkLabel: 'démonstration vidéo'
   },
   russell: {
     name: 'Port de plaisance Russell',
@@ -419,11 +504,14 @@ function renderReport() {
   const families = needObjects.map((n) => n.family);
   const hasTerrain = families.includes('terrain');
   const hasTech = families.includes('tech');
-  const identity = hasTerrain && hasTech
-    ? 'Gilles Ruszczycki, team leader logistique et développeur web full stack'
-    : hasTerrain
-      ? 'Gilles Ruszczycki, team leader logistique, 22 ans de terrain'
-      : 'Gilles Ruszczycki, développeur web full stack';
+  const hasAnalyse = families.includes('analyse');
+  const identity = hasAnalyse
+    ? 'Gilles Ruszczycki, analyste fonctionnel, 22 ans de métier et un profil de développeur'
+    : hasTerrain && hasTech
+      ? 'Gilles Ruszczycki, team leader et développeur web full stack'
+      : hasTerrain
+        ? 'Gilles Ruszczycki, team leader, 22 ans de terrain et d\'encadrement'
+        : 'Gilles Ruszczycki, développeur web full stack';
 
   const sector = state.sector.trim();
   $('#reportSub').textContent = [
@@ -484,7 +572,9 @@ function renderReport() {
     ...needObjects.map((need, i) => `Semaine ${i + 2} : ${need.plan[0]}`),
     hasTech
       ? 'Puis chaque semaine : livrer quelque chose de visible, en pull request relue, et signaler tôt ce qui coince.'
-      : 'Puis chaque semaine : un point court, un résultat mesuré et les difficultés annoncées tôt plutôt que découvertes tard.'
+      : hasAnalyse
+        ? 'Puis chaque semaine : un livrable écrit et validé par le métier, et les difficultés annoncées tôt plutôt que découvertes en recette.'
+        : 'Puis chaque semaine : un point court, un résultat mesuré et les difficultés annoncées tôt plutôt que découvertes tard.'
   ];
   $('#planList').innerHTML = planSteps.map((s) => `<li>${s}</li>`).join('');
 
@@ -580,8 +670,12 @@ function buildMailto() {
     .map((id) => NEEDS.find((n) => n.id === id))
     .filter(Boolean);
   const needLabels = needObjects.map((n) => n.label.toLowerCase());
-  const terrainOnly = needObjects.length > 0 && needObjects.every((n) => n.family === 'terrain');
-  const role = terrainOnly ? 'profil terrain et organisation' : 'développeur full stack';
+  const familyOf = (f) => needObjects.length > 0 && needObjects.every((n) => n.family === f);
+  const role = familyOf('analyse')
+    ? 'analyste fonctionnel'
+    : familyOf('terrain')
+      ? 'profil terrain et organisation'
+      : 'développeur full stack';
   const subject = `Entretien, ${role}, pour ${company}`;
   const body = [
     'Bonjour Gilles,',
@@ -611,15 +705,22 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#year').textContent = String(new Date().getFullYear());
 
   const needChoices = $('#needChoices');
+  const needAnalystChoices = $('#needAnalystChoices');
   const needFieldChoices = $('#needFieldChoices');
   const stackChoices = $('#stackChoices');
+  const analystChoices = $('#analystChoices');
   const fieldChoices = $('#fieldChoices');
   const contractChoices = $('#contractChoices');
   const NEED_GROUP = '[data-need-group] .hm-choice.is-active';
+  const needGroups = [needChoices, needAnalystChoices, needFieldChoices];
+  const skillGroups = [stackChoices, analystChoices, fieldChoices];
+  const findIn = (groups, id) => groups.reduce((found, g) => found || g.querySelector(`[data-id="${id}"]`), null);
 
   buildChoices(needChoices, NEEDS.filter((n) => n.family === 'tech'), { multi: true, max: 2, groupSelector: NEED_GROUP });
+  buildChoices(needAnalystChoices, NEEDS.filter((n) => n.family === 'analyse'), { multi: true, max: 2, groupSelector: NEED_GROUP });
   buildChoices(needFieldChoices, NEEDS.filter((n) => n.family === 'terrain'), { multi: true, max: 2, groupSelector: NEED_GROUP });
   buildChoices(stackChoices, STACK, { multi: true });
+  buildChoices(analystChoices, ANALYST_SKILLS, { multi: true });
   buildChoices(fieldChoices, FIELD_SKILLS, { multi: true });
   buildChoices(contractChoices, CONTRACTS, { multi: false });
   contractChoices.firstElementChild.classList.add('is-active');
@@ -637,8 +738,8 @@ document.addEventListener('DOMContentLoaded', () => {
       state.company = $('#companyInput').value;
       state.sector = $('#sectorInput').value;
     }
-    if (next === 3) state.needs = selectedIds(needChoices).concat(selectedIds(needFieldChoices));
-    if (next === 4) state.stack = selectedIds(stackChoices).concat(selectedIds(fieldChoices));
+    if (next === 3) state.needs = needGroups.flatMap((g) => selectedIds(g));
+    if (next === 4) state.stack = skillGroups.flatMap((g) => selectedIds(g));
     goToStep(next);
   }));
 
@@ -691,14 +792,14 @@ document.addEventListener('DOMContentLoaded', () => {
     $('#companyInput').value = state.company;
     $('#sectorInput').value = state.sector;
     state.needs.forEach((id) => {
-      const el = needChoices.querySelector(`[data-id="${id}"]`) || needFieldChoices.querySelector(`[data-id="${id}"]`);
+      const el = findIn(needGroups, id);
       if (el) {
         el.classList.add('is-active');
         el.setAttribute('aria-pressed', 'true');
       }
     });
     state.stack.forEach((id) => {
-      const el = stackChoices.querySelector(`[data-id="${id}"]`) || fieldChoices.querySelector(`[data-id="${id}"]`);
+      const el = findIn(skillGroups, id);
       if (el) {
         el.classList.add('is-active');
         el.setAttribute('aria-pressed', 'true');
