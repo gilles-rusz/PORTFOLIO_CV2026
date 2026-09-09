@@ -3,30 +3,40 @@
 
 const NEEDS = [
   {
-    id: 'vitrine',
+    id: 'front',
     family: 'tech',
-    label: 'Un site vitrine qui inspire confiance',
-    hint: 'image de marque, SEO, mobile',
-    answer: "Je conçois et je mets en production des sites vitrines complets : structure des pages, rédaction technique du contenu, référencement, performances et responsive. C'est le cœur de mon activité Web RG Est.",
-    deliverable: 'Une première version en ligne, visitable, en 2 à 3 semaines',
-    projects: ['webrgest', 'oliwood'],
-    plan: ["Auditer l'existant (pages, SEO, performances, mobile) et livrer une liste de correctifs priorisés"]
+    label: 'Un développeur front-end',
+    hint: 'React, Next.js, interfaces responsives',
+    answer: "Je développe des interfaces en React et Next.js, avec TypeScript et Tailwind : découpage en composants, états, appels d'API, responsive et accessibilité de base. Je travaille à partir d'une maquette Figma et je livre des écrans qui tiennent sur mobile comme sur grand écran.",
+    deliverable: "Un premier écran livré, intégré à vos composants et branché sur vos données",
+    projects: ['webrgest', 'oliwood', 'greenbin'],
+    plan: ['Reprendre un écran existant de bout en bout pour comprendre vos conventions front, puis livrer le suivant seul']
   },
   {
-    id: 'ecommerce',
+    id: 'back',
     family: 'tech',
-    label: 'Vendre en ligne (catalogue, panier, paiement)',
-    hint: 'Stripe, stocks, livraison',
-    answer: "J'ai développé et mis en production une boutique complète : catalogue, panier, paiement Stripe, gestion des commandes et livraison multi-pays. Je connais les pièges (TVA, webhooks de paiement, états de commande).",
-    deliverable: 'Un tunnel de commande testable en environnement de recette',
-    projects: ['burovia'],
-    plan: ['Cartographier le tunnel de commande et sécuriser les webhooks de paiement']
+    label: 'Un développeur back-end',
+    hint: 'Node.js, Express, PHP MVC, bases de données',
+    answer: "Côté serveur je travaille en Node.js avec Express et en PHP en architecture MVC : routes, services, modèles, modélisation de la base, authentification JWT et gestion des rôles. J'ai livré en production sur MySQL, PostgreSQL et MongoDB.",
+    deliverable: 'Une première fonctionnalité serveur livrée, du modèle de données à la route testée',
+    projects: ['auction', 'burovia', 'greenbin'],
+    plan: ['Reprendre le modèle de données et les routes existantes, puis livrer une première fonctionnalité serveur complète']
+  },
+  {
+    id: 'fullstack',
+    family: 'tech',
+    label: 'Un profil full stack',
+    hint: 'du besoin à la mise en production',
+    answer: "C'est mon terrain habituel : je prends un besoin, je modélise, je développe le back et le front, je déploie et j'assure la suite. Chez Web RG Est je le fais seul de bout en bout, en stage je l'ai fait dans une équipe, avec revue de code.",
+    deliverable: "Une fonctionnalité complète en ligne, base de données et interface incluses",
+    projects: ['burovia', 'auction', 'webrgest'],
+    plan: ["Livrer une fonctionnalité complète de bout en bout, base et interface, pour valider que j'ai compris votre chaîne"]
   },
   {
     id: 'backoffice',
     family: 'tech',
-    label: 'Un back-office ou un dashboard métier',
-    hint: 'CRUD, rôles, données',
+    label: 'Une application métier ou un back-office',
+    hint: 'CRUD, rôles, tableaux de bord, outil interne',
     answer: "Je construis des interfaces d'administration lisibles : CRUD complet, formulaires métier, gestion des rôles et des accès, tableaux de bord. J'y ajoute ce que les utilisateurs demandent toujours : recherche, filtres et export.",
     deliverable: 'Un premier écran d\'administration fonctionnel branché sur vos données',
     projects: ['greenbin', 'auction', 'oliwood'],
@@ -35,7 +45,7 @@ const NEEDS = [
   {
     id: 'api',
     family: 'tech',
-    label: 'Une API et des intégrations',
+    label: 'Une API et des intégrations entre systèmes',
     hint: 'REST, authentification, services tiers',
     answer: 'Je structure des API REST Node.js / Express : routes, services, modèles, authentification JWT et séparation claire des responsabilités. Je documente les endpoints pour que le front et les partenaires ne devinent rien.',
     deliverable: 'Des endpoints documentés et testables sous Postman',
@@ -65,8 +75,8 @@ const NEEDS = [
   {
     id: 'refonte',
     family: 'tech',
-    label: 'Refondre ou accélérer un site existant',
-    hint: 'performance, SEO, dette technique',
+    label: 'Reprendre un existant : refonte, performance, dette technique',
+    hint: 'mesure, correctifs priorisés, refonte progressive',
     answer: "Je reprends des bases existantes sans tout casser : mesure d'abord (performances, SEO, accessibilité), corrections priorisées ensuite, refonte progressive écran par écran.",
     deliverable: 'Un rapport de mesures et les premiers gains visibles',
     projects: ['webrgest', 'artisan'],
@@ -81,6 +91,16 @@ const NEEDS = [
     deliverable: 'Mes premières pull requests mergées dans la semaine',
     projects: ['auction', 'greenbin'],
     plan: ['Prendre les tickets que personne n\'a le temps de traiter et livrer mes premières pull requests']
+  },
+  {
+    id: 'site',
+    family: 'tech',
+    label: 'Un site ou une boutique en ligne de bout en bout',
+    hint: 'vitrine, e-commerce, paiement, SEO',
+    answer: "J'ai livré et mis en production des sites vitrines et une boutique complète : catalogue, panier, paiement Stripe, commandes et livraison multi-pays, plus le référencement et les performances. Je connais les pièges habituels, TVA, webhooks de paiement et états de commande.",
+    deliverable: 'Une première version en ligne, visitable, ou un tunnel de commande testable en recette',
+    projects: ['burovia', 'webrgest', 'oliwood'],
+    plan: ["Auditer l'existant, pages, SEO, performances et parcours d'achat, puis livrer les correctifs par ordre de gain"]
   },
   {
     id: 'besoin',
@@ -171,6 +191,16 @@ const NEEDS = [
     deliverable: 'Une procédure écrite, testée sur le terrain et comprise par les opérateurs',
     projects: ['cattenom', 'stellantis'],
     plan: ["Reprendre une procédure existante avec ceux qui l'appliquent, la simplifier et la faire valider"]
+  },
+  {
+    id: 'lean',
+    family: 'terrain',
+    label: "Déployer une démarche Lean et d'amélioration continue",
+    hint: 'Kaizen, Gemba, Muda, 5S, KPI',
+    answer: "J'ai été formé au Lean management chez Stellantis et je l'ai pratiqué sur le terrain pendant des années : chantiers Kaizen avec les opérateurs, Gemba walk pour voir le travail réel, chasse aux Muda, 5S et suivi d'indicateurs. Je mesure avant, je change une chose à la fois, et je garde ce qui tient dans le temps.",
+    deliverable: 'Un premier chantier cadré : mesure initiale, gaspillages identifiés et gains visés',
+    projects: ['lean', 'stellantis'],
+    plan: ["Aller voir le travail réel sur le terrain, mesurer, puis lancer un premier chantier Kaizen avec ceux qui font le travail"]
   },
   {
     id: 'recrutement',
