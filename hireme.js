@@ -1,6 +1,71 @@
 /* Le CV qui postule à votre place, logique de génération du dossier.
    Tout est calculé côté navigateur, aucune donnée n'est envoyée. */
 
+/* Les trois parcours proposés au recruteur. Chaque besoin et chaque compétence
+   porte la liste des parcours où il apparaît ; le parcours hybride montre tout. */
+const TRACKS = [
+  {
+    id: 'logi',
+    label: 'Responsable logistique / encadrement',
+    hint: 'flux, équipe, Lean, process, qualité. 22 ans de terrain.',
+    identity: 'Gilles Ruszczycki, responsable logistique, 22 ans de terrain et d\'encadrement',
+    role: 'responsable logistique',
+    cv: 'assets/cv/CV_Gilles_Ruszczycki_Logisticien_Senior.pdf',
+    cvLabel: 'CV logisticien senior en PDF',
+    defaultNeed: 'flux',
+    analystNeedTitle: 'Process, données et lien avec l\'IT',
+    analystSkillTitle: 'Données, méthode et outils',
+    emptyMatch: "Vous n'avez rien coché : mon socle est l'encadrement d'équipe, l'organisation des flux, le Lean et la qualité ISO 9001, avec le SQL et les outils numériques en plus.",
+    bonusTitle: 'Le bonus que peu de logisticiens ont',
+    bonus: [
+      { title: 'Un titre de développeur web', text: "Je sais lire une base de données, écrire une requête SQL, automatiser un reporting ou dialoguer avec l'IT sur un WMS. Le numérique n'est pas un obstacle, c'est un levier." },
+      { title: 'Lean et amélioration continue', text: 'Kaizen, Gemba, 5S, KPI : formé et pratiqué chez Stellantis. Je mesure avant, je change une chose à la fois, et je garde ce qui tient.' },
+      { title: 'Qualité et sûreté', text: "ISO 9001 en industrie et début de carrière au contrôle qualité sûreté de la centrale de Cattenom : je sais ce qu'une procédure non respectée peut coûter." },
+      { title: 'Une entreprise à mon nom', text: 'Web RG Est : je gère de vrais clients, de vrais délais et de vraies mises en production. Autonomie prouvée, pas déclarée.' }
+    ]
+  },
+  {
+    id: 'dev',
+    label: 'Développeur web / analyste fonctionnel',
+    hint: 'React, Next.js, Node.js, SQL, spécifications, recette.',
+    identity: 'Gilles Ruszczycki, développeur web full stack et analyste fonctionnel',
+    role: 'développeur full stack',
+    cv: 'assets/cv/CV_Gilles_Ruszczycki_Developpeur_Web.pdf',
+    cvLabel: 'CV développeur en PDF',
+    defaultNeed: 'renfort',
+    analystNeedTitle: 'Analyse fonctionnelle',
+    analystSkillTitle: 'Analyse fonctionnelle et outils projet',
+    emptyMatch: "Vous n'avez rien coché : mon socle technique est React, Next.js, Node.js, Express, SQL et Docker.",
+    bonusTitle: 'Le bonus que peu de juniors ont',
+    bonus: [
+      { title: '22 ans en industrie', text: "Team leader logistique chez Stellantis Trémery, jusqu'à 25 personnes encadrées, recrutement et intégration inclus. Je sais tenir un délai, rendre compte et travailler sous contrainte." },
+      { title: 'Le métier et la technique', text: 'Je recueille un besoin comme quelqu\'un qui a vécu le terrain, et je le spécifie comme quelqu\'un qui devra le développer. Les malentendus entre métier et IT se voient tôt.' },
+      { title: 'Lean et amélioration continue', text: "Analyse de causes, standardisation, mesure. Je ne livre pas seulement du code, je regarde ce qui fait perdre du temps à l'équipe." },
+      { title: 'Une entreprise à mon nom', text: 'Web RG Est : je gère de vrais clients, de vrais délais et de vraies mises en production. Autonomie prouvée, pas déclarée.' }
+    ]
+  },
+  {
+    id: 'hybrid',
+    label: 'Un profil hybride',
+    hint: 'logistique ou opérations avec une vraie dimension numérique : SQL, outils, automatisation.',
+    identity: 'Gilles Ruszczycki, responsable logistique et développeur web full stack',
+    role: 'profil hybride logistique et numérique',
+    cv: 'assets/cv/CV_Gilles_Ruszczycki_Profil_Complet.pdf',
+    cvLabel: 'CV profil complet en PDF',
+    defaultNeed: 'interface',
+    analystNeedTitle: 'Organisation, process et analyse',
+    analystSkillTitle: 'Données, méthode et outils projet',
+    emptyMatch: "Vous n'avez rien coché : mon socle terrain est l'encadrement d'équipe et l'organisation des flux, et mon socle technique est React, Next.js, Node.js, SQL et Docker.",
+    bonusTitle: 'Ce que ce double profil vous apporte',
+    bonus: [
+      { title: '22 ans en industrie', text: "Team leader logistique chez Stellantis Trémery, jusqu'à 25 personnes encadrées. Je sais tenir un délai, rendre compte et travailler sous contrainte." },
+      { title: 'Un titre de développeur web', text: 'Je lis une base, j\'écris une requête SQL, j\'automatise un reporting, je développe un outil interne si aucun logiciel ne fait le travail.' },
+      { title: 'Le métier et la technique', text: 'Je traduis une demande terrain en contrainte technique et une contrainte technique en conséquence terrain. Les malentendus entre métier et IT se voient tôt.' },
+      { title: 'Une entreprise à mon nom', text: 'Web RG Est : je gère de vrais clients, de vrais délais et de vraies mises en production. Autonomie prouvée, pas déclarée.' }
+    ]
+  }
+];
+
 const NEEDS = [
   {
     id: 'front',
@@ -105,6 +170,7 @@ const NEEDS = [
   {
     id: 'besoin',
     family: 'analyse',
+    tracks: ['logi', 'dev'],
     label: 'Recueillir et cadrer un besoin métier',
     hint: 'ateliers, irritants, arbitrages',
     answer: "C'est l'exercice que je fais depuis vingt ans, d'abord comme team leader face à des équipes et à leurs irritants, aujourd'hui comme développeur face à des clients. Je fais parler l'utilisateur de son travail réel, pas de la solution qu'il imagine, puis je reformule le besoin en objectifs vérifiables et j'assume les arbitrages.",
@@ -115,6 +181,7 @@ const NEEDS = [
   {
     id: 'specs',
     family: 'analyse',
+    tracks: ['dev'],
     label: 'Rédiger des spécifications et des user stories',
     hint: 'critères d\'acceptation, recette',
     answer: "J'écris des spécifications que les développeurs peuvent implémenter sans revenir poser trois questions, parce que je suis moi-même celui qui développe ensuite : règles de gestion, cas limites, critères d'acceptation, et une recette écrite avant le développement.",
@@ -125,6 +192,7 @@ const NEEDS = [
   {
     id: 'process',
     family: 'analyse',
+    tracks: ['logi', 'dev'],
     label: 'Cartographier et optimiser un processus métier',
     hint: 'existant, points de blocage, cible',
     answer: "J'ai passé 22 ans à observer des processus réels et à les corriger, avec mesure avant et après. Je cartographie l'existant tel qu'il est vécu, pas tel qu'il est censé fonctionner, je chiffre les points de blocage, puis je propose une cible atteignable par étapes.",
@@ -135,6 +203,7 @@ const NEEDS = [
   {
     id: 'interface',
     family: 'analyse',
+    tracks: ['logi', 'dev'],
     label: 'Faire le lien entre le métier et l\'IT',
     hint: 'traduction, recette, support, formation',
     answer: "C'est ma valeur principale : je parle les deux langues. Je traduis une demande métier en contrainte technique et une contrainte technique en conséquence métier, je pilote la recette avec les utilisateurs, je forme et je traite les incidents sans jargon parce que j'ai été utilisateur pendant 22 ans.",
@@ -145,6 +214,7 @@ const NEEDS = [
   {
     id: 'donnees',
     family: 'analyse',
+    tracks: ['logi', 'dev'],
     label: 'Analyser des données et des échanges de flux',
     hint: 'SQL, modèle de données, XML et JSON',
     answer: "Je modélise des bases et j'écris mes requêtes SQL au quotidien sur mes projets, et je manipule les formats d'échange XML et JSON entre applications. Je sais aller chercher la donnée pour vérifier une hypothèse plutôt que d'attendre un rapport.",
@@ -155,6 +225,7 @@ const NEEDS = [
   {
     id: 'maquette',
     family: 'analyse',
+    tracks: ['dev'],
     label: 'Maquetter avant de faire développer',
     hint: 'Figma, parcours utilisateur, validation',
     answer: "Je maquette sous Figma avant d'écrire une ligne de code : parcours écran par écran, validation par le métier, puis développement. C'est le moyen le moins cher de découvrir qu'on s'est trompé, et ça évite les développements jetés.",
@@ -297,6 +368,29 @@ const FIELD_SKILLS = [
 
 const ALL_SKILLS = STACK.concat(ANALYST_SKILLS, FIELD_SKILLS);
 const findSkill = (id) => ALL_SKILLS.find((s) => s.id === id);
+
+/* Compétences d'analyse utiles côté logistique (données, méthode, outils) ;
+   les autres ne sont proposées que sur le parcours développeur. */
+const ANALYST_SKILLS_LOGI = ['recueil', 'recette', 'sql', 'modele', 'xml', 'json', 'jira', 'scrum', 'kanban', 'sqlserver', 'oracle', 'o365', 'visio', 'drawio', 'bpmn'];
+
+const FAMILY_TRACKS = { tech: ['dev'], terrain: ['logi'], analyse: ['logi', 'dev'] };
+
+function needTracks(need) {
+  return need.tracks || FAMILY_TRACKS[need.family];
+}
+
+function needInTrack(need, trackId) {
+  return trackId === 'hybrid' || needTracks(need).includes(trackId);
+}
+
+function skillInTrack(skill, trackId) {
+  if (trackId === 'hybrid') return true;
+  if (STACK.includes(skill)) return trackId === 'dev';
+  if (FIELD_SKILLS.includes(skill)) return trackId === 'logi';
+  return trackId === 'dev' || ANALYST_SKILLS_LOGI.includes(skill.id);
+}
+
+const findTrack = (id) => TRACKS.find((t) => t.id === id);
 
 const STACK_GAP_PLAN = {
   vue: 'Vue.js reste du JavaScript composant : avec React et Next.js derrière moi, je suis opérationnel sur une base existante en une à deux semaines.',
@@ -447,7 +541,7 @@ const TIMINGS = {
   unknown: { label: 'selon le profil', line: 'Disponible immédiatement, aucun préavis, aucune contrainte de date de mon côté.' }
 };
 
-const state = { company: '', sector: '', needs: [], stack: [], contract: 'cdi', timing: 'now', step: 1 };
+const state = { track: 'logi', company: '', sector: '', needs: [], stack: [], contract: 'cdi', timing: 'now', step: 1 };
 
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -493,7 +587,8 @@ function selectedIds(container) {
 
 /* ---------- Navigation ---------- */
 
-const STEP_NAMES = { 1: 'Votre entreprise', 2: 'Votre besoin', 3: 'Vos attentes', 4: 'Le cadre du poste' };
+const STEP_NAMES = { 1: 'Le poste', 2: 'Votre entreprise', 3: 'Votre besoin', 4: 'Vos attentes', 5: 'Le cadre du poste' };
+const STEP_COUNT = 5;
 
 function goToStep(step) {
   state.step = step;
@@ -502,8 +597,48 @@ function goToStep(step) {
   });
   $('#stepNow').textContent = String(step);
   $('#stepName').textContent = STEP_NAMES[step];
-  $('#progressFill').style.width = `${(step / 4) * 100}%`;
+  $('#progressFill').style.width = `${(step / STEP_COUNT) * 100}%`;
   $('#wizard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ---------- Parcours : filtrage des besoins et compétences ---------- */
+
+function applyTrack(trackId) {
+  state.track = findTrack(trackId) ? trackId : 'logi';
+  const track = findTrack(state.track);
+
+  $$('[data-track]').forEach((el) => {
+    el.hidden = state.track !== 'hybrid' && !el.dataset.track.split(' ').includes(state.track);
+  });
+
+  $$('[data-need-group] .hm-choice').forEach((btn) => {
+    const need = NEEDS.find((n) => n.id === btn.dataset.id);
+    const visible = need ? needInTrack(need, state.track) : true;
+    btn.hidden = !visible;
+    if (!visible) {
+      btn.classList.remove('is-active');
+      btn.setAttribute('aria-pressed', 'false');
+    }
+  });
+
+  $$('#stackChoices .hm-choice, #analystChoices .hm-choice, #fieldChoices .hm-choice').forEach((btn) => {
+    const skill = findSkill(btn.dataset.id);
+    const visible = skill ? skillInTrack(skill, state.track) : true;
+    btn.hidden = !visible;
+    if (!visible) {
+      btn.classList.remove('is-active');
+      btn.setAttribute('aria-pressed', 'false');
+    }
+  });
+
+  $('#needAnalystTitle').textContent = track.analystNeedTitle;
+  $('#analystTitle').textContent = track.analystSkillTitle;
+
+  $$('#trackChoices .hm-choice').forEach((el) => {
+    const active = el.dataset.id === state.track;
+    el.classList.toggle('is-active', active);
+    el.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
 }
 
 /* ---------- Score ---------- */
@@ -523,7 +658,8 @@ function computeScore(skillIds) {
 function renderReport() {
   const company = state.company.trim();
   const companyLabel = company || 'votre entreprise';
-  const needs = state.needs.length ? state.needs : ['renfort'];
+  const track = findTrack(state.track) || TRACKS[0];
+  const needs = state.needs.length ? state.needs : [track.defaultNeed];
   const needObjects = needs.map((id) => NEEDS.find((n) => n.id === id)).filter(Boolean);
   const score = computeScore(state.stack);
 
@@ -535,13 +671,22 @@ function renderReport() {
   const hasTerrain = families.includes('terrain');
   const hasTech = families.includes('tech');
   const hasAnalyse = families.includes('analyse');
-  const identity = hasAnalyse
-    ? 'Gilles Ruszczycki, analyste fonctionnel, 22 ans de métier et un profil de développeur'
-    : hasTerrain && hasTech
-      ? 'Gilles Ruszczycki, team leader et développeur web full stack'
-      : hasTerrain
-        ? 'Gilles Ruszczycki, team leader, 22 ans de terrain et d\'encadrement'
-        : 'Gilles Ruszczycki, développeur web full stack';
+  const identity = state.track === 'hybrid' && hasTerrain && !hasTech
+    ? findTrack('logi').identity
+    : state.track === 'hybrid' && hasTech && !hasTerrain && !hasAnalyse
+      ? findTrack('dev').identity
+      : track.identity;
+
+  const cvBtn = $('#cvBtn');
+  cvBtn.href = track.cv;
+  cvBtn.textContent = track.cvLabel;
+  $('#bonusTitle').textContent = track.bonusTitle;
+  $('#bonusGrid').innerHTML = track.bonus.map((b) => `
+    <article class="hm-bonus">
+      <strong>${b.title}</strong>
+      <p>${b.text}</p>
+    </article>
+  `).join('');
 
   const sector = state.sector.trim();
   $('#reportSub').textContent = [
@@ -618,7 +763,7 @@ function renderReport() {
 
   $('#matchList').innerHTML = okList.length
     ? okList.map((s) => `<li>${s.label}</li>`).join('')
-    : "<li>Vous n'avez rien coché : mon socle technique est React, Next.js, Node.js, Express, SQL et Docker, et mon socle terrain est l'encadrement d'équipe et l'organisation des flux.</li>";
+    : `<li>${track.emptyMatch}</li>`;
 
   $('#gapList').innerHTML = gapList.length
     ? gapList.map((s) => `<li><strong>${s.label}</strong>${s.level === 'partial' ? ' <em>(notions)</em>' : ''}</li>`).join('')
@@ -640,6 +785,7 @@ function renderReport() {
 
 function syncUrl() {
   const params = new URLSearchParams();
+  params.set('p', state.track);
   if (state.company) params.set('c', state.company);
   if (state.sector) params.set('s', state.sector);
   if (state.needs.length) params.set('n', state.needs.join(','));
@@ -653,6 +799,8 @@ function syncUrl() {
 function readUrl() {
   const params = new URLSearchParams(location.search);
   if (![...params.keys()].length) return false;
+  const p = params.get('p');
+  if (findTrack(p)) state.track = p;
   state.company = params.get('c') || '';
   state.sector = params.get('s') || '';
   state.needs = (params.get('n') || '').split(',').filter((id) => NEEDS.some((n) => n.id === id));
@@ -699,16 +847,12 @@ function runCompile(done) {
 
 function buildMailto() {
   const company = state.company.trim() || 'notre entreprise';
-  const needObjects = (state.needs.length ? state.needs : ['renfort'])
+  const track = findTrack(state.track) || TRACKS[0];
+  const needObjects = (state.needs.length ? state.needs : [track.defaultNeed])
     .map((id) => NEEDS.find((n) => n.id === id))
     .filter(Boolean);
   const needLabels = needObjects.map((n) => n.label.toLowerCase());
-  const familyOf = (f) => needObjects.length > 0 && needObjects.every((n) => n.family === f);
-  const role = familyOf('analyse')
-    ? 'analyste fonctionnel'
-    : familyOf('terrain')
-      ? 'profil terrain et organisation'
-      : 'développeur full stack';
+  const role = track.role;
   const subject = `Entretien, ${role}, pour ${company}`;
   const body = [
     'Bonjour Gilles,',
@@ -744,6 +888,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const analystChoices = $('#analystChoices');
   const fieldChoices = $('#fieldChoices');
   const contractChoices = $('#contractChoices');
+  const trackChoices = $('#trackChoices');
   const needGroups = [needChoices, needAnalystChoices, needFieldChoices];
   const skillGroups = [stackChoices, analystChoices, fieldChoices];
   const findIn = (groups, id) => groups.reduce((found, g) => found || g.querySelector(`[data-id="${id}"]`), null);
@@ -757,21 +902,26 @@ document.addEventListener('DOMContentLoaded', () => {
   buildChoices(contractChoices, CONTRACTS, { multi: false });
   contractChoices.firstElementChild.classList.add('is-active');
   contractChoices.firstElementChild.setAttribute('aria-pressed', 'true');
+  buildChoices(trackChoices, TRACKS, { multi: false });
+  applyTrack(state.track);
 
   $('#startBtn').addEventListener('click', () => {
     $('#wizard').hidden = false;
     goToStep(1);
-    $('#companyInput').focus();
   });
 
   $$('[data-next]').forEach((btn) => btn.addEventListener('click', () => {
     const next = Number(btn.dataset.next);
     if (next === 2) {
+      applyTrack(selectedIds(trackChoices)[0] || state.track);
+      window.setTimeout(() => $('#companyInput').focus(), 350);
+    }
+    if (next === 3) {
       state.company = $('#companyInput').value;
       state.sector = $('#sectorInput').value;
     }
-    if (next === 3) state.needs = needGroups.flatMap((g) => selectedIds(g));
-    if (next === 4) state.stack = skillGroups.flatMap((g) => selectedIds(g));
+    if (next === 4) state.needs = needGroups.flatMap((g) => selectedIds(g));
+    if (next === 5) state.stack = skillGroups.flatMap((g) => selectedIds(g));
     goToStep(next);
   }));
 
@@ -821,6 +971,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Dossier partagé par URL : on l'affiche directement.
   if (readUrl()) {
+    applyTrack(state.track);
     $('#companyInput').value = state.company;
     $('#sectorInput').value = state.sector;
     state.needs.forEach((id) => {

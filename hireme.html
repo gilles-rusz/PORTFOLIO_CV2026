@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Le CV qui postule à votre place | Gilles Ruszczycki, analyste fonctionnel et développeur web</title>
   <meta name="description"
-    content="Répondez à 4 questions sur votre besoin : ce CV génère en direct le dossier de candidature de Gilles Ruszczycki, analyste fonctionnel et développeur web full stack, adapté à votre entreprise." />
+    content="Choisissez le poste, logistique ou développement web, répondez à 4 questions : ce CV génère en direct le dossier de candidature de Gilles Ruszczycki adapté à votre entreprise." />
   <meta property="og:title" content="Le CV qui postule à votre place">
   <meta property="og:description"
-    content="4 questions sur votre besoin, développement, analyse fonctionnelle ou terrain, et ce CV s'écrit pour votre entreprise : expériences comparables, plan des 30 premiers jours, disponibilité." />
+    content="Responsable logistique ou développeur web : choisissez le poste, 4 questions, et ce CV s'écrit pour votre entreprise : expériences comparables, plan des 30 premiers jours, disponibilité." />
   <meta property="og:image" content="https://gilles-rusz.github.io/PORTFOLIO_CV2026/assets/img/preview_v7.jpg">
   <meta property="og:url" content="https://gilles-rusz.github.io/PORTFOLIO_CV2026/hireme.html">
   <meta property="og:type" content="website">
@@ -18,7 +18,7 @@
   <meta name="theme-color" content="#080b12">
   <link rel="canonical" href="https://gilles-rusz.github.io/PORTFOLIO_CV2026/hireme.html">
 
-  <link rel="stylesheet" href="hireme.css?v=1.4">
+  <link rel="stylesheet" href="hireme.css?v=1.5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
   <header class="hm-header">
     <a class="hm-brand" href="index.html">
       <span class="hm-brand-mark">GR</span>
-      <span class="hm-brand-text">Gilles Ruszczycki<small>Analyste fonctionnel et développeur web full stack</small></span>
+      <span class="hm-brand-text">Gilles Ruszczycki<small>Responsable logistique · Développeur web full stack</small></span>
     </a>
     <div class="hm-header-actions">
       <span class="hm-status"><span class="hm-dot"></span> Disponible immédiatement</span>
@@ -41,14 +41,14 @@
   <main class="hm-main">
     <!-- ÉTAPE 0 : accroche -->
     <section class="hm-intro" id="intro">
-      <p class="hm-kicker">Candidature spontanée, analyse et développement</p>
+      <p class="hm-kicker">Candidature spontanée, logistique ou développement web</p>
       <h1>
         Vous n'avez pas le temps de lire mon CV.<br />
         <span class="hm-grad">Alors c'est lui qui va lire votre besoin.</span>
       </h1>
       <p class="hm-lead">
-        Quatre questions sur votre entreprise et ce que vous cherchez : développement web, analyse
-        fonctionnelle, ou encadrement d'équipe. En retour, cette page écrit en direct le dossier de
+        Dites-moi d'abord quel poste vous pourvoyez, responsable logistique ou développeur web, puis
+        quatre questions sur votre entreprise et ce que vous cherchez. En retour, cette page écrit en direct le dossier de
         candidature qui vous correspond : ce que j'ai déjà livré ou piloté dans votre cas, ce que je peux
         produire dans mes 30 premiers jours, et ce que je ne sais pas encore faire.
         Vous pouvez l'imprimer, l'exporter en PDF ou le transférer à votre équipe.
@@ -73,11 +73,21 @@
     <section class="hm-wizard" id="wizard" hidden>
       <div class="hm-progress">
         <div class="hm-progress-bar"><span id="progressFill"></span></div>
-        <p class="hm-progress-label">Étape <strong id="stepNow">1</strong> sur 4 · <span id="stepName">Votre entreprise</span></p>
+        <p class="hm-progress-label">Étape <strong id="stepNow">1</strong> sur 5 · <span id="stepName">Le poste</span></p>
       </div>
 
-      <!-- Étape 1 -->
+      <!-- Étape 1 : le poste -->
       <div class="hm-step" data-step="1">
+        <h2>Vous recrutez pour quel type de poste ?</h2>
+        <p class="hm-step-help">Le dossier ne vous montrera que ce qui concerne ce poste. Rien n'est mélangé.</p>
+        <div class="hm-choices hm-choices-track" id="trackChoices" data-single="true"></div>
+        <div class="hm-step-actions">
+          <button class="hm-btn hm-btn-primary" type="button" data-next="2">Continuer</button>
+        </div>
+      </div>
+
+      <!-- Étape 2 -->
+      <div class="hm-step" data-step="2" hidden>
         <h2>Votre entreprise</h2>
         <label class="hm-field">
           <span>Nom de l'entreprise</span>
@@ -88,21 +98,6 @@
           <input type="text" id="sectorInput" placeholder="télécom, industrie, e-commerce, collectivité" maxlength="60" />
         </label>
         <div class="hm-step-actions">
-          <button class="hm-btn hm-btn-primary" type="button" data-next="2">Continuer</button>
-        </div>
-      </div>
-
-      <!-- Étape 2 -->
-      <div class="hm-step" data-step="2" hidden>
-        <h2>Vos besoins</h2>
-        <p class="hm-step-help">Cochez tout ce qui vous concerne, dans une famille ou dans plusieurs. C'est ce qui déterminera les preuves que je vous montre.</p>
-        <h3 class="hm-group-title">Développement et digital</h3>
-        <div class="hm-choices" id="needChoices" data-need-group></div>
-        <h3 class="hm-group-title">Analyse fonctionnelle</h3>
-        <div class="hm-choices" id="needAnalystChoices" data-need-group></div>
-        <h3 class="hm-group-title">Terrain et encadrement</h3>
-        <div class="hm-choices" id="needFieldChoices" data-need-group></div>
-        <div class="hm-step-actions">
           <button class="hm-btn hm-btn-ghost" type="button" data-prev="1">Retour</button>
           <button class="hm-btn hm-btn-primary" type="button" data-next="3">Continuer</button>
         </div>
@@ -110,14 +105,20 @@
 
       <!-- Étape 3 -->
       <div class="hm-step" data-step="3" hidden>
-        <h2>Ce que vous attendez du poste</h2>
-        <p class="hm-step-help">Cochez ce que votre équipe utilise ou ce que vous exigez du poste. Je calcule honnêtement la correspondance, y compris les écarts.</p>
-        <h3 class="hm-group-title">Environnement technique</h3>
-        <div class="hm-choices hm-choices-compact" id="stackChoices"></div>
-        <h3 class="hm-group-title">Analyse fonctionnelle et outils projet</h3>
-        <div class="hm-choices hm-choices-compact" id="analystChoices"></div>
-        <h3 class="hm-group-title">Terrain et organisation</h3>
-        <div class="hm-choices hm-choices-compact" id="fieldChoices"></div>
+        <h2>Vos besoins</h2>
+        <p class="hm-step-help">Cochez tout ce qui vous concerne. C'est ce qui déterminera les preuves que je vous montre.</p>
+        <div data-track="logi">
+          <h3 class="hm-group-title">Logistique, encadrement et terrain</h3>
+          <div class="hm-choices" id="needFieldChoices" data-need-group></div>
+        </div>
+        <div data-track="dev">
+          <h3 class="hm-group-title">Développement web et digital</h3>
+          <div class="hm-choices" id="needChoices" data-need-group></div>
+        </div>
+        <div data-track="logi dev">
+          <h3 class="hm-group-title" id="needAnalystTitle">Organisation, process et analyse</h3>
+          <div class="hm-choices" id="needAnalystChoices" data-need-group></div>
+        </div>
         <div class="hm-step-actions">
           <button class="hm-btn hm-btn-ghost" type="button" data-prev="2">Retour</button>
           <button class="hm-btn hm-btn-primary" type="button" data-next="4">Continuer</button>
@@ -126,6 +127,28 @@
 
       <!-- Étape 4 -->
       <div class="hm-step" data-step="4" hidden>
+        <h2>Ce que vous attendez du poste</h2>
+        <p class="hm-step-help">Cochez ce que votre équipe utilise ou ce que vous exigez du poste. Je calcule honnêtement la correspondance, y compris les écarts.</p>
+        <div data-track="logi">
+          <h3 class="hm-group-title">Logistique, terrain et organisation</h3>
+          <div class="hm-choices hm-choices-compact" id="fieldChoices"></div>
+        </div>
+        <div data-track="dev">
+          <h3 class="hm-group-title">Environnement technique</h3>
+          <div class="hm-choices hm-choices-compact" id="stackChoices"></div>
+        </div>
+        <div data-track="logi dev">
+          <h3 class="hm-group-title" id="analystTitle">Données, méthode et outils projet</h3>
+          <div class="hm-choices hm-choices-compact" id="analystChoices"></div>
+        </div>
+        <div class="hm-step-actions">
+          <button class="hm-btn hm-btn-ghost" type="button" data-prev="3">Retour</button>
+          <button class="hm-btn hm-btn-primary" type="button" data-next="5">Continuer</button>
+        </div>
+      </div>
+
+      <!-- Étape 5 -->
+      <div class="hm-step" data-step="5" hidden>
         <h2>Le cadre du poste</h2>
         <p class="hm-step-help">Pour adapter la conclusion du dossier.</p>
         <div class="hm-choices" id="contractChoices" data-single="true"></div>
@@ -139,7 +162,7 @@
           </select>
         </label>
         <div class="hm-step-actions">
-          <button class="hm-btn hm-btn-ghost" type="button" data-prev="3">Retour</button>
+          <button class="hm-btn hm-btn-ghost" type="button" data-prev="4">Retour</button>
           <button class="hm-btn hm-btn-primary" id="generateBtn" type="button">Générer le dossier</button>
         </div>
       </div>
@@ -161,6 +184,7 @@
       <div class="hm-report-toolbar hm-noprint">
         <button class="hm-btn hm-btn-primary" id="mailBtn" type="button">Me convoquer en entretien</button>
         <button class="hm-btn hm-btn-ghost" id="printBtn" type="button">Imprimer / PDF</button>
+        <a class="hm-btn hm-btn-ghost" id="cvBtn" href="assets/cv/CV_Gilles_Ruszczycki_Profil_Complet.pdf" target="_blank" rel="noopener noreferrer">CV classique en PDF</a>
         <button class="hm-btn hm-btn-ghost" id="copyBtn" type="button">Copier le lien du dossier</button>
         <button class="hm-btn hm-btn-ghost" id="restartBtn" type="button">Recommencer</button>
       </div>
@@ -212,8 +236,8 @@
         </section>
 
         <section class="hm-block">
-          <h3>Le bonus que peu de juniors ont</h3>
-          <div class="hm-bonus-grid">
+          <h3 id="bonusTitle">Le bonus que peu de juniors ont</h3>
+          <div class="hm-bonus-grid" id="bonusGrid">
             <article class="hm-bonus">
               <strong>22 ans en industrie</strong>
               <p>Team leader logistique chez Stellantis Trémery, jusqu'à 25 personnes encadrées, recrutement et intégration inclus. Je sais tenir un délai, rendre compte et travailler sous contrainte.</p>
@@ -253,7 +277,7 @@
     <p>© <span id="year"></span> Gilles Ruszczycki · <a href="index.html">Portfolio complet</a> · <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">Web RG Est</a></p>
   </footer>
 
-  <script src="hireme.js?v=1.4"></script>
+  <script src="hireme.js?v=1.5"></script>
 </body>
 
 </html>
