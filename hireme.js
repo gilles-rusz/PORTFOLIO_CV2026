@@ -15,13 +15,13 @@ const TRACKS = [
     defaultNeed: 'flux',
     analystNeedTitle: 'Process, données et lien avec l\'IT',
     analystSkillTitle: 'Données, méthode et outils',
-    emptyMatch: "Vous n'avez rien coché : mon socle est l'encadrement d'équipe, l'organisation des flux, le Lean et la qualité ISO 9001, avec le SQL et les outils numériques en plus.",
+    emptyMatch: "Vous n'avez rien coché : mon socle est l'encadrement d'équipe, l'approvisionnement bord de ligne et le kitting, le Lean et la qualité ISO 9001, avec Excel et les outils de gestion de stock.",
     bonusTitle: 'Le bonus que peu de logisticiens ont',
     bonus: [
-      { title: 'Un titre de développeur web', text: "Je sais lire une base de données, écrire une requête SQL, automatiser un reporting ou dialoguer avec l'IT sur un WMS. Le numérique n'est pas un obstacle, c'est un levier." },
-      { title: 'Lean et amélioration continue', text: 'Kaizen, Gemba, 5S, KPI : formé et pratiqué chez Stellantis. Je mesure avant, je change une chose à la fois, et je garde ce qui tient.' },
+      { title: 'Issu de la production', text: "Rodage puis montage des moteurs avant la logistique : je connais les contraintes de la ligne que j'approvisionne, et les opérateurs le sentent." },
+      { title: 'Lean et amélioration continue', text: 'Kaizen, Gemba, 5S, 5 pourquoi, Yamazumi : formé et pratiqué chez Stellantis. Je mesure avant, je change une chose à la fois, et je garde ce qui tient.' },
       { title: 'Qualité et sûreté', text: "ISO 9001 en industrie et début de carrière au contrôle qualité sûreté de la centrale de Cattenom : je sais ce qu'une procédure non respectée peut coûter." },
-      { title: 'Une entreprise à mon nom', text: 'Web RG Est : je gère de vrais clients, de vrais délais et de vraies mises en production. Autonomie prouvée, pas déclarée.' }
+      { title: 'Des outils faits maison', text: "Titulaire d'un titre de développeur web, je crée moi-même les suivis Excel et les tableaux de bord qui fiabilisent un flux, sans attendre un projet informatique." }
     ]
   },
   {
@@ -170,7 +170,7 @@ const NEEDS = [
   {
     id: 'besoin',
     family: 'analyse',
-    tracks: ['logi', 'dev'],
+    tracks: ['dev'],
     label: 'Recueillir et cadrer un besoin métier',
     hint: 'ateliers, irritants, arbitrages',
     answer: "C'est l'exercice que je fais depuis vingt ans, d'abord comme team leader face à des équipes et à leurs irritants, aujourd'hui comme développeur face à des clients. Je fais parler l'utilisateur de son travail réel, pas de la solution qu'il imagine, puis je reformule le besoin en objectifs vérifiables et j'assume les arbitrages.",
@@ -192,7 +192,7 @@ const NEEDS = [
   {
     id: 'process',
     family: 'analyse',
-    tracks: ['logi', 'dev'],
+    tracks: ['dev'],
     label: 'Cartographier et optimiser un processus métier',
     hint: 'existant, points de blocage, cible',
     answer: "J'ai passé 22 ans à observer des processus réels et à les corriger, avec mesure avant et après. Je cartographie l'existant tel qu'il est vécu, pas tel qu'il est censé fonctionner, je chiffre les points de blocage, puis je propose une cible atteignable par étapes.",
@@ -203,7 +203,7 @@ const NEEDS = [
   {
     id: 'interface',
     family: 'analyse',
-    tracks: ['logi', 'dev'],
+    tracks: ['dev'],
     label: 'Faire le lien entre le métier et l\'IT',
     hint: 'traduction, recette, support, formation',
     answer: "C'est ma valeur principale : je parle les deux langues. Je traduis une demande métier en contrainte technique et une contrainte technique en conséquence métier, je pilote la recette avec les utilisateurs, je forme et je traite les incidents sans jargon parce que j'ai été utilisateur pendant 22 ans.",
@@ -214,7 +214,7 @@ const NEEDS = [
   {
     id: 'donnees',
     family: 'analyse',
-    tracks: ['logi', 'dev'],
+    tracks: ['dev'],
     label: 'Analyser des données et des échanges de flux',
     hint: 'SQL, modèle de données, XML et JSON',
     answer: "Je modélise des bases et j'écris mes requêtes SQL au quotidien sur mes projets, et je manipule les formats d'échange XML et JSON entre applications. Je sais aller chercher la donnée pour vérifier une hypothèse plutôt que d'attendre un rapport.",
@@ -240,7 +240,7 @@ const NEEDS = [
     hint: 'animation terrain, montée en compétences',
     answer: "J'ai encadré jusqu'à 25 personnes comme team leader logistique chez Stellantis : animation quotidienne, répartition de la charge, gestion des tensions et montée en compétences des équipiers. Je sais tenir une équipe sans la casser, et rendre compte à la hiérarchie avec des faits.",
     deliverable: "Un point d'équipe cadré et des objectifs individuels lisibles dès la première semaine",
-    projects: ['stellantis', 'recrutement'],
+    projects: ['stellantis', 'eb', 'recrutement'],
     plan: ["Rencontrer chaque membre de l'équipe en individuel et remonter les irritants avec un plan d'action"]
   },
   {
@@ -248,9 +248,9 @@ const NEEDS = [
     family: 'terrain',
     label: 'Organiser des flux logistiques ou de production',
     hint: 'approvisionnement, cadence, délais',
-    answer: "Plus de 13 ans en logistique automobile chez Stellantis, sur des flux tendus : approvisionnement des lignes, respect de la cadence, gestion des aléas et des priorités. J'ai piloté des projets d'optimisation de flux avec mesure avant et après.",
+    answer: "Plus de 13 ans en logistique automobile chez Stellantis, en flux tendu : approvisionnement bord de ligne et kitting du montage et de l'usinage, sur plus de 30 000 m² et 1 500 à 2 500 références. Je tiens la cadence, je gère les aléas et les priorités, et j'équilibre les tournées avec le Yamazumi.",
     deliverable: "Une cartographie du flux réel, avec les points de blocage chiffrés",
-    projects: ['stellantis', 'lean'],
+    projects: ['stellantis', 'lean', 'compactage'],
     plan: ['Observer le flux sur le terrain, chronométrer, puis proposer les deux corrections au meilleur rapport gain sur effort']
   },
   {
@@ -258,9 +258,9 @@ const NEEDS = [
     family: 'terrain',
     label: 'Écrire et faire appliquer des procédures',
     hint: 'qualité, sécurité, conformité',
-    answer: "J'ai rédigé et fait appliquer des procédures en environnement exigeant : qualité ISO 9001, sécurité, conformité SSI. J'ai commencé ma carrière au contrôle qualité et sûreté de la centrale nucléaire de Cattenom, donc je sais ce qu'une procédure non respectée peut coûter.",
+    answer: "J'ai rédigé et fait appliquer des procédures en environnement exigeant : qualité ISO 9001, sécurité, standards 5S chronométrés de l'atelier EB, fiche de contrôle à la réception. J'ai commencé ma carrière au contrôle qualité et sûreté de la centrale nucléaire de Cattenom, donc je sais ce qu'une procédure non respectée peut coûter.",
     deliverable: 'Une procédure écrite, testée sur le terrain et comprise par les opérateurs',
-    projects: ['cattenom', 'stellantis'],
+    projects: ['eb', 'turbos', 'cattenom'],
     plan: ["Reprendre une procédure existante avec ceux qui l'appliquent, la simplifier et la faire valider"]
   },
   {
@@ -268,9 +268,9 @@ const NEEDS = [
     family: 'terrain',
     label: "Déployer une démarche Lean et d'amélioration continue",
     hint: 'Kaizen, Gemba, Muda, 5S, KPI',
-    answer: "J'ai été formé au Lean management chez Stellantis et je l'ai pratiqué sur le terrain pendant des années : chantiers Kaizen avec les opérateurs, Gemba walk pour voir le travail réel, chasse aux Muda, 5S et suivi d'indicateurs. Je mesure avant, je change une chose à la fois, et je garde ce qui tient dans le temps.",
+    answer: "Formé au Lean management chez Stellantis, je l'ai pratiqué sur le terrain : chantiers Kaizen avec les opérateurs, Gemba walk, 5 pourquoi, Kanban, Yamazumi. Deux exemples : une palette de picking posée directement au poste a supprimé la double manutention de 20 à 30 boîtes toutes les 30 minutes, et j'ai refait tous les standards 5S de l'atelier EB, chronométrés pour tenir dans les 30 minutes de fin de poste. Je mesure avant, je change une chose à la fois, et je garde ce qui tient.",
     deliverable: 'Un premier chantier cadré : mesure initiale, gaspillages identifiés et gains visés',
-    projects: ['lean', 'stellantis'],
+    projects: ['lean', 'eb', 'compactage'],
     plan: ["Aller voir le travail réel sur le terrain, mesurer, puis lancer un premier chantier Kaizen avec ceux qui font le travail"]
   },
   {
@@ -282,6 +282,36 @@ const NEEDS = [
     deliverable: "Un parcours d'intégration écrit pour le prochain arrivant",
     projects: ['recrutement', 'lean'],
     plan: ["Formaliser le parcours d'intégration du poste et le tester sur le prochain arrivant"]
+  },
+  {
+    id: 'implantation',
+    family: 'terrain',
+    label: 'Démarrer ou réorganiser une zone logistique',
+    hint: 'implantation, compactage, Yamazumi',
+    answer: "Chez Stellantis, j'ai mis en place toute la logistique de l'atelier EB (1.2 PureTech) à partir d'un entrepôt vide : zones de stockage, circuits d'approvisionnement, organisation de l'équipe. Plus tard, j'ai compacté l'atelier DV pour libérer la place du stock des moteurs DW : chantiers Kaizen sur le kitting et tournées des chariots rééquilibrées avec le Yamazumi.",
+    deliverable: "Un plan d'implantation et des tournées rééquilibrées, validés avec ceux qui les font tourner",
+    projects: ['eb', 'compactage'],
+    plan: ["Relever l'implantation et les tournées actuelles, puis tester une première réorganisation sur une zone pilote"]
+  },
+  {
+    id: 'stocks',
+    family: 'terrain',
+    label: 'Fiabiliser les stocks et éviter les ruptures',
+    hint: "seuils d'alerte, gestion de stock, commandes",
+    answer: "Des pièces à faible rotation absentes d'Hermès, l'outil de gestion de stock, avaient déjà provoqué un arrêt de ligne. J'ai créé un suivi Excel avec un flowrack dédié, un contrôle quotidien et un seuil d'alerte à deux boîtes : sous ce seuil, je vérifiais la commande dans Maestro et j'alertais le gestionnaire avant la rupture.",
+    deliverable: 'La liste des références à risque et un contrôle simple de leurs seuils, tenu chaque jour',
+    projects: ['hermes', 'stellantis'],
+    plan: ['Repérer les références qui ont déjà causé une rupture et mettre en place leur contrôle quotidien']
+  },
+  {
+    id: 'securiteflux',
+    family: 'terrain',
+    label: 'Sécuriser les flux et la réception',
+    hint: 'piétons / caristes, contrôle réception, 5 pourquoi',
+    answer: "Je traite la sécurité comme un flux à organiser : séparation des flux piétons et caristes, zone de tri des déchets, règles expliquées aux chauffeurs, y compris en anglais. Après une chute de palettes de turbos, un 5 pourquoi a remonté la cause jusqu'au fournisseur, qui ne filmait plus le dessous de ses palettes en acier : nous avons mis en place une fiche de contrôle qualité à la réception.",
+    deliverable: 'La carte des croisements de flux à risque, avec les premières corrections en place',
+    projects: ['turbos', 'compactage'],
+    plan: ['Faire un tour terrain dédié à la sécurité des flux et corriger en priorité les croisements piétons / engins']
   }
 ];
 
@@ -351,29 +381,34 @@ const FIELD_SKILLS = [
   { id: 'anim', label: 'Animation terrain au quotidien', level: 'ok' },
   { id: 'recrut', label: 'Recrutement et intégration', level: 'ok' },
   { id: 'logistique', label: 'Logistique et gestion des flux', level: 'ok' },
+  { id: 'bordligne', label: 'Approvisionnement bord de ligne et kitting', level: 'ok' },
+  { id: 'stock', label: 'Gestion des stocks, FIFO et inventaires', level: 'ok' },
+  { id: 'receptionexp', label: 'Réception et expéditions', level: 'partial' },
+  { id: 'poste', label: 'Travail posté (2x8, 3x8)', level: 'ok' },
   { id: 'leanm', label: 'Lean management', level: 'ok' },
+  { id: '5s', label: '5S et management visuel', level: 'ok' },
+  { id: 'kanbanlog', label: 'Kanban et flux tirés', level: 'ok' },
   { id: 'iso', label: 'Qualité ISO 9001', level: 'ok' },
   { id: 'kpi', label: 'Pilotage de KPI', level: 'ok' },
   { id: 'procedure', label: 'Rédaction de procédures', level: 'ok' },
   { id: 'securite', label: 'Sécurité et sûreté en site sensible', level: 'ok' },
   { id: 'projet', label: 'Gestion de projet et coordination', level: 'ok' },
-  { id: 'supportapp', label: 'Support applicatif et incidents', level: 'ok' },
-  { id: 'formation', label: 'Formation des utilisateurs', level: 'ok' },
-  { id: 'parc', label: 'Gestion de parc informatique', level: 'partial' },
-  { id: 'rgpd', label: 'Conformité RGPD et SSI', level: 'partial' },
+  { id: 'formation', label: 'Formation au poste et polyvalence', level: 'ok' },
+  { id: 'excel', label: 'Excel avancé (suivis, tableaux de bord)', level: 'ok' },
+  { id: 'erp', label: 'Logiciel de gestion de stock (Hermès, Maestro)', level: 'ok' },
+  { id: 'wms', label: 'WMS du marché', level: 'partial' },
+  { id: 'sap', label: 'SAP', level: 'no' },
+  { id: 'supportapp', label: 'Support applicatif et incidents', level: 'ok', hybridOnly: true },
+  { id: 'parc', label: 'Gestion de parc informatique', level: 'partial', hybridOnly: true },
+  { id: 'rgpd', label: 'Conformité RGPD et SSI', level: 'partial', hybridOnly: true },
   { id: 'anglais', label: 'Anglais professionnel', level: 'partial' },
-  { id: 'erp', label: 'ERP ou WMS logistique', level: 'partial' },
   { id: 'compta', label: 'Comptabilité et paie', level: 'no' }
 ];
 
 const ALL_SKILLS = STACK.concat(ANALYST_SKILLS, FIELD_SKILLS);
 const findSkill = (id) => ALL_SKILLS.find((s) => s.id === id);
 
-/* Compétences d'analyse utiles côté logistique (données, méthode, outils) ;
-   les autres ne sont proposées que sur le parcours développeur. */
-const ANALYST_SKILLS_LOGI = ['recueil', 'recette', 'sql', 'modele', 'xml', 'json', 'jira', 'scrum', 'kanban', 'sqlserver', 'oracle', 'o365', 'visio', 'drawio', 'bpmn'];
-
-const FAMILY_TRACKS = { tech: ['dev'], terrain: ['logi'], analyse: ['logi', 'dev'] };
+const FAMILY_TRACKS = { tech: ['dev'], terrain: ['logi'], analyse: ['dev'] };
 
 function needTracks(need) {
   return need.tracks || FAMILY_TRACKS[need.family];
@@ -386,8 +421,8 @@ function needInTrack(need, trackId) {
 function skillInTrack(skill, trackId) {
   if (trackId === 'hybrid') return true;
   if (STACK.includes(skill)) return trackId === 'dev';
-  if (FIELD_SKILLS.includes(skill)) return trackId === 'logi';
-  return trackId === 'dev' || ANALYST_SKILLS_LOGI.includes(skill.id);
+  if (FIELD_SKILLS.includes(skill)) return trackId === 'logi' && !skill.hybridOnly;
+  return trackId === 'dev';
 }
 
 const findTrack = (id) => TRACKS.find((t) => t.id === id);
@@ -409,8 +444,10 @@ const STACK_GAP_PLAN = {
   python: 'Python : niveau scripts et automatisation, pas encore de back-end livré.',
   parc: "J'ai géré du matériel et dépanné des utilisateurs, sans avoir tenu un parc informatique complet avec inventaire et cycle de vie.",
   rgpd: 'Je suis sensibilisé au RGPD et à la SSI et je les applique dans mes développements, sans être référent conformité.',
-  anglais: 'Anglais technique et conversationnel : je lis la documentation et je tiens une réunion, pas encore une négociation.',
-  erp: "J'ai utilisé des outils métier de suivi de flux en industrie, sans être administrateur d'un ERP ou d'un WMS.",
+  anglais: "Anglais opérationnel : je l'ai utilisé à la réception avec des chauffeurs étrangers, consignes de sécurité comprises. Je suis des cours pour aller jusqu'à la négociation.",
+  receptionexp: "J'ai tenu la réception et les expéditions en relais du responsable de secteur, pas comme poste principal : les règles sont acquises, la pratique quotidienne se reprend vite.",
+  wms: "Chez Stellantis, les stocks passaient par Hermès et les commandes par Maestro, des outils internes. Un WMS du marché repose sur les mêmes logiques d'emplacements et de mouvements : c'est une prise en main, pas un nouveau métier.",
+  sap: "Je n'ai pas utilisé SAP. Références, commandes et mouvements de stock, je les ai gérés au quotidien dans d'autres outils : il me faudrait quelques semaines pour être autonome sur les transactions courantes.",
   compta: "La comptabilité et la paie ne sont pas mon domaine, en dehors de la gestion de ma propre micro-entreprise.",
   jira: "J'ai travaillé sur Jira pendant mon stage chez CK Charles Kieffer : je sais suivre un ticket et alimenter un board, pas encore administrer un projet complet.",
   scrum: "J'ai travaillé en itérations avec des points quotidiens, sans avoir tenu formellement un rôle Scrum. Le cadre m'est familier, la certification non.",
@@ -479,7 +516,7 @@ const PROJECTS = {
   stellantis: {
     name: 'Team Leader Logistique',
     context: 'Stellantis Trémery · 2002 à 2025',
-    text: "22 ans en industrie automobile, dont la logistique comme team leader : encadrement d'équipes jusqu'à 25 personnes, animation terrain, gestion des aléas en flux tendu et support des équipes sur les outils métier.",
+    text: "Près de 23 ans en industrie automobile, dont plus de 13 ans comme team leader logistique : équipes jusqu'à 25 personnes, approvisionnement bord de ligne et kitting en flux tendu, plus de 30 000 m² et 1 500 à 2 500 références.",
     tags: ["Management d'équipe", 'Logistique', 'Flux tendu', 'Reporting'],
     link: '',
     linkLabel: ''
@@ -493,10 +530,42 @@ const PROJECTS = {
     linkLabel: ''
   },
   lean: {
-    name: 'Amélioration continue',
+    name: 'Chasse aux muda en bord de ligne',
     context: 'Stellantis · Lean et ISO 9001',
-    text: "Chantiers d'optimisation des flux : analyse de causes, standardisation des postes, pilotage de KPI et mesure des gains obtenus.",
-    tags: ['Lean', 'ISO 9001', 'KPI', 'Standardisation'],
+    text: "La palette de picking est posée sur une embase directement au poste : la double manutention de 20 à 30 boîtes toutes les 30 minutes disparaît sur les pièces à forte rotation.",
+    tags: ['Lean', 'Muda', 'Kaizen', 'Standardisation'],
+    link: '',
+    linkLabel: ''
+  },
+  eb: {
+    name: "Démarrage et 5S de l'atelier EB",
+    context: 'Stellantis Trémery · moteurs 1.2 PureTech',
+    text: "Logistique d'un atelier neuf mise en place à partir d'un entrepôt vide, puis refonte des standards 5S par allée et par tâche (matériel, méthode, photos), chronométrés pour tenir dans les 30 minutes de fin de poste. Validés par le responsable de secteur, avec un coefficient supplémentaire à la clé.",
+    tags: ['Démarrage', '5S', 'Standards', 'Management visuel'],
+    link: '',
+    linkLabel: ''
+  },
+  compactage: {
+    name: "Compactage de l'atelier DV",
+    context: 'Stellantis Trémery · moteurs 1.5 / 1.6 HDi',
+    text: "Place libérée pour le stock des moteurs DW : chantiers Kaizen sur le kitting, tournées des chariots rééquilibrées avec le Yamazumi, flux piétons et caristes séparés, zone de tri des déchets.",
+    tags: ['Kaizen', 'Yamazumi', 'Kitting', 'Sécurité'],
+    link: '',
+    linkLabel: ''
+  },
+  hermes: {
+    name: 'Suivi des pièces hors Hermès',
+    context: 'Stellantis Trémery · gestion de stock',
+    text: "Visserie à faible rotation, absente de l'outil de stock et déjà à l'origine d'un arrêt de ligne : flowrack dédié, contrôle quotidien sur fiche Excel, seuil d'alerte à 2 boîtes, vérification des commandes dans Maestro.",
+    tags: ['Excel', 'Hermès', 'Maestro', "Seuils d'alerte"],
+    link: '',
+    linkLabel: ''
+  },
+  turbos: {
+    name: '5 pourquoi sur une chute de palettes',
+    context: 'Stellantis Trémery · réception',
+    text: "Deux palettes de turbos tombées au déchargement : plutôt que d'accuser le cariste, le 5 pourquoi a remonté la cause jusqu'au fournisseur (palettes en acier plus filmées en dessous). Une fiche de contrôle qualité à la réception en a découlé.",
+    tags: ['5 pourquoi', 'Qualité', 'Réception', 'Sécurité'],
     link: '',
     linkLabel: ''
   },
