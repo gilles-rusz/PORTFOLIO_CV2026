@@ -225,6 +225,69 @@ const projects = {
       </div>
     `
   },
+  oliwood: {
+    kicker: "Activité professionnelle • Client Web RG Est",
+    title: "Oli'Wood",
+    primaryLabel: "Voir le site",
+    primaryHref: "https://oliwood-jura.fr",
+    body: `
+      <div class="modal-grid">
+        <div class="modal-gallery">
+          ${gallery([
+            { src: "assets/img/oliwood-accueil.jpg", alt: "Accueil Oli'Wood en thème par défaut", caption: "Page d'accueil : thème par défaut" },
+            { src: "assets/img/oliwood-noel-accueil.jpg", alt: "Accueil Oli'Wood en mode Noël", caption: "Mode hiver « Noël » : page d'accueil" },
+            { src: "assets/img/oliwood-noel-realisations.jpg", alt: "Réalisations Oli'Wood en mode Noël", caption: "Mode hiver « Noël » : réalisations et décors saisonniers" },
+            { src: "assets/img/oliwood-devis.jpg", alt: "Section devis et pied de page Oli'Wood", caption: "Demande de devis en ligne et pied de page" }
+          ])}
+        </div>
+        <div class="modal-meta">
+          <div class="meta-card">
+            <h4>Contexte</h4>
+            <p>Site vitrine réalisé par Web RG Est pour Oli'Wood, entreprise de charpente et construction bois du Jura (carports, pergolas bioclimatiques, terrasses sur mesure, ossature bois). Livré et en ligne sur oliwood-jura.fr.</p>
+          </div>
+          <div class="meta-card">
+            <h4>Ce que j'ai réalisé</h4>
+            ${listHtml([
+              "Galerie de réalisations par catégorie, alimentée depuis le back-office",
+              "Demande de devis en ligne protégée (honeypot, reCAPTCHA v3)",
+              "Alerte par e-mail et notification push à chaque nouveau devis",
+              "Back-office sécurisé : devis, galerie photos, textes et coordonnées",
+              "Décors saisonniers (Noël, printemps) activables en un clic, avec aperçu en direct",
+              "Déploiement Vercel avec domaine personnalisé oliwood-jura.fr"
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Ce que ça démontre</h4>
+            ${listHtml([
+              "Capacité à livrer un projet client de bout en bout, jusqu'à la mise en ligne",
+              "Full stack Next.js avec base de données PostgreSQL (Prisma) et stockage Supabase",
+              "Un outil que le client gère seul, sans toucher au code"
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Stack</h4>
+            ${linksHtml([
+              { label: "Next.js" },
+              { label: "React" },
+              { label: "TypeScript" },
+              { label: "Tailwind CSS" },
+              { label: "Prisma" },
+              { label: "PostgreSQL" },
+              { label: "Supabase" },
+              { label: "NextAuth" },
+              { label: "Vercel" }
+            ])}
+          </div>
+          <div class="meta-card">
+            <h4>Liens</h4>
+            ${linksHtml([
+              { label: "oliwood-jura.fr", href: "https://oliwood-jura.fr" }
+            ])}
+          </div>
+        </div>
+      </div>
+    `
+  },
   greenbin: {
     kicker: "Projet de présentation • Titre professionnel DWWM",
     title: "GreenBin",

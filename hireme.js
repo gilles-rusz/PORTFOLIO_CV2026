@@ -483,11 +483,11 @@ const PROJECTS = {
   },
   oliwood: {
     name: "Oli'Wood",
-    context: 'Client menuiserie · en cours de production',
-    text: "Site vitrine avec back-office : gestion des réalisations, demandes de devis, et thèmes saisonniers (mode Noël) activables en un clic sans toucher au code.",
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Back-office'],
-    link: 'index.html#a-venir',
-    linkLabel: 'captures dans le portfolio'
+    context: 'Client Web RG Est · en ligne',
+    text: "Site vitrine livré pour une entreprise de charpente du Jura, avec back-office : gestion des réalisations, demandes de devis, et thèmes saisonniers (mode Noël) activables en un clic sans toucher au code.",
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL'],
+    link: 'https://oliwood-jura.fr',
+    linkLabel: 'oliwood-jura.fr'
   },
   auction: {
     name: 'Auction Showcase',
