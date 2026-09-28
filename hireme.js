@@ -7,8 +7,8 @@ const TRACKS = [
   {
     id: 'logi',
     label: 'Responsable logistique / encadrement',
-    hint: 'flux, équipe, Lean, process, qualité. 22 ans de terrain.',
-    identity: 'Gilles Ruszczycki, responsable logistique, 22 ans de terrain et d\'encadrement',
+    hint: 'flux, équipe, Lean, process, qualité. 23 ans chez Stellantis.',
+    identity: 'Gilles Ruszczycki, team leader logistique, 23 ans de terrain industriel chez Stellantis',
     role: 'responsable logistique',
     cv: 'assets/cv/CV_Gilles_Ruszczycki_Responsable_Logistique_ATS.pdf',
     cvLabel: 'CV team leader logistique en PDF',
@@ -48,7 +48,7 @@ const TRACKS = [
     id: 'hybrid',
     label: 'Un profil hybride',
     hint: 'logistique ou opérations avec une vraie dimension numérique : SQL, outils, automatisation.',
-    identity: 'Gilles Ruszczycki, responsable logistique et développeur web full stack',
+    identity: 'Gilles Ruszczycki, team leader logistique et développeur web full stack',
     role: 'profil hybride logistique et numérique',
     cv: 'assets/cv/CV_Gilles_Ruszczycki_Profil_Complet.pdf',
     cvLabel: 'CV profil complet en PDF',
@@ -248,7 +248,7 @@ const NEEDS = [
     family: 'terrain',
     label: 'Organiser des flux logistiques ou de production',
     hint: 'approvisionnement, cadence, délais',
-    answer: "22 ans en logistique automobile sur des flux tendus : approvisionnement des lignes, respect de la cadence, gestion des aléas et des priorités. J'ai piloté des projets d'optimisation de flux avec mesure avant et après.",
+    answer: "Plus de 13 ans en logistique automobile chez Stellantis, sur des flux tendus : approvisionnement des lignes, respect de la cadence, gestion des aléas et des priorités. J'ai piloté des projets d'optimisation de flux avec mesure avant et après.",
     deliverable: "Une cartographie du flux réel, avec les points de blocage chiffrés",
     projects: ['stellantis', 'lean'],
     plan: ['Observer le flux sur le terrain, chronométrer, puis proposer les deux corrections au meilleur rapport gain sur effort']
