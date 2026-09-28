@@ -182,6 +182,63 @@ a { color: var(--hm-accent); }
   line-height: 1.8;
 }
 
+.hm-profile {
+  margin: 8px 0 22px;
+  padding: 24px 26px;
+  border: 1px solid var(--hm-line);
+  border-radius: var(--hm-radius);
+  background: var(--hm-panel);
+}
+
+.hm-profile-title {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--hm-accent);
+}
+
+.hm-profile-text {
+  margin: 0 0 20px;
+  max-width: 80ch;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--hm-muted);
+}
+
+.hm-profile-text strong { color: var(--hm-text); font-weight: 700; }
+
+.hm-keyfacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hm-keyfacts li {
+  padding: 14px 14px 13px;
+  border: 1px solid var(--hm-line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .03);
+}
+
+.hm-keyfacts strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  background: linear-gradient(100deg, var(--hm-accent), var(--hm-accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hm-keyfacts span { display: block; font-size: 12.5px; line-height: 1.45; color: var(--hm-muted); }
+
 /* ---------- Boutons ---------- */
 
 .hm-btn {
@@ -779,6 +836,10 @@ a { color: var(--hm-accent); }
 }
 
 @media (max-width: 640px) {
+  .hm-profile { padding: 20px 18px; }
+  .hm-profile-text { font-size: 15px; }
+  .hm-keyfacts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hm-keyfacts strong { font-size: 17px; }
   .hm-sheet-head { flex-direction: column-reverse; align-items: flex-start; }
   .hm-score { width: 108px; height: 108px; }
   .hm-btn { width: 100%; justify-content: center; }
