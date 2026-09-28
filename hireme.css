@@ -42,6 +42,21 @@ a { color: var(--hm-accent); }
     linear-gradient(90deg, rgba(232, 238, 252, .035) 1px, transparent 1px) 0 0 / 46px 100%;
 }
 
+.hm-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 620px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(8, 11, 18, .94) 0%, rgba(8, 11, 18, .82) 30%, rgba(8, 11, 18, .30) 56%, rgba(8, 11, 18, 0) 72%),
+    linear-gradient(180deg, rgba(8, 11, 18, 0) 55%, var(--hm-bg) 100%),
+    url("assets/img/hero-gilles.jpg") right -120px top / auto 100% no-repeat,
+    #081530;
+}
+
 /* ---------- Header ---------- */
 
 .hm-header {
@@ -145,6 +160,7 @@ a { color: var(--hm-accent); }
 }
 
 .hm-intro h1 {
+  max-width: 14em;
   margin: 0 0 20px;
   font-size: clamp(30px, 5.2vw, 52px);
   line-height: 1.08;
@@ -161,7 +177,7 @@ a { color: var(--hm-accent); }
 
 .hm-lead {
   margin: 0 0 28px;
-  max-width: 68ch;
+  max-width: 62ch;
   font-size: 17px;
   line-height: 1.65;
   color: var(--hm-muted);
@@ -784,6 +800,7 @@ a { color: var(--hm-accent); }
 
 @media print {
   .grid-glow,
+  .hm-hero-bg,
   .hm-header,
   .hm-intro,
   .hm-wizard,
@@ -833,6 +850,16 @@ a { color: var(--hm-accent); }
   .hm-score-value { stroke: #14418c; }
 
   a { color: #14418c; text-decoration: none; }
+}
+
+@media (max-width: 1360px) {
+  .hm-hero-bg {
+    height: 560px;
+    background:
+      linear-gradient(180deg, rgba(8, 11, 18, .55) 0%, rgba(8, 11, 18, .80) 45%, var(--hm-bg) 100%),
+      url("assets/img/hero-gilles-mobile.jpg") 72% top / cover no-repeat,
+      #081530;
+  }
 }
 
 @media (max-width: 640px) {
