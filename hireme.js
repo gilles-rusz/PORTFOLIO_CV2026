@@ -11,7 +11,7 @@ const TRACKS = [
     identity: 'Gilles Ruszczycki, responsable logistique, 22 ans de terrain et d\'encadrement',
     role: 'responsable logistique',
     cv: 'assets/cv/CV_Gilles_Ruszczycki_Responsable_Logistique_ATS.pdf',
-    cvLabel: 'CV responsable logistique en PDF',
+    cvLabel: 'CV team leader logistique en PDF',
     defaultNeed: 'flux',
     analystNeedTitle: 'Process, données et lien avec l\'IT',
     analystSkillTitle: 'Données, méthode et outils',
@@ -238,7 +238,7 @@ const NEEDS = [
     family: 'terrain',
     label: 'Encadrer une équipe au quotidien',
     hint: 'animation terrain, montée en compétences',
-    answer: "J'ai encadré jusqu'à 25 personnes chez Stellantis pendant 22 ans : animation quotidienne, répartition de la charge, gestion des tensions et montée en compétences des équipiers. Je sais tenir une équipe sans la casser, et rendre compte à la hiérarchie avec des faits.",
+    answer: "J'ai encadré jusqu'à 25 personnes comme team leader logistique chez Stellantis : animation quotidienne, répartition de la charge, gestion des tensions et montée en compétences des équipiers. Je sais tenir une équipe sans la casser, et rendre compte à la hiérarchie avec des faits.",
     deliverable: "Un point d'équipe cadré et des objectifs individuels lisibles dès la première semaine",
     projects: ['stellantis', 'recrutement'],
     plan: ["Rencontrer chaque membre de l'équipe en individuel et remonter les irritants avec un plan d'action"]
@@ -478,8 +478,8 @@ const PROJECTS = {
   },
   stellantis: {
     name: 'Team Leader Logistique',
-    context: 'Stellantis Trémery · 2002 à 2024',
-    text: "22 ans en logistique automobile : encadrement d'équipes jusqu'à 25 personnes, animation terrain, gestion des aléas en flux tendu et support des équipes sur les outils métier.",
+    context: 'Stellantis Trémery · 2002 à 2025',
+    text: "22 ans en industrie automobile, dont la logistique comme team leader : encadrement d'équipes jusqu'à 25 personnes, animation terrain, gestion des aléas en flux tendu et support des équipes sur les outils métier.",
     tags: ["Management d'équipe", 'Logistique', 'Flux tendu', 'Reporting'],
     link: '',
     linkLabel: ''
