@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fiche profil | Gilles Ruszczycki, team leader logistique Lean et développeur full stack</title>
+  <meta name="description" content="La fiche produit d'un profil unique : team leader logistique Lean et développeur web full stack. Choisissez la version, téléchargez le CV, parcourez les projets." />
+  <meta property="og:title" content="Profil hybride : Team Leader Logistique Lean & Développeur Full-Stack">
+  <meta property="og:description" content="Exemplaire unique, disponible immédiatement. Choisissez la version logistique, développeur ou hybride et téléchargez le CV.">
+  <meta property="og:image" content="https://gilles-rusz.github.io/PORTFOLIO_CV2026/assets/img/fiche-produit.jpg">
+  <meta property="og:url" content="https://gilles-rusz.github.io/PORTFOLIO_CV2026/profil.html">
+  <meta property="og:type" content="website">
+  <meta name="author" content="Gilles Ruszczycki">
+  <meta name="theme-color" content="#131921">
+  <link rel="canonical" href="https://gilles-rusz.github.io/PORTFOLIO_CV2026/profil.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="profil.css?v=1.0">
+</head>
+
+<body>
+  <header class="sh-top">
+    <a class="sh-logo" href="index.html" aria-label="Retour au portfolio">ruszczycki<span>.profil</span></a>
+    <form class="sh-search" id="searchForm" role="search">
+      <input id="searchInput" type="search" placeholder="Rechercher un projet, une compétence..." aria-label="Rechercher un projet ou une compétence">
+      <button type="submit" aria-label="Rechercher">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </form>
+    <div class="sh-account">
+      <a href="hireme.html"><small>Bonjour, recruteur</small><strong>CV interactif</strong></a>
+      <a href="index.html#projets"><small>Retours</small><strong>et projets</strong></a>
+      <button class="sh-cart" id="cartBtn" type="button" aria-label="Voir ma sélection">
+        <span class="sh-cart-count" id="cartCount">0</span>
+        <svg viewBox="0 0 32 28" width="34" height="30" aria-hidden="true"><path d="M2 3h5l3.5 15h15L29 8H9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="12" cy="24" r="2.2" fill="currentColor"/><circle cx="24" cy="24" r="2.2" fill="currentColor"/></svg>
+        <strong>Sélection</strong>
+      </button>
+    </div>
+  </header>
+  <nav class="sh-nav" aria-label="Navigation">
+    <a href="index.html">Portfolio</a>
+    <a href="hireme.html">CV interactif</a>
+    <a href="#onglets" data-tab-link="projets">Projets réalisés</a>
+    <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">Web RG Est</a>
+    <a href="https://www.linkedin.com/in/gilles-ruszczycki/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </nav>
+
+  <main class="sh-main">
+    <p class="sh-crumbs"><a href="index.html">Portfolio</a> › <a href="hireme.html">Profils experts</a> › <span id="crumbVersion">Logistique &amp; Développement</span></p>
+
+    <section class="sh-product">
+      <div class="sh-gallery">
+        <ul class="sh-thumbs" id="thumbs" aria-label="Galerie"></ul>
+        <figure class="sh-stage" id="stage">
+          <div class="sh-box" id="boxView">
+            <span class="sh-badge sh-badge-top">Top<br>Vente</span>
+            <span class="sh-badge sh-badge-unique">★<br>Exemplaire<br>unique</span>
+            <div class="sh-box-front">
+              <img src="assets/img/portrait.webp" alt="Portrait de Gilles Ruszczycki" width="1024" height="1024">
+              <div class="sh-box-label">
+                <strong id="boxTitle">Profil hybride</strong>
+                <span id="boxSub">Logistique <em>×</em> Développement</span>
+              </div>
+            </div>
+            <div class="sh-box-side" aria-hidden="true"></div>
+          </div>
+          <div class="sh-shot" id="shotView" hidden>
+            <button class="sh-shot-img" id="shotZoom" type="button" aria-label="Agrandir la capture"><img id="shotImg" src="" alt=""></button>
+            <figcaption>
+              <strong id="shotTitle"></strong>
+              <span id="shotText"></span>
+              <span class="sh-shot-links" id="shotLinks"></span>
+            </figcaption>
+          </div>
+          <p class="sh-zoom-hint" id="zoomHint">Cliquez sur une vignette pour voir mes projets</p>
+        </figure>
+      </div>
+
+      <div class="sh-info">
+        <h1 id="pTitle">Profil Hybride : Team Leader Logistique Lean &amp; Développeur Full-Stack</h1>
+        <p class="sh-brand">Marque : <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">Web RG Est</a> · Fabriqué en Moselle</p>
+        <p class="sh-rating"><span class="sh-stars" aria-hidden="true">★★★★★</span> <strong>5.0</strong> <span>(22 ans d'expérience terrain)</span></p>
+        <hr>
+        <p class="sh-price" id="pPrice">Sur devis / Disponible immédiatement</p>
+        <p class="sh-delivery">Livraison : <strong>Grand Est, Luxembourg</strong> (frontalier à 20 min), sur site ou en télétravail. Permis B, véhicule.</p>
+
+        <div class="sh-variants" role="radiogroup" aria-label="Choisir la version du profil">
+          <p class="sh-variants-label">Version : <strong id="variantName">Hybride</strong></p>
+          <div class="sh-variant-list" id="variants"></div>
+        </div>
+
+        <h2 class="sh-h2">Caractéristiques principales</h2>
+        <ul class="sh-features" id="pFeatures"></ul>
+      </div>
+
+      <aside class="sh-buy" aria-label="Actions">
+        <p class="sh-buy-price" id="buyPrice">Sur devis</p>
+        <p class="sh-stock">En stock, disponible immédiatement</p>
+        <a class="sh-btn sh-btn-orange" id="cvBtn" href="assets/cv/CV_Gilles_Ruszczycki_Profil_Complet.pdf" target="_blank" rel="noopener noreferrer">Télécharger le CV</a>
+        <a class="sh-btn sh-btn-yellow" href="mailto:gilles.dev57@outlook.fr?subject=Votre%20profil%20m'int%C3%A9resse">Contacter l'expert</a>
+        <a class="sh-btn sh-btn-line" href="index.html#projets">Voir mes projets</a>
+        <a class="sh-btn sh-btn-line" href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">Découvrir Web RG Est</a>
+        <a class="sh-btn sh-btn-line" href="hireme.html">CV interactif pour votre entreprise</a>
+        <button class="sh-btn sh-btn-ghost" id="addBtn" type="button">♡ Ajouter à ma sélection</button>
+        <ul class="sh-buy-meta">
+          <li><span>Expédié par</span> Gilles Ruszczycki</li>
+          <li><span>Vendu par</span> Web RG Est</li>
+          <li><span>Retours</span> entretien sans engagement</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="sh-trust" aria-label="Points forts">
+      <div><span class="sh-ic">🛡️</span><p><strong>Expertise éprouvée</strong>22 ans d'industrie, dont 13 ans de management</p></div>
+      <div><span class="sh-ic">🚀</span><p><strong>Disponibilité immédiate</strong>Prêt à démarrer sur vos projets</p></div>
+      <div><span class="sh-ic">🤝</span><p><strong>Accompagnement sur mesure</strong>Une approche pragmatique et orientée résultats</p></div>
+      <div><span class="sh-ic">📍</span><p><strong>Zone d'intervention</strong>Grand Est, Luxembourg, télétravail</p></div>
+    </section>
+
+    <section class="sh-tabs" id="onglets">
+      <div class="sh-tablist" role="tablist">
+        <button role="tab" aria-selected="true" data-tab="description">Description</button>
+        <button role="tab" aria-selected="false" data-tab="projets">Projets réalisés <span class="sh-count" id="projCount"></span></button>
+        <button role="tab" aria-selected="false" data-tab="faq">Questions et réponses</button>
+      </div>
+
+      <div class="sh-panel" data-panel="description" id="pDescription"></div>
+
+      <div class="sh-panel" data-panel="projets" hidden>
+        <div class="sh-filters" id="filters"></div>
+        <div class="sh-cards" id="cards"></div>
+        <p class="sh-more"><a class="sh-btn sh-btn-orange sh-btn-inline" href="index.html#projets">Tous les détails dans le portfolio</a></p>
+      </div>
+
+      <div class="sh-panel" data-panel="faq" hidden>
+        <details open><summary>Le profil est-il disponible tout de suite ?</summary><p>Oui, disponibilité immédiate, en France ou au Luxembourg (frontalier, à 20 min de la frontière).</p></details>
+        <details><summary>Quel est son vrai niveau d'expérience en management ?</summary><p>13 ans de Team Leader Logistique chez Stellantis (2012 à 2025), avec des équipes jusqu'à 25 personnes, après 10 ans comme opérateur sur le même site.</p></details>
+        <details><summary>Et le développement web, c'est du sérieux ?</summary><p>Titre professionnel Développeur Web et Web Mobile (Bac+2, 2025), stage chez CK Charles Kieffer Group au Luxembourg, et une activité indépendante, Web RG Est, avec des sites livrés et en ligne comme Oli'Wood.</p></details>
+        <details><summary>Quel niveau d'anglais ?</summary><p>A2 vers B1, avec une formation en cours au Cercle des Langues (cours du soir, objectif B2).</p></details>
+        <details><summary>Pourquoi un profil hybride ?</summary><p>Parce que je connais le terrain et que je sais construire les outils qui le simplifient : tableaux de bord, suivi des actions, automatisations. Le Lean et le développement partagent la même logique : observer, améliorer, mesurer.</p></details>
+      </div>
+    </section>
+
+    <section class="sh-related">
+      <h2 class="sh-h2">Les recruteurs ayant consulté ce profil ont aussi regardé</h2>
+      <div class="sh-related-list">
+        <a href="hireme.html"><strong>Le CV qui postule à votre place</strong><span>4 questions, un dossier adapté à votre entreprise</span></a>
+        <a href="index.html"><strong>Le portfolio complet</strong><span>Parcours, compétences et projets en détail</span></a>
+        <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer"><strong>Web RG Est</strong><span>Sites web, applications métier et automatisations</span></a>
+        <a href="https://www.linkedin.com/in/gilles-ruszczycki/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong><span>Mon profil professionnel</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sh-foot">
+    <a href="#" id="backTop">Retour en haut</a>
+    <p>© <span id="year"></span> Gilles Ruszczycki · <a href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">Web RG Est</a> · Page au format fiche produit, sans lien avec un site marchand.</p>
+  </footer>
+
+  <div class="sh-drawer" id="drawer" aria-hidden="true">
+    <div class="sh-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <div class="sh-drawer-head">
+        <h2 id="drawerTitle">Ma sélection</h2>
+        <button type="button" id="drawerClose" aria-label="Fermer">✕</button>
+      </div>
+      <ul id="drawerList"></ul>
+      <p class="sh-drawer-empty" id="drawerEmpty">Votre sélection est vide. Choisissez une version et cliquez sur « Ajouter à ma sélection ».</p>
+      <a class="sh-btn sh-btn-yellow" id="drawerMail" href="mailto:gilles.dev57@outlook.fr">Me contacter pour un entretien</a>
+    </div>
+  </div>
+
+  <div class="sh-lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" id="lightboxClose" aria-label="Fermer l'image">✕</button>
+    <img id="lightboxImg" src="" alt="Capture agrandie">
+  </div>
+
+  <script src="profil.js?v=1.0"></script>
+</body>
+
+</html>
