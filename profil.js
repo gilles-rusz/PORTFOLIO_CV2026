@@ -211,6 +211,12 @@ function openTab(name) {
   document.querySelectorAll('.sh-panel').forEach((p) => { p.hidden = p.dataset.panel !== name; });
 }
 
+function openFromHash() {
+  const tab = location.hash.slice(1);
+  if (!['projets', 'calcul', 'faq'].includes(tab) || $('calcTab').hidden && tab === 'calcul') return;
+  openTab(tab);
+  $('onglets').scrollIntoView({ behavior: 'smooth' });
+}
 function bindTabLinks(root = document) {
   root.querySelectorAll('[data-tab-link]').forEach((a) => a.addEventListener('click', () => openTab(a.dataset.tabLink)));
 }
@@ -285,4 +291,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   $('backTop').addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); });
   $('year').textContent = new Date().getFullYear();
+  openFromHash();
+  addEventListener('hashchange', openFromHash);
 });
