@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="profil.css?v=1.0">
+  <link rel="stylesheet" href="profil.css?v=2.0">
 </head>
 
 <body>
@@ -100,6 +100,7 @@
         <p class="sh-stock">En stock, disponible immédiatement</p>
         <a class="sh-btn sh-btn-orange" id="cvBtn" href="assets/cv/CV_Gilles_Ruszczycki_Profil_Complet.pdf" target="_blank" rel="noopener noreferrer">Télécharger le CV</a>
         <a class="sh-btn sh-btn-yellow" href="mailto:gilles.dev57@outlook.fr?subject=Votre%20profil%20m'int%C3%A9resse">Contacter l'expert</a>
+        <a class="sh-btn sh-btn-line" id="calcBtn" href="#onglets" data-tab-link="calcul">Calculer vos gains</a>
         <a class="sh-btn sh-btn-line" href="index.html#projets">Voir mes projets</a>
         <a class="sh-btn sh-btn-line" href="https://webrgest.fr" target="_blank" rel="noopener noreferrer">Découvrir Web RG Est</a>
         <a class="sh-btn sh-btn-line" href="hireme.html">CV interactif pour votre entreprise</a>
@@ -123,6 +124,7 @@
       <div class="sh-tablist" role="tablist">
         <button role="tab" aria-selected="true" data-tab="description">Description</button>
         <button role="tab" aria-selected="false" data-tab="projets">Projets réalisés <span class="sh-count" id="projCount"></span></button>
+        <button role="tab" aria-selected="false" data-tab="calcul" id="calcTab">Calculateur de gains</button>
         <button role="tab" aria-selected="false" data-tab="faq">Questions et réponses</button>
       </div>
 
@@ -134,9 +136,34 @@
         <p class="sh-more"><a class="sh-btn sh-btn-orange sh-btn-inline" href="index.html#projets">Tous les détails dans le portfolio</a></p>
       </div>
 
+      <div class="sh-panel" data-panel="calcul" hidden>
+        <div class="sh-calc">
+          <form class="sh-calc-form" onsubmit="return false">
+            <h3>Combien vous coûte le temps perdu ?</h3>
+            <p>Entrez vos chiffres, le résultat s'affiche tout de suite.</p>
+            <label>Opérations par jour <small>livraisons, préparations, appros de ligne...</small><input id="cOps" type="number" min="0" step="10" value="400" inputmode="numeric"></label>
+            <label>Minutes perdues par opération <small>attente, recherche, déplacement inutile</small><input id="cMin" type="number" min="0" step="0.5" value="2" inputmode="decimal"></label>
+            <label>Jours travaillés par an<input id="cDays" type="number" min="0" step="1" value="220" inputmode="numeric"></label>
+            <label>Coût horaire chargé (€)<input id="cRate" type="number" min="0" step="1" value="30" inputmode="numeric"></label>
+            <label>Objectif de réduction : <output id="cPctOut">30 %</output><input id="cPct" type="range" min="5" max="60" step="5" value="30"></label>
+          </form>
+          <div class="sh-calc-result" aria-live="polite">
+            <p class="sh-calc-k">Temps perdu aujourd'hui</p>
+            <p class="sh-calc-v"><strong id="rLostH">0 h</strong> par an, soit <strong id="rLostE">0 €</strong></p>
+            <p class="sh-calc-k">Gain avec <span id="rPct">30</span> % de réduction</p>
+            <p class="sh-calc-v sh-calc-gain"><strong id="rGainH">0 h</strong> et <strong id="rGainE">0 €</strong> par an</p>
+            <p class="sh-calc-fte">Soit environ <strong id="rFte">0</strong> équivalent temps plein (base 1 607 h par an).</p>
+            <p class="sh-calc-note">Le pourcentage est un objectif que vous choisissez, pas une promesse. Sur le terrain, ça passe par exemple par une tournée kanban revue : deux chariots fusionnés en un, charge équilibrée au Yamazumi, chasse aux muda.</p>
+            <a class="sh-btn sh-btn-orange" id="calcMail" href="mailto:gilles.dev57@outlook.fr">Parlons de votre cas</a>
+            <a class="sh-btn sh-btn-line" href="https://webrgest-logistique.vercel.app" target="_blank" rel="noopener noreferrer">Tester mon application de rituel terrain</a>
+          </div>
+        </div>
+      </div>
+
       <div class="sh-panel" data-panel="faq" hidden>
         <details open><summary>Le profil est-il disponible tout de suite ?</summary><p>Oui, disponibilité immédiate, en France ou au Luxembourg (frontalier, à 20 min de la frontière).</p></details>
         <details><summary>Quel est son vrai niveau d'expérience en management ?</summary><p>13 ans de Team Leader Logistique chez Stellantis (2012 à 2025), avec des équipes jusqu'à 25 personnes, après 10 ans comme opérateur sur le même site.</p></details>
+        <details><summary>Quel rôle dans les chantiers Lean ?</summary><p>Acteur terrain, en tant que chef d'équipe : tournée kanban optimisée, zone de tri réaménagée, transfert du stock moteur DW, chantiers Kaizen et standards 5S. Je connais les outils (muda, Yamazumi, 5S, 5 pourquoi, notions de VSM) et surtout je sais les faire vivre avec une équipe.</p></details>
         <details><summary>Et le développement web, c'est du sérieux ?</summary><p>Titre professionnel Développeur Web et Web Mobile (Bac+2, 2025), stage chez CK Charles Kieffer Group au Luxembourg, et une activité indépendante, Web RG Est, avec des sites livrés et en ligne comme Oli'Wood.</p></details>
         <details><summary>Quel niveau d'anglais ?</summary><p>A2 vers B1, avec une formation en cours au Cercle des Langues (cours du soir, objectif B2).</p></details>
         <details><summary>Pourquoi un profil hybride ?</summary><p>Parce que je connais le terrain et que je sais construire les outils qui le simplifient : tableaux de bord, suivi des actions, automatisations. Le Lean et le développement partagent la même logique : observer, améliorer, mesurer.</p></details>
@@ -176,7 +203,7 @@
     <img id="lightboxImg" src="" alt="Capture agrandie">
   </div>
 
-  <script src="profil.js?v=1.0"></script>
+  <script src="profil.js?v=2.0"></script>
 </body>
 
 </html>
