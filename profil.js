@@ -27,13 +27,13 @@ const VERSIONS = {
     cv: 'assets/cv/CV_Gilles_Ruszczycki_Responsable_Logistique_ATS.pdf',
     calc: true,
     features: [
-      ['👥', 'Management d\u2019équipe', '13 ans de management chez Stellantis, équipes jusqu\u2019à 25 personnes.'],
+      ['👥', 'Management d\u2019équipe', '13 ans de management chez Stellantis, équipes jusqu\u2019à 25 personnes : plannings, absences, polyvalence et habilitations.'],
       ['📈', 'Lean & performance', 'PDCA, 5 pourquoi, 5S, standardisation, suivi des KPI qualité et sécurité.'],
       ['🧩', 'Digitalisation des process', 'Mon application de rituel terrain SQCDP, en ligne et testable, et des outils de suivi que je développe moi-même.']
     ],
     description: [
       "Team Leader Logistique chez Stellantis de 2012 à 2025, sur un site certifié ISO 9001, ISO 14001 et IATF 16949, avec des équipes jusqu\u2019à 25 personnes.",
-      "Organisation du travail, approvisionnement des lignes, régulation du stock (correction des écarts, ajout ou retrait de palettes et de pièces), sécurité, qualité, formation des nouveaux et amélioration continue au quotidien.",
+      "Organisation du travail, approvisionnement des lignes, régulation du stock (correction des écarts, ajout ou retrait de palettes et de pièces), plannings et rotation des postes, habilitations des opérateurs, sécurité, qualité, formation des nouveaux et amélioration continue au quotidien.",
       "Ma touche en plus : je transforme les besoins du terrain en outils numériques simples, pour fiabiliser le suivi et gagner du temps."
     ]
   },
@@ -66,6 +66,7 @@ const PROJECTS = [
   { v: LOG, id: 'kanban', cat: 'lean', title: 'Tournée kanban optimisée', img: 'assets/img/lean-kanban.svg', text: "Participation au chantier : fusion de deux chariots kanban en un, tournée maintenue sous une heure, charge de l'opérateur équilibrée au Yamazumi, pièces passées du picking au stock sol, chasse aux muda pour réduire le temps de livraison.", tags: ['Kanban', 'Yamazumi', 'Muda'] },
   { v: LOG, id: 'tri', cat: 'lean', title: 'Zone de tri au retour des kanbans', img: 'assets/img/lean-tri.svg', text: "Réaménagement de la zone : tri des emballages vides (vides spécifiques comme les contenants de soupapes, bacs GEFCO) et des déchets (PP, PF), sens de circulation revus pour que trains kanban et caristes ne se croisent plus.", tags: ['Réaménagement', 'Sécurité', 'Flux'] },
   { v: LOG, id: 'stock-dw', cat: 'lean', title: 'Rapatriement du stock moteur DW', img: 'assets/img/lean-stock.svg', text: "Participation au grand chantier de transfert du stock moteur DW dans notre bâtiment, avec compactage de tout notre stock pour faire la place.", tags: ['Stock', 'Implantation', 'Chantier'] },
+  { v: LOG, id: 'polyvalence', cat: 'lean', title: 'Polyvalence, habilitations et plannings', img: 'assets/img/lean-polyvalence.svg', text: "Suivi de qui est formé à quel poste dans un tableau Excel, pour bâtir les plannings et faire tourner les opérateurs afin de limiter les TMS. Gestion des imprévus et des absences. Habilitation au poste validée avec l'opérateur (standard, fiche sécurité, fiche qualité) et signée, revue régulièrement, avec des audits surprises sur le respect des bonnes pratiques.", tags: ['Polyvalence', 'Habilitations', 'Prévention TMS'] },
   { v: LOG, id: 'kaizen', cat: 'lean', title: 'Kaizen, 5S et standards', img: 'assets/img/lean-kaizen.svg', text: "Chantiers Kaizen, analyses 5 pourquoi, standards 5S et standards de poste rédigés, puis appliqués et suivis avec l'équipe, la sécurité en premier.", tags: ['Kaizen', '5S', 'Standards'] },
   { v: WEB, id: 'oliwood', cat: 'client', title: "Oli'Wood", img: 'assets/img/oliwood-accueil.jpg', text: "Site livré pour une entreprise de charpente du Jura : réalisations, devis en ligne, back-office.", tags: ['Next.js', 'Prisma', 'PostgreSQL'], url: 'https://oliwood-jura.fr', label: 'Voir le site' },
   { v: WEB, id: 'oliwood-noel', cat: 'client', title: "Oli'Wood, thème de Noël", img: 'assets/img/oliwood-noel-accueil.jpg', text: "Décorations saisonnières activables en un clic depuis l'administration.", tags: ['Back-office', 'Thèmes'], url: 'https://oliwood-jura.fr', label: 'Voir le site' },
