@@ -245,3 +245,6 @@ button { font: inherit; cursor: pointer; }
 .sh-v2 a { color: var(--ink); font-weight: 600; text-decoration: none; }
 .sh-v2 a::before { content: '✓ '; color: var(--orange); font-weight: 800; }
 .sh-v2 a:hover { color: var(--orange-d); text-decoration: underline; }
+.sh-btn-roi { background: var(--top); color: #fff; font-weight: 700; gap: 8px; box-shadow: 0 0 0 3px rgba(245, 124, 0, .35); }
+.sh-btn-roi:hover { background: var(--nav); }
+.sh-new { background: var(--orange); color: #fff; border-radius: 999px; padding: 1px 8px; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
