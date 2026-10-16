@@ -288,7 +288,7 @@ const NEEDS = [
     family: 'terrain',
     label: 'Démarrer ou réorganiser une zone logistique',
     hint: 'implantation, compactage, Yamazumi',
-    answer: "Chez Stellantis, j'ai mis en place toute la logistique de l'atelier EB (1.2 PureTech) à partir d'un entrepôt vide : zones de stockage, circuits d'approvisionnement, organisation de l'équipe. Plus tard, j'ai participé au rapatriement du stock des moteurs DW dans le bâtiment du stock DV, un chantier d'ampleur mené par un chef de projet avec des techniciens. Chef d'équipe du secteur, j'étais l'œil du terrain : j'ai apporté des solutions et participé aux chantiers Kaizen pour compacter le stock et améliorer l'existant.",
+    answer: "Chez Stellantis, je suis arrivé en 2012 au démarrage de l'atelier EB (1.2 PureTech), dont la logistique était déjà en cours de mise en place : j'ai participé aux améliorations avec mes idées et refait tous les standards 5S. Plus tard, j'ai participé au rapatriement du stock des moteurs DW dans le bâtiment du stock DV, un chantier d'ampleur mené par un chef de projet avec des techniciens. Chef d'équipe du secteur, j'étais l'œil du terrain : j'ai apporté des solutions et participé aux chantiers Kaizen pour compacter le stock et améliorer l'existant.",
     deliverable: "Un plan d'implantation et des tournées rééquilibrées, validés avec ceux qui les font tourner",
     projects: ['eb', 'compactage'],
     plan: ["Relever l'implantation et les tournées actuelles, puis tester une première réorganisation sur une zone pilote"]
@@ -538,10 +538,10 @@ const PROJECTS = {
     linkLabel: ''
   },
   eb: {
-    name: "Démarrage et 5S de l'atelier EB",
+    name: "Standards 5S de l'atelier EB",
     context: 'Stellantis Trémery · moteurs 1.2 PureTech',
-    text: "Logistique d'un atelier neuf mise en place à partir d'un entrepôt vide, puis refonte des standards 5S par allée et par tâche (matériel, méthode, photos), chronométrés pour tenir dans les 30 minutes de fin de poste. Validés par le responsable de secteur, avec un coefficient supplémentaire à la clé.",
-    tags: ['Démarrage', '5S', 'Standards', 'Management visuel'],
+    text: "Arrivé au démarrage de l'atelier, j'ai participé aux améliorations avec mes idées et refait tous les standards 5S. Au lieu d'un simple coup de balai dans les allées, le cariste lève les palettes et le cambiste nettoie les posages, avec un lavage à l'eau et au savon une fois par mois. Matériel référencé pour chaque tâche, temps calculé pour tenir dans les 30 minutes de fin de poste (chercher le matériel, faire, ranger), armoire 5S suivie et réapprovisionnée. Validés par le responsable de secteur, avec un coefficient supplémentaire à la clé.",
+    tags: ['5S', 'Standards', 'Amélioration continue', 'Management visuel'],
     link: '',
     linkLabel: ''
   },
