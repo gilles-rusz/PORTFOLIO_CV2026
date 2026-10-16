@@ -7,8 +7,8 @@ const TRACKS = [
   {
     id: 'logi',
     label: 'Responsable logistique / encadrement',
-    hint: 'flux, équipe, Lean, process, qualité. 23 ans chez Stellantis.',
-    identity: 'Gilles Ruszczycki, team leader logistique, 23 ans de terrain industriel chez Stellantis',
+    hint: 'flux, équipe, Lean, process, qualité. 22 ans chez Stellantis.',
+    identity: 'Gilles Ruszczycki, team leader logistique, 22 ans de terrain industriel chez Stellantis',
     role: 'responsable logistique',
     cv: 'assets/cv/CV_Gilles_Ruszczycki_Responsable_Logistique_ATS.pdf',
     cvLabel: 'CV team leader logistique en PDF',
@@ -516,7 +516,7 @@ const PROJECTS = {
   stellantis: {
     name: 'Team Leader Logistique',
     context: 'Stellantis Trémery · 2002 à 2025',
-    text: "Près de 23 ans en industrie automobile, dont plus de 13 ans comme team leader logistique : équipes jusqu'à 25 personnes, approvisionnement bord de ligne et kitting en flux tendu, plus de 30 000 m² et 1 500 à 2 500 références.",
+    text: "22 ans en industrie automobile, dont plus de 13 ans comme team leader logistique : équipes jusqu'à 25 personnes, approvisionnement bord de ligne et kitting en flux tendu, plus de 30 000 m² et 1 500 à 2 500 références.",
     tags: ["Management d'équipe", 'Logistique', 'Flux tendu', 'Reporting'],
     link: '',
     linkLabel: ''
