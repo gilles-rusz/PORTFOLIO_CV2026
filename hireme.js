@@ -7,8 +7,8 @@ const TRACKS = [
   {
     id: 'logi',
     label: 'Responsable logistique / encadrement',
-    hint: 'flux, équipe, Lean, process, qualité. 23 ans chez Stellantis.',
-    identity: 'Gilles Ruszczycki, team leader logistique, 23 ans de terrain industriel chez Stellantis',
+    hint: 'flux, équipe, Lean, process, qualité. 22 ans chez Stellantis.',
+    identity: 'Gilles Ruszczycki, team leader logistique, 22 ans de terrain industriel chez Stellantis',
     role: 'responsable logistique',
     cv: 'assets/cv/CV_Gilles_Ruszczycki_Responsable_Logistique_ATS.pdf',
     cvLabel: 'CV team leader logistique en PDF',
@@ -19,7 +19,7 @@ const TRACKS = [
     bonusTitle: 'Le bonus que peu de logisticiens ont',
     bonus: [
       { title: 'Issu de la production', text: "Rodage puis montage des moteurs avant la logistique : je connais les contraintes de la ligne que j'approvisionne, et les opérateurs le sentent." },
-      { title: 'Lean et amélioration continue', text: 'Kaizen, Gemba, 5S, 5 pourquoi, Yamazumi : formé et pratiqué chez Stellantis. Je mesure avant, je change une chose à la fois, et je garde ce qui tient.' },
+      { title: 'Lean et amélioration continue', text: 'Kaizen, Gemba, 5S, 5 pourquoi, Yamazumi : formé chez Stellantis et pratiqué en acteur terrain des chantiers. Je mesure avant, je change une chose à la fois, et je garde ce qui tient.' },
       { title: 'Qualité et sûreté', text: "ISO 9001 en industrie et début de carrière au contrôle qualité sûreté de la centrale de Cattenom : je sais ce qu'une procédure non respectée peut coûter." },
       { title: 'Des outils faits maison', text: "Titulaire d'un titre de développeur web, je crée moi-même les suivis Excel et les tableaux de bord qui fiabilisent un flux, sans attendre un projet informatique." }
     ]
@@ -268,10 +268,10 @@ const NEEDS = [
     family: 'terrain',
     label: "Déployer une démarche Lean et d'amélioration continue",
     hint: 'Kaizen, Gemba, Muda, 5S, KPI',
-    answer: "Formé au Lean management chez Stellantis, je l'ai pratiqué sur le terrain : chantiers Kaizen avec les opérateurs, Gemba walk, 5 pourquoi, Kanban, Yamazumi. Deux exemples : une palette de picking posée directement au poste a supprimé la double manutention de 20 à 30 boîtes toutes les 30 minutes, et j'ai refait tous les standards 5S de l'atelier EB, chronométrés pour tenir dans les 30 minutes de fin de poste. Je mesure avant, je change une chose à la fois, et je garde ce qui tient.",
-    deliverable: 'Un premier chantier cadré : mesure initiale, gaspillages identifiés et gains visés',
+    answer: "Formé au Lean management chez Stellantis, je l'ai pratiqué sur le terrain : chantiers Kaizen avec les opérateurs, Gemba walk, 5 pourquoi, Kanban, Yamazumi. Deux exemples : une palette de picking posée directement au poste a supprimé la double manutention de 20 à 30 boîtes toutes les 30 minutes, et j'ai refait tous les standards 5S de l'atelier EB, chronométrés pour tenir dans les 30 minutes de fin de poste. Je connais toute la démarche, de la chasse aux muda à la VSM actuelle puis future, mais je n'ai jamais été chef de projet Lean : j'étais l'agent terrain des chantiers, celui qui apporte les solutions et les fait appliquer.",
+    deliverable: 'Les gaspillages repérés sur le terrain et des pistes d\'amélioration concrètes, mesurées',
     projects: ['lean', 'eb', 'compactage'],
-    plan: ["Aller voir le travail réel sur le terrain, mesurer, puis lancer un premier chantier Kaizen avec ceux qui font le travail"]
+    plan: ["Aller voir le travail réel sur le terrain, mesurer, puis proposer des pistes et participer aux chantiers Kaizen avec ceux qui font le travail"]
   },
   {
     id: 'recrutement',
@@ -288,7 +288,7 @@ const NEEDS = [
     family: 'terrain',
     label: 'Démarrer ou réorganiser une zone logistique',
     hint: 'implantation, compactage, Yamazumi',
-    answer: "Chez Stellantis, j'ai mis en place toute la logistique de l'atelier EB (1.2 PureTech) à partir d'un entrepôt vide : zones de stockage, circuits d'approvisionnement, organisation de l'équipe. Plus tard, j'ai compacté l'atelier DV pour libérer la place du stock des moteurs DW : chantiers Kaizen sur le kitting et tournées des chariots rééquilibrées avec le Yamazumi.",
+    answer: "Chez Stellantis, je suis arrivé en 2012 au démarrage de l'atelier EB (1.2 PureTech), dont la logistique était déjà en cours de mise en place : j'ai participé aux améliorations avec mes idées et refait tous les standards 5S. Plus tard, j'ai participé au rapatriement du stock des moteurs DW dans le bâtiment du stock DV, un chantier d'ampleur mené par un chef de projet avec des techniciens. Chef d'équipe du secteur, j'étais l'œil du terrain : j'ai apporté des solutions et participé aux chantiers Kaizen pour compacter le stock et améliorer l'existant.",
     deliverable: "Un plan d'implantation et des tournées rééquilibrées, validés avec ceux qui les font tourner",
     projects: ['eb', 'compactage'],
     plan: ["Relever l'implantation et les tournées actuelles, puis tester une première réorganisation sur une zone pilote"]
@@ -451,7 +451,7 @@ const STACK_GAP_PLAN = {
   compta: "La comptabilité et la paie ne sont pas mon domaine, en dehors de la gestion de ma propre micro-entreprise.",
   jira: "J'ai travaillé sur Jira pendant mon stage chez CK Charles Kieffer : je sais suivre un ticket et alimenter un board, pas encore administrer un projet complet.",
   scrum: "J'ai travaillé en itérations avec des points quotidiens, sans avoir tenu formellement un rôle Scrum. Le cadre m'est familier, la certification non.",
-  kanban: "Je connais le principe et j'ai piloté des flux tirés en industrie, mais je n'ai pas encore pratiqué le Kanban agile en équipe produit.",
+  kanban: "Je connais le principe et j'ai travaillé en flux tirés avec des tournées kanban en industrie, mais je n'ai pas encore pratiqué le Kanban agile en équipe produit.",
   sqlserver: "J'écris du SQL au quotidien sur MySQL et PostgreSQL : SQL Server, c'est le même langage et une console à prendre en main.",
   oracle: "Même réponse pour Oracle : les requêtes et la modélisation ne changent pas, l'outil et le PL/SQL spécifique sont à apprendre.",
   o365: 'Office 365 au niveau usage courant, Excel et collaboratif inclus, sans expertise Power Platform.',
@@ -516,7 +516,7 @@ const PROJECTS = {
   stellantis: {
     name: 'Team Leader Logistique',
     context: 'Stellantis Trémery · 2002 à 2025',
-    text: "Près de 23 ans en industrie automobile, dont plus de 13 ans comme team leader logistique : équipes jusqu'à 25 personnes, approvisionnement bord de ligne et kitting en flux tendu, plus de 30 000 m² et 1 500 à 2 500 références.",
+    text: "22 ans en industrie automobile, dont plus de 13 ans comme team leader logistique : équipes jusqu'à 25 personnes, approvisionnement bord de ligne et kitting en flux tendu, plus de 30 000 m² et 1 500 à 2 500 références.",
     tags: ["Management d'équipe", 'Logistique', 'Flux tendu', 'Reporting'],
     link: '',
     linkLabel: ''
@@ -538,18 +538,18 @@ const PROJECTS = {
     linkLabel: ''
   },
   eb: {
-    name: "Démarrage et 5S de l'atelier EB",
+    name: "Standards 5S de l'atelier EB",
     context: 'Stellantis Trémery · moteurs 1.2 PureTech',
-    text: "Logistique d'un atelier neuf mise en place à partir d'un entrepôt vide, puis refonte des standards 5S par allée et par tâche (matériel, méthode, photos), chronométrés pour tenir dans les 30 minutes de fin de poste. Validés par le responsable de secteur, avec un coefficient supplémentaire à la clé.",
-    tags: ['Démarrage', '5S', 'Standards', 'Management visuel'],
+    text: "Arrivé au démarrage de l'atelier, j'ai participé aux améliorations avec mes idées et refait tous les standards 5S. Au lieu d'un simple coup de balai dans les allées, le cariste lève les palettes et le cambiste nettoie les posages, avec un lavage à l'eau et au savon une fois par mois. Matériel référencé pour chaque tâche, temps calculé pour tenir dans les 30 minutes de fin de poste (chercher le matériel, faire, ranger), armoire 5S suivie et réapprovisionnée. Validés par le responsable de secteur, avec un coefficient supplémentaire à la clé.",
+    tags: ['5S', 'Standards', 'Amélioration continue', 'Management visuel'],
     link: '',
     linkLabel: ''
   },
   compactage: {
-    name: "Compactage de l'atelier DV",
-    context: 'Stellantis Trémery · moteurs 1.5 / 1.6 HDi',
-    text: "Place libérée pour le stock des moteurs DW : chantiers Kaizen sur le kitting, tournées des chariots rééquilibrées avec le Yamazumi, flux piétons et caristes séparés, zone de tri des déchets.",
-    tags: ['Kaizen', 'Yamazumi', 'Kitting', 'Sécurité'],
+    name: 'Transfert du stock moteur DW',
+    context: "Stellantis Trémery · participation en tant que chef d'équipe du secteur",
+    text: "Chantier d'ampleur mené par un chef de projet avec des techniciens : rapatrier le stock des moteurs DW dans le bâtiment du stock DV pour libérer la place des moteurs électriques. Mon rôle : l'œil du terrain, des solutions proposées et la participation aux chantiers Kaizen pour compacter le stock et améliorer l'existant.",
+    tags: ['Participation', 'Kaizen', 'Compactage', 'Terrain'],
     link: '',
     linkLabel: ''
   },
